@@ -57,7 +57,7 @@ def _send_discord_alert(message: str):
 def run_predictions():
     log.info("Loading models...")
     registry = ModelRegistry()
-    log.info(f"Models loaded: {len(registry.models)} entries")
+    log.info(f"Models loaded: {registry.list_models()['total']} entries")
 
     log.info("Fetching recent parking data...")
     recent_rows = fetch_recent_rows(n=20)
