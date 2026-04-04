@@ -1,0 +1,33 @@
+date,day_of_week,event,category,parking_impact,is_class_day
+2026-01-01,Thursday,New Year's Day - University Closed,university_closed,none,False
+2026-01-10,Saturday,Saturday Classes Begin,semester_start,normal,False
+2026-01-12,Monday,First Day of Classes,semester_start,high,True
+2026-01-17,Saturday,No Saturday Classes,no_saturday_classes,low,False
+2026-01-19,Monday,MLK Day - University Closed,university_closed,none,False
+2026-01-20,Tuesday,Last Day to Add/Drop,admin,normal,True
+2026-01-26,Monday,Census Date,admin,normal,True
+2026-02-06,Friday,Early Alert Deadline,admin,normal,True
+2026-02-12,Thursday,Graduation Application Deadline,admin,normal,True
+2026-02-27,Friday,Midterm Grades Due,admin,normal,True
+2026-03-02,Monday,Fall 2026 Schedule Available,admin,normal,True
+2026-03-09,Monday,Spring Recess Begins - No Classes,spring_recess,low,False
+2026-03-10,Tuesday,Spring Recess - No Classes,spring_recess,low,False
+2026-03-11,Wednesday,Spring Recess - No Classes,spring_recess,low,False
+2026-03-12,Thursday,Spring Recess - No Classes,spring_recess,low,False
+2026-03-13,Friday,Spring Recess - No Classes,spring_recess,low,False
+2026-03-14,Saturday,Spring Recess - No Classes,spring_recess,low,False
+2026-03-16,Monday,Classes Resume After Spring Recess,return_from_break,high,True
+2026-03-30,Monday,Registration Begins (Summer/Fall),admin,normal,True
+2026-04-10,Friday,Refresh Weekend - No Classes,no_classes,low,False
+2026-04-11,Saturday,Refresh Weekend - No Classes,no_classes,low,False
+2026-04-29,Wednesday,Last Day of Classes,semester_end,high,True
+2026-04-30,Thursday,Reading Day,reading_day,medium,False
+2026-05-01,Friday,Final Exams Begin,finals,medium,False
+2026-05-02,Saturday,Final Exams - Saturday,finals,medium,False
+2026-05-04,Monday,Final Exams Continue,finals,medium,False
+2026-05-05,Tuesday,Final Exams Continue,finals,medium,False
+2026-05-06,Wednesday,Final Exams Continue,finals,medium,False
+2026-05-07,Thursday,Final Exams / Commencement,finals_commencement,high,False
+2026-05-08,Friday,Commencement,commencement,high,False
+2026-05-09,Saturday,Commencement,commencement,high,False
+2026-05-11,Monday,Academic Year Ends,semester_end,low,False

@@ -1,0 +1,12 @@
+date,day_of_week,condition,status,classes,note
+2026-01-24,Saturday,C2,suspended,cancelled,C2 effective noon Jan 24 through 11:59pm Jan 26 (winter storm)
+2026-01-25,Sunday,C2,suspended,cancelled,C2 continues through 11:59pm Jan 26
+2026-01-26,Monday,C2,suspended,cancelled,C2 extended; extended again through 11:30am Jan 27
+2026-01-27,Tuesday,C2->Normal,partial,cancelled_until_1130am_then_normal,C2 extended through 11:30am; normal ops resumed 11:30am Jan 27
+2026-01-30,Friday,C1->C2,partial_then_suspended,virtual,"C1 from 7pm, C2 from 10pm (winter storm warning)"
+2026-01-31,Saturday,C2,suspended,cancelled,C2 through 11:59pm Sunday Jan 31
+2026-02-01,Sunday,C2,suspended,cancelled,C2 extended; Mon Feb 2 announced as remote
+2026-02-02,Monday,C2,suspended,remote,C2 through 11:59pm; classes remote
+2026-02-03,Tuesday,C2,suspended,remote,C2 through 11:59pm; classes remote
+2026-02-04,Wednesday,C1,reduced,in_person_resumed,C1 from 12am through 9:59am Thu Feb 5; in-person resumes
+2026-02-05,Thursday,Normal,normal,normal,Normal operations resumed ~10am Feb 5

@@ -1,0 +1,15 @@
+[Unit]
+Description=UNCC Parking Prediction API
+After=network.target
+
+[Service]
+Type=simple
+User=ubuntu
+WorkingDirectory=/home/ubuntu/uncc-parking-api
+EnvironmentFile=/home/ubuntu/uncc-parking-api/.env
+ExecStart=/home/ubuntu/uncc-parking-api/venv/bin/uvicorn parking_api.main:app --host 127.0.0.1 --port 8000
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target

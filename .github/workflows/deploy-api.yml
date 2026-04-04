@@ -1,0 +1,34 @@
+name: Deploy API to EC2
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'parking_api/**'
+      - 'models/**'
+      - 'data/**'
+      - 'requirements.txt'
+      - 'parking-api.service'
+      - 'parking-predictor.service'
+      - 'parking-predictor.timer'
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy to EC2
+        uses: appleboy/ssh-action@v1
+        with:
+          host: ${{ secrets.EC2_HOST }}
+          username: ${{ secrets.EC2_USER }}
+          key: ${{ secrets.EC2_KEY }}
+          script: |
+            cd ~/uncc-parking-api
+            git pull origin main
+            venv/bin/pip install -r requirements.txt --quiet
+            sudo cp parking-api.service /etc/systemd/system/
+            sudo cp parking-predictor.service /etc/systemd/system/
+            sudo cp parking-predictor.timer /etc/systemd/system/
+            sudo systemctl daemon-reload
+            sudo systemctl restart parking-api.service
+            sudo systemctl restart parking-predictor.timer

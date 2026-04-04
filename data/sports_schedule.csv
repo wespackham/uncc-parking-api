@@ -1,0 +1,326 @@
+date,day_of_week,sport,home_away,opponent,time,location,parking_impact
+2025-12-30,Tuesday,Men's Basketball,home,Temple,7 p.m.,"Charlotte, N.C.",high
+2025-12-31,Wednesday,Women's Basketball,home,Memphis,3:00 PM,"Charlotte, N.C.",high
+2026-01-03,Saturday,Women's Basketball,home,UAB,3:00 PM,"Charlotte, N.C.",high
+2026-01-03,Saturday,Men's Basketball,home,Wichita State,6 p.m.,"Charlotte, N.C.",high
+2026-01-07,Wednesday,Women's Basketball,away,Rice,8:00 PM,"Houston, Texas",none
+2026-01-07,Wednesday,Men's Basketball,away,UTSA,8 p.m.,"San Antonio, Texas",none
+2026-01-10,Saturday,Women's Basketball,away,UTSA,1:00 PM,"San Antonio, Texas",none
+2026-01-10,Saturday,Men's Tennis,home,Wingate,5:00 PM,"Charlotte, N.C.",low
+2026-01-11,Sunday,Men's Basketball,away,Rice,2 p.m.,"Houston, Texas",none
+2026-01-14,Wednesday,Men's Basketball,home,Tulsa,7 p.m.,"Charlotte, N.C.",high
+2026-01-15,Thursday,Men's Tennis,home,Samford,1:00 PM,"Charlotte, N.C.",low
+2026-01-16,Friday,Track & Field,away,"Virginia Tech Invitational Blacksburg, Va.",,,none
+2026-01-16,Friday,Women's Tennis,home,Queens,9:00 AM,"Charlotte, N.C.",low
+2026-01-16,Friday,Women's Tennis,home,Elon,12:00 PM,"Charlotte, N.C.",low
+2026-01-17,Saturday,Track & Field,away,"Virginia Tech Invitational Blacksburg, Va.",,,none
+2026-01-17,Saturday,Women's Basketball,home,Tulsa,4:00 PM,"Charlotte, N.C.",high
+2026-01-18,Sunday,Men's Tennis,away,VCU,10:00 AM,"Richmond, Va.",none
+2026-01-18,Sunday,Women's Tennis,away,Clemson,10:00 AM,"Clemson, S.C.",none
+2026-01-18,Sunday,Men's Basketball,away,East Carolina,2 p.m.,"Greenville, N.C.",none
+2026-01-18,Sunday,Women's Tennis,home,South Carolina State,5:00 PM,"Clemson, S.C.",low
+2026-01-20,Tuesday,Women's Basketball,home,Florida Atlantic,6:30 PM,"Charlotte, N.C.",high
+2026-01-23,Friday,Track & Field,away,"Orange & Purple Invitational Clemson, S.C.",,,none
+2026-01-23,Friday,Track & Field,away,"Hokie Invitational Blacksburg, Va.",,,none
+2026-01-23,Friday,Women's Tennis,home,Columbia,12 PM,"Chapel Hill, N.C.",low
+2026-01-23,Friday,Men's Tennis,away,Ole Miss,3:30 PM,,none
+2026-01-23,Friday,Other,unknown,"d, Ms.",,,none
+2026-01-23,Friday,Men's Basketball,home,Tulane,7:30 p.m.,"Charlotte, N.C.",high
+2026-01-24,Saturday,Track & Field,away,"Hokie Invitational Blacksburg, Va.",,,none
+2026-01-24,Saturday,Men's Tennis,away,Tulane,11:00 AM,,none
+2026-01-24,Saturday,Other,unknown,"d, Ms.",,,none
+2026-01-24,Saturday,Women's Tennis,unknown,North Carolina,11 AM,"Chapel Hill, N.C.",none
+2026-01-24,Saturday,Women's Basketball,away,Temple,1:00 PM,"Philadelphia, Pa.",none
+2026-01-25,Sunday,Women's Golf,unknown,"Round 1 Orlando, Fla.",,,none
+2026-01-26,Monday,Women's Golf,unknown,"Round 2 Orlando, Fla.",,,none
+2026-01-27,Tuesday,Women's Golf,unknown,"Round 3 Orlando, Fla.",,,none
+2026-01-27,Tuesday,Women's Basketball,away,South Florida,7:00 PM,"Tampa, Fla.",none
+2026-01-28,Wednesday,Men's Basketball,away,Temple,7 p.m.,"Philadelphia, Pa.",none
+2026-01-30,Friday,Track & Field,away,"Bob Pollock Invitational Clemson, S.C.",,,none
+2026-01-30,Friday,Women's Tennis,home,Furman,9:00 AM,"Charlotte, N.C.",low
+2026-01-30,Friday,Men's Tennis,home,Gardner-Webb,2:00 PM,"Charlotte, N.C.",low
+2026-01-30,Friday,Women's Basketball,home,East Carolina,3:00 PM,"Charlotte, N.C.",high
+2026-01-30,Friday,Women's Lacrosse,away,Queens (N.C.),5:00 PM,"Charlotte, NC",none
+2026-01-30,Friday,Men's Basketball,home,Rice,7 p.m.,"Charlotte, N.C.",high
+2026-01-31,Saturday,Track & Field,away,"Bob Pollock Invitational Clemson, S.C.",,,none
+2026-02-01,Sunday,Track & Field,away,"ASICS Superblast Invitational Winston-Salem, N.C.",,,none
+2026-02-01,Sunday,Men's Tennis,home,Presbyterian,1:30 PM,,low
+2026-02-01,Sunday,Other,unknown,"otte, N.C.",,,none
+2026-02-01,Sunday,Men's Tennis,home,Queens,5:30 PM,,low
+2026-02-01,Sunday,Other,unknown,"otte, N.C.",,,none
+2026-02-04,Wednesday,Women's Basketball,away,Tulane,7:30 PM,"New Orleans, La.",none
+2026-02-04,Wednesday,Men's Basketball,away,Wichita State,7:30 p.m.,"Wichita, Kans.",none
+2026-02-05,Thursday,Softball,away,FGCU,6:30 PM,"Fort Myers, Fla",none
+2026-02-06,Friday,Track & Field,away,"Camel City Invitational Winston-Salem, N.C.",,,none
+2026-02-06,Friday,Track & Field,away,"Doc Hale Invitational Blacksburg, VA",,,none
+2026-02-06,Friday,Softball,home,Southern Illinois,10:00 AM,"Fort Myers, Fla",medium
+2026-02-06,Friday,Men's Tennis,away,Georgia Tech,11:00 AM,"Atlanta, Ga.",none
+2026-02-06,Friday,Softball,home,Ball State,12:30 PM,"Fort Myers, Fla",medium
+2026-02-07,Saturday,Track & Field,away,"Camel City Invitational Winston-Salem, N.C.",,,none
+2026-02-07,Saturday,Track & Field,away,"Doc Hale Invitational Blacksburg, VA",,,none
+2026-02-07,Saturday,Softball,home,Southern Illinois,10:00 AM,"Fort Myers, Fla",medium
+2026-02-07,Saturday,Women's Lacrosse,home,Vermont,12:00 PM,"Charlotte, NC",medium
+2026-02-07,Saturday,Softball,home,LIU,12:30 PM,"Fort Myers, Fla",medium
+2026-02-07,Saturday,Women's Basketball,home,Wichita State,4:00 PM,"Charlotte, N.C.",high
+2026-02-08,Sunday,Men's Tennis,away,Clemson,1:00 PM,"Clemson, S.C.",none
+2026-02-08,Sunday,Men's Basketball,away,Memphis,2 p.m.,"Memphis, Tenn.",none
+2026-02-09,Monday,Women's Golf,unknown,"Day 1 - 36 Holes Tucson, Ariz.",,,none
+2026-02-10,Tuesday,Women's Golf,unknown,"Final Round Tucson, Ariz.",,,none
+2026-02-10,Tuesday,Softball,home,Elon,4:30 PM,"Charlotte, N.C.",medium
+2026-02-11,Wednesday,Women's Lacrosse,away,Davidson,6:30 PM,"Davidson, NC",none
+2026-02-13,Friday,Track & Field,away,"Darius Dixon Memorial Invitational Lynchburg, Va.",,,none
+2026-02-13,Friday,Softball,home,Villanova,3:00 PM,"Charlotte, N.C.",medium
+2026-02-13,Friday,Baseball,home,San Diego,4:00 PM,"Charlotte, N.C.",medium
+2026-02-13,Friday,Softball,home,Michigan State,5:30 PM,"Charlotte, N.C.",medium
+2026-02-14,Saturday,Track & Field,away,"Darius Dixon Memorial Invitational Lynchburg, Va.",,,none
+2026-02-14,Saturday,Track & Field,away,"ASICS Sound Invite Winston-Salem, N.C.",,,none
+2026-02-14,Saturday,Men's Golf,unknown,"Day 1 - 36 Holes Gainesville, Fla.",,,none
+2026-02-14,Saturday,Women's Tennis,away,South Carolina,10:00 AM,"Columbia, S.C.",none
+2026-02-14,Saturday,Women's Lacrosse,away,VCU,1:00 PM,"Richmond, VA",none
+2026-02-14,Saturday,Baseball,home,San Diego,1:00 PM,"Charlotte, N.C.",medium
+2026-02-14,Saturday,Women's Basketball,away,Memphis,3:00 PM,"Memphis, Tenn.",none
+2026-02-14,Saturday,Softball,home,Virginia Tech,3:00 PM,"Charlotte, N.C.",medium
+2026-02-14,Saturday,Women's Tennis,home,South Carolina State,4:00 PM,"Columbia, S.C.",low
+2026-02-14,Saturday,Baseball,home,"San Diego After G1 Charlotte, N.C.",,,medium
+2026-02-14,Saturday,Softball,home,Michigan State,5:30 PM,"Charlotte, N.C.",medium
+2026-02-15,Sunday,Men's Golf,unknown,"Final Round Gainesville, Fla.",,,none
+2026-02-15,Sunday,Men's Basketball,home,UTSA,12 p.m.,"Charlotte, N.C.",high
+2026-02-15,Sunday,Softball,home,Villanova,12:30 PM,,medium
+2026-02-15,Sunday,Other,unknown,"otte, N.C.",,,none
+2026-02-17,Tuesday,Men's Tennis,home,South Carolina State,1:00 PM,"Charlotte, N.C.",low
+2026-02-17,Tuesday,Baseball,away,Clemson,4:00 PM,"Clemson, S.C.",none
+2026-02-17,Tuesday,Women's Basketball,home,Temple,6:30 PM,"Charlotte, N.C.",high
+2026-02-18,Wednesday,Women's Lacrosse,home,Coastal Carolina,4:00 PM,"Charlotte, NC",medium
+2026-02-18,Wednesday,Softball,home,Clemson,5:00 PM,"Charlotte, N.C.",medium
+2026-02-18,Wednesday,Men's Basketball,away,Tulsa,8 p.m.,"Tulsa, Okla.",none
+2026-02-19,Thursday,Men's Tennis,away,Elon,2:00 PM,"Elon, N.C.",none
+2026-02-20,Friday,Softball,home,Boston University,3:00 PM,"Charlotte, N.C.",medium
+2026-02-20,Friday,Baseball,home,Wright State,4:00 PM,"Charlotte, N.C.",medium
+2026-02-20,Friday,Women's Tennis,away,Wake Forest,4:00 PM,"Winston-Salem, N.C.",none
+2026-02-20,Friday,Softball,home,Marshall,5:30 PM,"Charlotte, N.C.",medium
+2026-02-21,Saturday,Track & Field,away,"USC Invitational Columbia, S.C.",,,none
+2026-02-21,Saturday,Men's Basketball,home,East Carolina,12 p.m.,"Charlotte, N.C.",high
+2026-02-21,Saturday,Baseball,home,Wright State,2:00 PM,"Charlotte, N.C.",medium
+2026-02-21,Saturday,Softball,home,Jacksonville,3:00 PM,"Charlotte, N.C.",medium
+2026-02-21,Saturday,Women's Basketball,home,North Texas,5:00 PM,"Charlotte, N.C.",high
+2026-02-21,Saturday,Softball,home,Marshall,5:30 PM,"Charlotte, N.C.",medium
+2026-02-22,Sunday,Softball,home,Jacksonville,12:30 PM,"Charlotte, N.C.",medium
+2026-02-22,Sunday,Baseball,home,Wright State,1:00 PM,"Charlotte, N.C.",medium
+2026-02-22,Sunday,Women's Tennis,home,Maryland,1:30 PM,"Charlotte, N.C.",low
+2026-02-24,Tuesday,Softball,away,South Carolina,6:00 PM,"Columbia, S.C.",none
+2026-02-24,Tuesday,Women's Basketball,away,Florida Atlantic,7:00 PM,"Boca Raton, Fla.",none
+2026-02-25,Wednesday,Women's Lacrosse,home,Campbell,4:00 PM,"Charlotte, NC",medium
+2026-02-25,Wednesday,Baseball,home,Maine,4:00 PM,"Charlotte, N.C.",medium
+2026-02-25,Wednesday,Men's Basketball,home,North Texas,7 p.m.,"Charlotte, N.C.",high
+2026-02-27,Friday,Track & Field,away,"American Conference Championships Birmingham, Ala.",,,none
+2026-02-27,Friday,Men's Tennis,home,Furman,10:30 AM,"Charlotte, N.C.",low
+2026-02-27,Friday,Baseball,away,Old Dominion,2:00 PM,"Norfolk, Va.",none
+2026-02-27,Friday,Women's Tennis,away,South Florida,2:00 PM,"Tampa, Fla.",none
+2026-02-27,Friday,Softball,home,Omaha,3:30 PM,"Fayatteville, Ark.",medium
+2026-02-27,Friday,Men's Tennis,home,Davidson,3:00 PM,"Charlotte, N.C.",low
+2026-02-27,Friday,Softball,away,Arkansas,8:00 PM,"Fayatteville, Ark.",none
+2026-02-28,Saturday,Track & Field,away,"American Conference Championships Birmingham, Ala.",,,none
+2026-02-28,Saturday,Women's Tennis,home,Florida Atlantic,11:00 AM,"Tampa, Fla.",low
+2026-02-28,Saturday,Women's Lacrosse,away,George Washington,1:00 PM,"Washington, D.C",none
+2026-02-28,Saturday,Women's Soccer,away,Wake Forest,1:00 PM,"Winston-Salem, NC",none
+2026-02-28,Saturday,Baseball,away,Old Dominion,2:00 PM,"Norfolk, Va.",none
+2026-02-28,Saturday,Women's Basketball,away,East Carolina,2:00 PM,"Greenville, N.C.",none
+2026-02-28,Saturday,Softball,away,Arkansas,5:45 PM,"Fayatteville, Ark.",none
+2026-02-28,Saturday,Softball,home,Kansas,8:00 PM,"Fayatteville, Ark.",medium
+2026-03-01,Sunday,Softball,home,Boise State,11:00 AM,"Fayatteville, Ark.",medium
+2026-03-01,Sunday,Men's Tennis,away,ETSU,12:00 PM,"Johnson City, TN",none
+2026-03-01,Sunday,Baseball,away,Old Dominion,1:00 PM,"Norfolk, Va.",none
+2026-03-01,Sunday,Men's Basketball,away,Florida Atlantic,2 p.m.,"Boca Raton, Fla.",none
+2026-03-02,Monday,Women's Golf,unknown,"Day 1 - 36 Holes Charleston, S.C.",,,none
+2026-03-03,Tuesday,Women's Golf,unknown,"Final Round Charleston, S.C.",,,none
+2026-03-03,Tuesday,Baseball,home,Virginia,6:00 PM,"Charlotte, N.C.",medium
+2026-03-03,Tuesday,Women's Basketball,home,Rice,6:30 PM,"Charlotte, N.C.",high
+2026-03-04,Wednesday,Women's Lacrosse,home,Winthrop,4:00 PM,"Charlotte, N.C.",medium
+2026-03-04,Wednesday,Baseball,home,Virginia,6:00 PM,"Kannapolis, N.C.",medium
+2026-03-04,Wednesday,Men's Basketball,home,UAB,7 p.m.,"Charlotte, N.C.",high
+2026-03-06,Friday,Women's Tennis,home,Charleston Southern,11:00 AM,"Charlotte, N.C.",low
+2026-03-06,Friday,Baseball,unknown,Radford vs. Western Carolina,12:00 PM,"Charlotte, N.C.",none
+2026-03-06,Friday,Men's Tennis,away,Auburn,1:00 PM,"Auburn, Al.",none
+2026-03-06,Friday,Baseball,home,Radford,4:00 PM,"Charlotte, N.C.",medium
+2026-03-06,Friday,Softball,home,Florida Atlantic,6:00 PM,"Charlotte, N.C.",medium
+2026-03-06,Friday,Women's Soccer,home,Carolina Ascent,6:00 PM,"Charlotte, N.C.",medium
+2026-03-07,Saturday,Men's Golf,unknown,"Round 1 Ponte Vedra Beach, Fla.",,,none
+2026-03-07,Saturday,Baseball,unknown,Radford vs. Western Carolina,12:00 PM,"Charlotte, N.C.",none
+2026-03-07,Saturday,Softball,home,Florida Atlantic,1:00 PM,"Charlotte, N.C.",medium
+2026-03-07,Saturday,Women's Basketball,away,UAB,3:00 PM,"Birmingham, Ala.",none
+2026-03-07,Saturday,Baseball,home,Western Carolina,4:00 PM,"Charlotte, N.C.",medium
+2026-03-08,Sunday,Men's Golf,unknown,"Round 2 Ponte Vedra Beach, Fla.",,,none
+2026-03-08,Sunday,Softball,home,Florida Atlantic,12:00 PM,"Charlotte, N.C.",medium
+2026-03-08,Sunday,Baseball,home,Western Carolina,1:00 PM,"Charlotte, N.C.",medium
+2026-03-08,Sunday,Men's Basketball,away,South Florida,2 p.m.,"Tampa, Fla.",none
+2026-03-08,Sunday,Men's Tennis,home,Coastal Carolina,2:00 PM,"Charlotte, N.C.",low
+2026-03-08,Sunday,Women's Lacrosse,home,Stetson,2:00 PM,"Charlotte, N.C.",medium
+2026-03-09,Monday,Men's Golf,unknown,"Round 3 Ponte Vedra Beach, Fla.",,,none
+2026-03-10,Tuesday,Softball,away,NC State,5:00 PM,"Raleigh, N.C.",none
+2026-03-10,Tuesday,Baseball,away,Campbell,6:00 PM,"Buies Creek, N.C.",none
+2026-03-11,Wednesday,Men's Basketball,away,"American Conference Championship Birmingham, Al.",,,none
+2026-03-12,Thursday,Men's Basketball,away,"American Conference Championship Birmingham, Al.",,,none
+2026-03-13,Friday,Men's Basketball,away,"American Conference Championship Birmingham, Al.",,,none
+2026-03-13,Friday,Women's Tennis,away,"Tulane New Orleans, La.",,,none
+2026-03-13,Friday,Track & Field,away,"NCAA Indoor Championships Fayetteville, Ark.",,,none
+2026-03-13,Friday,Men's Tennis,home,Old Dominion,1:00 PM,"Charlotte, N.C.",low
+2026-03-13,Friday,Softball,away,South Florida,4:00 PM,"Tampa, Fla.",none
+2026-03-13,Friday,Baseball,home,St. John's,6:00 PM,"Charlotte, N.C.",medium
+2026-03-14,Saturday,Men's Basketball,away,"American Conference Championship Birmingham, Al.",,,none
+2026-03-14,Saturday,Track & Field,away,"NCAA Indoor Championships Fayetteville, Ark.",,,none
+2026-03-14,Saturday,Women's Tennis,home,"Rice New Orleans, La.",,,low
+2026-03-14,Saturday,Women's Lacrosse,home,Old Dominion,1:00 PM,"Charlotte, NC",medium
+2026-03-14,Saturday,Men's Tennis,home,Yale,1:00 PM,"Charlotte, N.C.",low
+2026-03-14,Saturday,Baseball,home,St. John's,4:00 PM,"Charlotte, N.C.",medium
+2026-03-14,Saturday,Softball,away,South Florida,5:00 PM,"Tampa, Fla.",none
+2026-03-15,Sunday,Men's Basketball,away,"American Conference Championship Birmingham, Al.",,,none
+2026-03-15,Sunday,Baseball,home,St. John's,12:00 PM,"Charlotte, N.C.",medium
+2026-03-15,Sunday,Softball,away,South Florida,1:00 PM,"Tampa, Fla.",none
+2026-03-17,Tuesday,Women's Lacrosse,away,Denver,2:00 PM,"Denver, CO",none
+2026-03-17,Tuesday,Baseball,away,South Carolina,6:30 PM,"Columbia, S.C.",none
+2026-03-18,Wednesday,Baseball,home,USC Upstate,6:00 PM,"Charlotte, N.C.",medium
+2026-03-19,Thursday,Track & Field,home,"49er Classic Charlotte, N.C.",,,low
+2026-03-20,Friday,Track & Field,home,"49er Classic Charlotte, N.C.",,,low
+2026-03-20,Friday,Men's Golf,unknown,"Round 1 Lake Oconee, Ga.",,,none
+2026-03-20,Friday,Women's Tennis,home,Georgia Tech,11:00 AM,"Charlotte, N.C.",low
+2026-03-20,Friday,Women's Tennis,home,UConn,4:00 PM,"Charlotte, N.C.",low
+2026-03-20,Friday,Softball,away,UAB,6:30 PM,"Birmingham, Ala.",none
+2026-03-20,Friday,Baseball,away,Wichita State,7:00 PM,"Wichita, Kan.",none
+2026-03-21,Saturday,Track & Field,home,"49er Classic Charlotte, N.C.",,,low
+2026-03-21,Saturday,Men's Golf,unknown,"Round 2 Lake Oconee, Ga.",,,none
+2026-03-21,Saturday,Men's Tennis,home,Wichita State,11:00 AM,"Charlotte, N.C.",low
+2026-03-21,Saturday,Women's Soccer,home,Davidson,12:00 PM,"Charlotte, N.C.",medium
+2026-03-21,Saturday,Women's Lacrosse,away,Gardner-Webb,1:00 PM,"Boiling Springs, NC",none
+2026-03-21,Saturday,Softball,away,UAB,2:00 PM,"Birmingham, Ala.",none
+2026-03-21,Saturday,Baseball,away,Wichita State,3:00 PM,"Wichita, Kan.",none
+2026-03-22,Sunday,Men's Golf,unknown,"Round 3 Lake Oconee, Ga.",,,none
+2026-03-22,Sunday,Softball,away,UAB,1:00 PM,"Birmingham, Ala.",none
+2026-03-22,Sunday,Baseball,away,Wichita State,1:00 PM,"Wichita, Kan.",none
+2026-03-22,Sunday,Men's Tennis,home,Liberty,1:00 PM,"Charlotte, N.C.",low
+2026-03-24,Tuesday,Softball,home,Radford,5:00 PM,"Charlotte, N.C.",medium
+2026-03-24,Tuesday,Baseball,home,Queens,6:00 PM,"Charlotte, N.C.",medium
+2026-03-26,Thursday,Track & Field,away,"Raleigh Relays Raleigh, N.C.",,,none
+2026-03-27,Friday,Track & Field,away,"Raleigh Relays Raleigh, N.C.",,,none
+2026-03-27,Friday,Women's Tennis,away,"William & Mary Williamsburg, Va.",,,none
+2026-03-27,Friday,Track & Field,away,"Davidson Relays Davidson, N.C.",,,none
+2026-03-27,Friday,Men's Tennis,home,Rice,11:00 AM,"Charlotte, N.C.",low
+2026-03-27,Friday,Softball,home,North Texas,6:00 PM,"Charlotte, N.C.",medium
+2026-03-27,Friday,Baseball,home,South Florida,6:00 PM,"Charlotte, N.C.",medium
+2026-03-28,Saturday,Track & Field,away,"Raleigh Relays Raleigh, N.C.",,,none
+2026-03-28,Saturday,Track & Field,away,"Davidson Relays Davidson, N.C.",,,none
+2026-03-28,Saturday,Women's Tennis,home,"Liberty Williamsburg, Va.",,,low
+2026-03-28,Saturday,Women's Lacrosse,away,Vanderbilt,1:00 PM,"Nashville, TN",none
+2026-03-28,Saturday,Softball,home,North Texas,1:00 PM,"Charlotte, N.C.",medium
+2026-03-28,Saturday,Baseball,home,South Florida,4:00 PM,"Charlotte, N.C.",medium
+2026-03-29,Sunday,Men's Tennis,home,UTSA,11:00 AM,"Charlotte, N.C.",low
+2026-03-29,Sunday,Softball,home,North Texas,12:00 PM,"Charlotte, N.C.",medium
+2026-03-29,Sunday,Baseball,home,South Florida,1:00 PM,"Charlotte, N.C.",medium
+2026-03-30,Monday,Women's Golf,unknown,"Day 1 - 36 Holes Morganton, N.C.",,,none
+2026-03-31,Tuesday,Women's Golf,unknown,"Final Round Morganton, N.C.",,,none
+2026-03-31,Tuesday,Softball,home,Western Carolina,5:00 PM,"Charlotte, N.C.",medium
+2026-04-02,Thursday,Track & Field,away,"Vertklasse High Point, N.C.",,,none
+2026-04-02,Thursday,Softball,away,East Carolina,5:00 PM,"Greenville, N.C.",none
+2026-04-02,Thursday,Baseball,away,East Carolina,6:00 PM,"Greenville, N.C.",none
+2026-04-03,Friday,Track & Field,away,"Vertklasse High Point, N.C.",,,none
+2026-04-03,Friday,Men's Golf,unknown,"Round 1 Nashville, Tenn.",,,none
+2026-04-03,Friday,Track & Field,away,"Florida Relays Gainesville, Fla.",,,none
+2026-04-03,Friday,Women's Tennis,home,James Madison,11:00 AM,"Charlotte, N.C.",low
+2026-04-03,Friday,Men's Tennis,away,South Florida,11:00 AM,"Tampa, Fl.",none
+2026-04-03,Friday,Women's Tennis,home,Gardner-Webb,3:00 PM,"Charlotte, N.C.",low
+2026-04-03,Friday,Softball,away,East Carolina,5:00 PM,"Greenville, N.C.",none
+2026-04-03,Friday,Baseball,away,East Carolina,6:00 PM,"Greenville, N.C.",none
+2026-04-04,Saturday,Track & Field,away,"Florida Relays Gainesville, Fla.",,,none
+2026-04-04,Saturday,Men's Golf,unknown,"Round 2 Nashville, Tenn.",,,none
+2026-04-04,Saturday,Baseball,away,East Carolina,1:00 PM,"Greenville, N.C.",none
+2026-04-04,Saturday,Softball,away,East Carolina,1:00 PM,"Greenville, N.C.",none
+2026-04-04,Saturday,Women's Lacrosse,home,James Madison,5:00 PM,"Charlotte, NC",medium
+2026-04-05,Sunday,Women's Tennis,away,"ETSU Johnson City, Tenn.",,,none
+2026-04-05,Sunday,Men's Golf,unknown,"Round 3 Nashville, Tenn.",,,none
+2026-04-05,Sunday,Men's Tennis,away,Florida Atlantic,11:00 AM,"Boca Raton, Fl.",none
+2026-04-02,Thursday,Track & Field,away,Vertklasse,,"High Point, N.C.",none
+2026-04-02,Thursday,Women's Tennis,home,James Madison,3:00 PM,"Charlotte, N.C.",low
+2026-04-03,Friday,Track & Field,away,Vertklasse,,"High Point, N.C.",none
+2026-04-03,Friday,Track & Field,away,Florida Relays,,"Gainesville, Fla.",none
+2026-04-04,Saturday,Track & Field,away,Florida Relays,,"Gainesville, Fla.",none
+2026-04-04,Saturday,Women's Tennis,away,ETSU,10:30 AM,"Johnson City, Tenn.",none
+2026-04-04,Saturday,Men's Soccer,away,Virginia,1:00 PM,"Charlottesville, VA",none
+2026-04-07,Tuesday,Baseball,away,North Carolina,7:00 PM,"Chapel Hill, N.C.",none
+2026-04-08,Wednesday,Track & Field,away,Duke Invitational Combined Events,,"Durham, NC",none
+2026-04-08,Wednesday,Softball,away,UNCG,5:00 PM,"Greensboro, N.C.",none
+2026-04-09,Thursday,Track & Field,away,Duke Invitational Combined Events,,"Durham, NC",none
+2026-04-10,Friday,Track & Field,away,Duke Invitational,,"Durham, N.C.",none
+2026-04-10,Friday,Women's Tennis,home,VCU,11:00 AM,"Charlotte, N.C.",low
+2026-04-10,Friday,Softball,home,Memphis,6:00 PM,"Charlotte, N.C.",medium
+2026-04-10,Friday,Baseball,home,Rice,6:00 PM,"Charlotte, N.C.",medium
+2026-04-11,Saturday,Track & Field,away,Duke Invitational,,"Durham, N.C.",none
+2026-04-11,Saturday,Softball,home,Memphis,1:00 PM,"Charlotte, N.C.",medium
+2026-04-11,Saturday,Women's Lacrosse,away,South Florida,1:00 PM,"Tampa, FL",none
+2026-04-11,Saturday,Men's Tennis,home,Tulsa,1:00 PM,"Charlotte, N.C.",low
+2026-04-11,Saturday,Baseball,home,Rice,4:00 PM,"Charlotte, N.C.",medium
+2026-04-11,Saturday,Men's Soccer,away,College of Charleston,5:00 PM,"Charleston, SC",none
+2026-04-12,Sunday,Softball,home,Memphis,12:00 PM,"Charlotte, N.C.",medium
+2026-04-12,Sunday,Baseball,home,Rice,1:00 PM,"Charlotte, N.C.",medium
+2026-04-12,Sunday,Women's Tennis,home,Old Dominion,1:00 PM,"Charlotte, N.C.",low
+2026-04-14,Tuesday,Softball,home,Winthrop,6:00 PM,"Charlotte, N.C.",medium
+2026-04-14,Tuesday,Baseball,home,Clemson,6:05 PM,"Charlotte, N.C.",medium
+2026-04-16,Thursday,Track & Field,away,Wake Forest Invitational,,"Winston-Salem, N.C.",none
+2026-04-16,Thursday,Women's Tennis,away,American Conference Championship,,"Houston, Texas",none
+2026-04-16,Thursday,Men's Tennis,away,American Conference Championship,,"Tulsa, Okla.",none
+2026-04-17,Friday,Track & Field,away,Wake Forest Invitational,,"Winston-Salem, N.C.",none
+2026-04-17,Friday,Women's Tennis,away,American Conference Championship,,"Houston, Texas",none
+2026-04-17,Friday,Men's Tennis,away,American Conference Championship,,"Tulsa, Okla.",none
+2026-04-17,Friday,Women's Lacrosse,home,Temple,12:00 PM,"Charlotte, NC",medium
+2026-04-17,Friday,Softball,home,Wichita State,6:00 PM,"Charlotte, N.C.",medium
+2026-04-17,Friday,Baseball,away,UTSA,7:00 PM,"San Antonio, Texas",none
+2026-04-18,Saturday,Women's Tennis,away,American Conference Championship,,"Houston, Texas",none
+2026-04-18,Saturday,Men's Tennis,away,American Conference Championship,,"Tulsa, Okla.",none
+2026-04-18,Saturday,Softball,home,Wichita State,1:00 PM,"Charlotte, N.C.",medium
+2026-04-18,Saturday,Women's Soccer,home,South Carolina,1:00 PM,"Charlotte, N.C.",low
+2026-04-18,Saturday,Baseball,away,UTSA,3:00 PM,"San Antonio, Texas",none
+2026-04-19,Sunday,Women's Tennis,away,American Conference Championship,,"Houston, Texas",none
+2026-04-19,Sunday,Men's Tennis,away,American Conference Championship,,"Tulsa, Okla.",none
+2026-04-19,Sunday,Softball,home,Wichita State,12:00 PM,"Charlotte, N.C.",medium
+2026-04-19,Sunday,Baseball,away,UTSA,2:00 PM,"San Antonio, Texas",none
+2026-04-21,Tuesday,Softball,away,Duke,6:00 PM,"Durham, N.C.",none
+2026-04-21,Tuesday,Baseball,home,Campbell,6:00 PM,"Charlotte, N.C.",medium
+2026-04-24,Friday,Track & Field,home,Charlotte Invitational,,"Charlotte, N.C.",none
+2026-04-24,Friday,Baseball,away,Florida Atlantic,6:30 PM,"Boca Raton, Fla.",none
+2026-04-24,Friday,Softball,away,UTSA,7:00 PM,"San Antonio, Texas",none
+2026-04-25,Saturday,Track & Field,home,Charlotte Invitational,,"Charlotte, N.C.",none
+2026-04-25,Saturday,Women's Lacrosse,away,East Carolina,1:00 PM,"Greenville, NC",none
+2026-04-25,Saturday,Women's Soccer,away,Wofford,1:00 PM,"Spartanburg, SC",none
+2026-04-25,Saturday,Softball,away,UTSA,2:00 PM,"San Antonio, Texas",none
+2026-04-25,Saturday,Baseball,away,Florida Atlantic,4:00 PM,"Boca Raton, Fla.",none
+2026-04-26,Sunday,Baseball,away,Florida Atlantic,12:00 PM,"Boca Raton, Fla.",none
+2026-04-26,Sunday,Softball,away,UTSA,1:00 PM,"San Antonio, Texas",none
+2026-04-28,Tuesday,Baseball,away,Liberty,6:00 PM,"Lynchburg, Va.",none
+2026-04-29,Wednesday,Women's Lacrosse,away,American Conference Championships,TBD,"Nashville, TN",none
+2026-04-30,Thursday,Women's Lacrosse,away,American Conference Championships,TBD,"Nashville, TN",none
+2026-05-01,Friday,Women's Lacrosse,away,American Conference Championships,TBD,"Nashville, TN",none
+2026-05-01,Friday,Softball,home,Tulsa,6:00 PM,"Charlotte, N.C.",medium
+2026-05-01,Friday,Baseball,home,Tulane,6:00 PM,"Charlotte, N.C.",medium
+2026-05-02,Saturday,Women's Lacrosse,away,American Conference Championships,TBD,"Nashville, TN",none
+2026-05-02,Saturday,Softball,home,Tulsa,1:00 PM,"Charlotte, N.C.",medium
+2026-05-02,Saturday,Baseball,home,Tulane,4:00 PM,"Charlotte, N.C.",medium
+2026-05-03,Sunday,Track & Field,away,Duke Twilight,,"Durham, N.C.",none
+2026-05-03,Sunday,Softball,home,Tulsa,12:00 PM,"Charlotte, N.C.",medium
+2026-05-03,Sunday,Baseball,home,Tulane,1:00 PM,"Charlotte, N.C.",medium
+2026-05-05,Tuesday,Baseball,home,Campbell,6:00 PM,"Charlotte, N.C.",medium
+2026-05-06,Wednesday,Softball,away,American Conference Tournament,TBA,"Greenville, N.C.",none
+2026-05-08,Friday,Baseball,away,UAB,6:00 PM,"Birmingham, Ala.",none
+2026-05-09,Saturday,Baseball,away,UAB,3:00 PM,"Birmingham, Ala.",none
+2026-05-10,Sunday,Baseball,away,UAB,2:00 PM,"Birmingham, Ala.",none
+2026-05-12,Tuesday,Baseball,home,Gardner-Webb,6:00 PM,"Charlotte, N.C.",medium
+2026-05-14,Thursday,Track & Field,away,American Conference Championships,,"Denton, Tx.",none
+2026-05-14,Thursday,Baseball,home,Memphis,6:00 PM,"Charlotte, N.C.",medium
+2026-05-15,Friday,Track & Field,away,American Conference Championships,,"Denton, Tx.",none
+2026-05-15,Friday,Baseball,home,Memphis,6:00 PM,"Charlotte, N.C.",medium
+2026-05-16,Saturday,Track & Field,away,American Conference Championships,,"Denton, Tx.",none
+2026-05-16,Saturday,Baseball,home,Memphis,1:00 PM,"Charlotte, N.C.",medium
+2026-05-19,Tuesday,Baseball,away,American Conference Championships,,"Clearwater, Fla.",none
+2026-05-27,Wednesday,Track & Field,away,NCAA East Preliminaries,,"Lexington, Ky.",none
+2026-05-28,Thursday,Track & Field,away,NCAA East Preliminaries,,"Lexington, Ky.",none
+2026-05-29,Friday,Track & Field,away,NCAA East Preliminaries,,"Lexington, Ky.",none
+2026-05-29,Friday,Baseball,away,NCAA Regionals,,TBD,none
+2026-05-30,Saturday,Track & Field,away,NCAA East Preliminaries,,"Lexington, Ky.",none
+2026-06-05,Friday,Baseball,away,NCAA Super Regionals,,TBD,none

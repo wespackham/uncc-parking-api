@@ -1,0 +1,9 @@
+[Unit]
+Description=Run parking predictor every 5 minutes (offset from scraper)
+
+[Timer]
+OnCalendar=*:1/5
+AccuracySec=1s
+
+[Install]
+WantedBy=timers.target
