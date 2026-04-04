@@ -130,10 +130,10 @@ def run_predictions():
                 })
                 predicted_chain.insert(0, mean)
 
-        # --- Long-term: baseline model (T+3hrs to T+7days, hourly) ---
+        # --- Long-term: baseline model (T+3hrs to T+24hrs, hourly) ---
         feat_names_base = registry.get_feature_names(lot, "baseline")
         start_hours = 3 if not stale else 0
-        for hours_ahead in range(start_hours, 168):
+        for hours_ahead in range(start_hours, 24):
             target_dt = now_est + timedelta(hours=hours_ahead)
             target_utc = (now + timedelta(hours=hours_ahead)).isoformat()
             weather_row = get_weather_for_time(weather_df, target_dt)

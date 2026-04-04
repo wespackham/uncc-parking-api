@@ -72,7 +72,7 @@ def fetch_forecast_sync() -> pd.DataFrame:
 
 def get_weather_for_time(weather_df: pd.DataFrame, dt) -> dict:
     """Look up weather for the nearest hour to dt."""
-    target = pd.Timestamp(dt).round("h")
+    target = pd.Timestamp(dt).replace(tzinfo=None).round("h")
     if target in weather_df["datetime"].values:
         row = weather_df[weather_df["datetime"] == target].iloc[0]
     else:
