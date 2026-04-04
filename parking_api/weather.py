@@ -13,8 +13,11 @@ _weather_cache: pd.DataFrame | None = None
 
 def _parse_hourly(data: dict) -> pd.DataFrame:
     hourly = data["hourly"]
+    datetimes = pd.to_datetime(hourly["time"])
+    if datetimes.dt.tz is not None:
+        datetimes = datetimes.dt.tz_convert(None)
     return pd.DataFrame({
-        "datetime": pd.to_datetime(hourly["time"]),
+        "datetime": datetimes,
         "temperature_f": hourly["temperature_2m"],
         "humidity": hourly["relative_humidity_2m"],
         "precipitation_in": hourly["precipitation"],
