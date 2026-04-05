@@ -20,6 +20,7 @@ def fetch_recent_rows(n: int = 20) -> list[dict]:
     result = (
         client.table(TABLE_PARKING_DATA)
         .select("created_at, data")
+        .gt("created_at", "2020-01-01")
         .order("created_at", desc=True)
         .limit(n)
         .execute()
