@@ -13,7 +13,6 @@ MOCK_SPORTS = {"home_game_count": 0, "has_basketball": 0, "has_baseball": 0, "ha
 MOCK_DIS    = {"condition_level": 0, "is_remote": 0, "is_cancelled": 0}
 WEATHER     = {"temperature_f": 68.0, "humidity": 55.0, "precipitation_in": 0.0}
 
-
 @pytest.fixture(autouse=True)
 def mock_enrichment():
     # side_effect returns a fresh dict copy each call — build_calendar_features
