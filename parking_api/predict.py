@@ -88,9 +88,10 @@ def run_predictions():
              f"tz: {weather_df['datetime'].dt.tz}, "
              f"sample: {weather_df['datetime'].iloc[0]}")
 
-    # Use EST for feature engineering (matching training data)
-    now_est = datetime.now(timezone(timedelta(hours=-4)))
-    log.info(f"now_est: {now_est} (tzinfo={now_est.tzinfo})")
+    # Use UTC for feature engineering — training data (backtest.py) derives hour/day_of_week
+    # from created_at which Supabase returns as UTC. Models learned UTC-indexed time patterns.
+    now_utc = datetime.now(timezone.utc)
+    log.info(f"now_utc: {now_utc} (tzinfo={now_utc.tzinfo})")
 
     predictions = []
 
@@ -104,7 +105,7 @@ def run_predictions():
             if not stale:
                 feat_names_30 = registry.get_feature_names(lot, "30min")
                 for minutes_ahead in (30, 60):
-                    target_dt = now_est + timedelta(minutes=minutes_ahead)
+                    target_dt = now_utc + timedelta(minutes=minutes_ahead)
                     target_utc = (now + timedelta(minutes=minutes_ahead)).isoformat()
                     weather_row = get_weather_for_time(weather_df, target_dt)
                     X = build_feature_vector(
@@ -129,7 +130,7 @@ def run_predictions():
             if not stale:
                 feat_names_60 = registry.get_feature_names(lot, "60min")
                 for minutes_ahead in range(90, 181, 15):
-                    target_dt = now_est + timedelta(minutes=minutes_ahead)
+                    target_dt = now_utc + timedelta(minutes=minutes_ahead)
                     target_utc = (now + timedelta(minutes=minutes_ahead)).isoformat()
                     weather_row = get_weather_for_time(weather_df, target_dt)
                     X = build_feature_vector(
@@ -154,7 +155,7 @@ def run_predictions():
             feat_names_base = registry.get_feature_names(lot, "baseline")
             start_hours = 3 if not stale else 0
             for hours_ahead in range(start_hours, 24):
-                target_dt = now_est + timedelta(hours=hours_ahead)
+                target_dt = now_utc + timedelta(hours=hours_ahead)
                 target_utc = (now + timedelta(hours=hours_ahead)).isoformat()
                 weather_row = get_weather_for_time(weather_df, target_dt)
                 X = build_feature_vector(
