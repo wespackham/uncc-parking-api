@@ -31,17 +31,25 @@ log = logging.getLogger(__name__)
 
 
 def _extract_recent_values(rows: list[dict], lot: str, n: int = 4) -> list[float]:
-    """Extract the most recent N occupancy values for a lot from parking_data rows (newest-first)."""
+    """Extract N occupancy values at 15-minute intervals from parking_data rows (newest-first).
+
+    Training used 15-min cadence data (shift(1) = 15 min). The scraper now runs every 5 min,
+    so we sample every 3rd row to reconstruct the same 15-min lag spacing the models expect:
+      index 0 = now, index 3 = 15 min ago, index 6 = 30 min ago, index 9 = 45 min ago.
+    Requires fetch_recent_rows(n >= 10) to have enough rows.
+    """
     values = []
-    for row in rows:
-        data = row["data"]
+    step = 3
+    for i in range(n):
+        idx = i * step
+        if idx >= len(rows):
+            break
+        data = rows[idx]["data"]
         if isinstance(data, str):
             data = json.loads(data)
         val = data.get(lot)
         if val is not None:
             values.append(float(val))
-        if len(values) >= n:
-            break
     return values
 
 

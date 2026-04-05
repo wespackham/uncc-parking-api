@@ -1,7 +1,5 @@
 """Supabase helpers for reading parking data and writing predictions."""
 
-from datetime import datetime, timezone
-
 from supabase import create_client
 
 from .config import SUPABASE_URL, SUPABASE_KEY, TABLE_PARKING_DATA, TABLE_PREDICTIONS
@@ -30,16 +28,12 @@ def fetch_recent_rows(n: int = 20) -> list[dict]:
 
 
 def write_predictions(predictions: list[dict]):
-    """Delete existing future predictions and insert new ones.
+    """Insert predictions, preserving all historical runs for accuracy comparison.
 
     Each prediction dict should have: target_time, lot, model_tier, prediction,
     confidence_low, confidence_high.
     """
     client = _get_client()
-    now = datetime.now(timezone.utc).isoformat()
-
-    # Delete future predictions
-    client.table(TABLE_PREDICTIONS).delete().gte("target_time", now).execute()
 
     # Batch insert in chunks of 500
     for i in range(0, len(predictions), 500):
