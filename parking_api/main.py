@@ -14,3 +14,5 @@ async def lifespan(app: FastAPI):
 
 app = FastAPI(title="UNCC Parking Prediction API", lifespan=lifespan)
 app.include_router(router)
+
+# CI/CD push
