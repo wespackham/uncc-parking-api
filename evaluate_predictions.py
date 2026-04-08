@@ -29,7 +29,7 @@ load_dotenv()
 SUPABASE_URL = os.environ.get("SUPABASE_URL", "")
 SUPABASE_KEY = os.environ.get("SUPABASE_KEY", "")
 
-TIER_ORDER = ["30min", "30min_v2", "60min", "baseline", "baseline_v2", "lgb"]
+TIER_ORDER = ["lgb"]
 
 # Maximum seconds between target_time and actual observation to count as a match
 MATCH_TOLERANCE_SEC = 4 * 60  # 4 minutes

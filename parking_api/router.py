@@ -1,6 +1,6 @@
 from datetime import datetime, timezone
 
-from fastapi import APIRouter, HTTPException, Request, Header
+from fastapi import APIRouter, HTTPException, Header
 
 from .schemas import PredictionResponse, HealthResponse, LotPrediction
 from .supabase_client import fetch_predictions
@@ -12,12 +12,9 @@ router = APIRouter()
 
 
 @router.get("/health", response_model=HealthResponse)
-def health(request: Request):
-    registry = request.app.state.registry
-    model_info = registry.list_models()
+def health():
     return HealthResponse(
         status="ok",
-        models_loaded=model_info["total"],
         csv_coverage=get_coverage(),
     )
 

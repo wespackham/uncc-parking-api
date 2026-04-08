@@ -19,5 +19,4 @@ class PredictionResponse(BaseModel):
 
 class HealthResponse(BaseModel):
     status: str
-    models_loaded: int
     csv_coverage: dict
