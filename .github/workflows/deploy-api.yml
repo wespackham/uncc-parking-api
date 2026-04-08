@@ -6,6 +6,7 @@ on:
     paths:
       - 'parking_api/**'
       - 'models/**'
+      - 'models_v2/**'
       - 'data/**'
       - 'requirements.txt'
       - 'parking-api.service'

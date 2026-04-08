@@ -2,10 +2,18 @@
 
 Run as CLI: python -m parking_api.predict
 
-Horizon strategy:
-  T+30min, T+60min       → 30-min model (real lag features)
-  T+90min to T+3hrs      → 60-min model (autoregressive: lags from prior predictions)
-  T+3hrs to T+24hrs      → baseline model (no lags, 1-hour intervals)
+Produces a prediction every 5 minutes from T+5 to T+360 (6 hours) per lot.
+
+V1 horizon strategy (30 models):
+  T+5  to T+60   (every 5 min) → 30-min model (autoregressive lag features)
+  T+65 to T+180  (every 5 min) → 60-min model (autoregressive lag features)
+  T+185 to T+360 (every 5 min) → baseline model (calendar + weather, no lags)
+  When stale: baseline only, T+5 to T+360.
+
+V2 shadow (runs alongside V1, tiers suffixed _v2):
+  T+5  to T+60   (every 5 min) → 30min_v2  (true 5-min lags, minute_sin/cos)
+  T+65 to T+360  (every 5 min) → baseline_v2
+  When stale: baseline_v2 only, T+5 to T+360.
 """
 
 import json
@@ -16,7 +24,7 @@ from datetime import datetime, timedelta, timezone
 import httpx
 import pandas as pd
 
-from .config import LOTS, DISCORD_WEBHOOK_URL, safe_name
+from .config import LOTS, DISCORD_WEBHOOK_URL, MODELS_V2_DIR, safe_name
 from .models import ModelRegistry
 from .features import build_feature_vector
 from .weather import fetch_forecast_sync, get_weather_for_time
@@ -30,16 +38,17 @@ logging.basicConfig(
 log = logging.getLogger(__name__)
 
 
-def _extract_recent_values(rows: list[dict], lot: str, n: int = 4) -> list[float]:
-    """Extract N occupancy values at 15-minute intervals from parking_data rows (newest-first).
+def _extract_recent_values(rows: list[dict], lot: str, n: int = 4, step: int = 3) -> list[float]:
+    """Extract N occupancy values spaced `step` rows apart from parking_data rows (newest-first).
 
-    Training used 15-min cadence data (shift(1) = 15 min). The scraper now runs every 5 min,
-    so we sample every 3rd row to reconstruct the same 15-min lag spacing the models expect:
+    V1 (step=3): reconstructs 15-min lag spacing from 5-min scraper rows.
       index 0 = now, index 3 = 15 min ago, index 6 = 30 min ago, index 9 = 45 min ago.
-    Requires fetch_recent_rows(n >= 10) to have enough rows.
+      Requires fetch_recent_rows(n >= 10).
+
+    V2 (step=1): true 5-min lags matching how v2 models were trained.
+      index 0 = now, index 1 = 5 min ago, index 2 = 10 min ago, index 3 = 15 min ago.
     """
     values = []
-    step = 3
     for i in range(n):
         idx = i * step
         if idx >= len(rows):
@@ -65,7 +74,9 @@ def _send_discord_alert(message: str):
 def run_predictions():
     log.info("Loading models...")
     registry = ModelRegistry()
-    log.info(f"Models loaded: {registry.list_models()['total']} entries")
+    registry_v2 = ModelRegistry(MODELS_V2_DIR)
+    log.info(f"V1 models loaded: {registry.list_models()['total']} entries")
+    log.info(f"V2 models loaded: {registry_v2.list_models()['total']} entries")
 
     log.info("Fetching recent parking data...")
     recent_rows = fetch_recent_rows(n=20)
@@ -97,14 +108,16 @@ def run_predictions():
 
     for lot in LOTS:
         log.debug(f"Processing lot: {lot}")
-        recent_values = _extract_recent_values(recent_rows, lot, n=4)
-        predicted_chain = list(recent_values)
+        recent_values_v1 = _extract_recent_values(recent_rows, lot, n=4, step=3)
+        recent_values_v2 = _extract_recent_values(recent_rows, lot, n=4, step=1)
+        predicted_chain = list(recent_values_v1)
 
+        # ── V1 predictions ────────────────────────────────────────────────────
         try:
-            # --- Near-term: 30-min model (T+30, T+60) ---
+            # --- Near-term: 30-min model (T+5 to T+60, every 5 min) ---
             if not stale:
                 feat_names_30 = registry.get_feature_names(lot, "30min")
-                for minutes_ahead in (30, 60):
+                for minutes_ahead in range(5, 61, 5):
                     target_dt = now_utc + timedelta(minutes=minutes_ahead)
                     target_utc = (now + timedelta(minutes=minutes_ahead)).isoformat()
                     weather_row = get_weather_for_time(weather_df, target_dt)
@@ -126,10 +139,10 @@ def run_predictions():
                     })
                     predicted_chain.insert(0, mean)
 
-            # --- Medium-term: 60-min model (T+90 to T+180, every 15 min) ---
+            # --- Medium-term: 60-min model (T+65 to T+180, every 5 min) ---
             if not stale:
                 feat_names_60 = registry.get_feature_names(lot, "60min")
-                for minutes_ahead in range(90, 181, 15):
+                for minutes_ahead in range(65, 181, 5):
                     target_dt = now_utc + timedelta(minutes=minutes_ahead)
                     target_utc = (now + timedelta(minutes=minutes_ahead)).isoformat()
                     weather_row = get_weather_for_time(weather_df, target_dt)
@@ -151,12 +164,12 @@ def run_predictions():
                     })
                     predicted_chain.insert(0, mean)
 
-            # --- Long-term: baseline model (T+3hrs to T+24hrs, hourly) ---
+            # --- Long-term: baseline model (T+185 to T+360, every 5 min) ---
             feat_names_base = registry.get_feature_names(lot, "baseline")
-            start_hours = 3 if not stale else 0
-            for hours_ahead in range(start_hours, 24):
-                target_dt = now_utc + timedelta(hours=hours_ahead)
-                target_utc = (now + timedelta(hours=hours_ahead)).isoformat()
+            start_minutes = 185 if not stale else 5
+            for minutes_ahead in range(start_minutes, 361, 5):
+                target_dt = now_utc + timedelta(minutes=minutes_ahead)
+                target_utc = (now + timedelta(minutes=minutes_ahead)).isoformat()
                 weather_row = get_weather_for_time(weather_df, target_dt)
                 X = build_feature_vector(
                     dt=target_dt,
@@ -174,9 +187,63 @@ def run_predictions():
                 })
 
         except Exception:
-            log.error(f"Failed on lot {lot}:\n{traceback.format_exc()}")
+            log.error(f"[V1] Failed on lot {lot}:\n{traceback.format_exc()}")
             _send_discord_alert(f"⚠️ Prediction failed for lot {lot}")
             continue
+
+        # ── V2 shadow predictions (isolated — V1 failures above skip this via continue) ──
+        try:
+            predicted_chain_v2 = list(recent_values_v2)
+
+            # --- V2 near-term: 30min_v2 (T+5 to T+60, every 5 min, true 5-min lags) ---
+            if not stale:
+                feat_names_30_v2 = registry_v2.get_feature_names(lot, "30min")
+                for minutes_ahead in range(5, 61, 5):
+                    target_dt = now_utc + timedelta(minutes=minutes_ahead)
+                    target_utc = (now + timedelta(minutes=minutes_ahead)).isoformat()
+                    weather_row = get_weather_for_time(weather_df, target_dt)
+                    X = build_feature_vector(
+                        dt=target_dt,
+                        weather_row=weather_row,
+                        lot=lot,
+                        recent_values=predicted_chain_v2[:4],
+                        feature_names=feat_names_30_v2,
+                    )
+                    mean, low, high = registry_v2.predict(lot, "30min", X)
+                    predictions.append({
+                        "target_time": target_utc,
+                        "lot": lot,
+                        "model_tier": "30min_v2",
+                        "prediction": round(mean, 4),
+                        "confidence_low": round(low, 4),
+                        "confidence_high": round(high, 4),
+                    })
+                    predicted_chain_v2.insert(0, mean)
+
+            # --- V2 long-term: baseline_v2 (T+65 to T+360, every 5 min) ---
+            feat_names_base_v2 = registry_v2.get_feature_names(lot, "baseline")
+            start_minutes_v2 = 65 if not stale else 5
+            for minutes_ahead in range(start_minutes_v2, 361, 5):
+                target_dt = now_utc + timedelta(minutes=minutes_ahead)
+                target_utc = (now + timedelta(minutes=minutes_ahead)).isoformat()
+                weather_row = get_weather_for_time(weather_df, target_dt)
+                X = build_feature_vector(
+                    dt=target_dt,
+                    weather_row=weather_row,
+                    feature_names=feat_names_base_v2,
+                )
+                mean, low, high = registry_v2.predict(lot, "baseline", X)
+                predictions.append({
+                    "target_time": target_utc,
+                    "lot": lot,
+                    "model_tier": "baseline_v2",
+                    "prediction": round(mean, 4),
+                    "confidence_low": round(low, 4),
+                    "confidence_high": round(high, 4),
+                })
+
+        except Exception:
+            log.error(f"[V2] Failed on lot {lot}:\n{traceback.format_exc()}")
 
     log.info(f"Generated {len(predictions)} predictions for {len(LOTS)} lots")
 

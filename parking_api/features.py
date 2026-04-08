@@ -2,6 +2,7 @@
 
 Operates on single timestamps instead of DataFrames.
 Produces the same 25 baseline features + 5 lot-specific lag features for horizon models.
+V2 models additionally use minute_sin and minute_cos (27 baseline features).
 """
 
 import numpy as np
@@ -26,6 +27,8 @@ def build_time_features(dt: datetime) -> dict:
         "hour_cos": np.cos(2 * np.pi * hour / 24),
         "dow_sin": np.sin(2 * np.pi * day_of_week / 7),
         "dow_cos": np.cos(2 * np.pi * day_of_week / 7),
+        "minute_sin": np.sin(2 * np.pi * minute / 60),
+        "minute_cos": np.cos(2 * np.pi * minute / 60),
     }
 
 

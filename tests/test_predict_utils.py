@@ -95,7 +95,23 @@ def test_data_as_dict():
 
 
 def test_values_cast_to_float():
-    rows = [_make_row({"CRI": "0.55"})] * 10
+    rows = _make_rows(["0.55"] * 10, lot="CRI")
     result = _extract_recent_values(rows, "CRI", n=1)
     assert result == [0.55]
     assert isinstance(result[0], float)
+
+
+# ── Step-1 sampling (true 5-min intervals, v2 models) ────────────────────────
+
+def test_step1_picks_consecutive_indices():
+    """step=1 selects indices 0, 1, 2, 3 — consecutive 5-min rows."""
+    rows = _make_rows([0.90, 0.85, 0.80, 0.75, 0.70, 0.65])
+    result = _extract_recent_values(rows, "CRI", n=4, step=1)
+    assert result == [0.90, 0.85, 0.80, 0.75]
+
+
+def test_step1_short_input_returns_available():
+    """Only 2 rows available → returns 2 values."""
+    rows = _make_rows([0.6, 0.5])
+    result = _extract_recent_values(rows, "CRI", n=4, step=1)
+    assert result == [0.6, 0.5]

@@ -98,6 +98,34 @@ def test_time_features_cyclical_range():
         assert -1.0 <= f["hour_cos"] <= 1.0
 
 
+def test_time_features_minute_sin_cos_present():
+    dt = datetime(2026, 3, 25, 10, 30)
+    f = build_time_features(dt)
+    assert "minute_sin" in f
+    assert "minute_cos" in f
+
+
+def test_time_features_minute_sin_cos_range():
+    for minute in range(0, 60, 5):
+        dt = datetime(2026, 4, 1, 10, minute)
+        f = build_time_features(dt)
+        assert -1.0 <= f["minute_sin"] <= 1.0
+        assert -1.0 <= f["minute_cos"] <= 1.0
+
+
+def test_time_features_minute_sin_cos_values():
+    """minute=0 → sin=0, cos=1. minute=15 → sin=1, cos≈0."""
+    dt0 = datetime(2026, 4, 1, 10, 0)
+    f0 = build_time_features(dt0)
+    assert np.isclose(f0["minute_sin"], 0.0, atol=1e-10)
+    assert np.isclose(f0["minute_cos"], 1.0, atol=1e-10)
+
+    dt15 = datetime(2026, 4, 1, 10, 15)
+    f15 = build_time_features(dt15)
+    assert np.isclose(f15["minute_sin"], 1.0, atol=1e-10)
+    assert np.isclose(f15["minute_cos"], 0.0, atol=1e-10)
+
+
 def test_time_features_utc_aware():
     """UTC-aware datetime should use UTC hour — this is what training used."""
     dt = datetime(2026, 3, 25, 19, 0, tzinfo=timezone.utc)  # 19:00 UTC = 3pm EDT

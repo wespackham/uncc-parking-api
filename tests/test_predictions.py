@@ -6,7 +6,7 @@ from unittest.mock import patch
 
 from parking_api.models import ModelRegistry
 from parking_api.features import build_feature_vector
-from parking_api.config import LOTS
+from parking_api.config import LOTS, MODELS_V2_DIR
 
 MOCK_CAL    = {"is_class_day": 1, "is_break": 0, "is_finals": 0, "is_commencement": 0, "is_holiday": 0}
 MOCK_SPORTS = {"home_game_count": 0, "has_basketball": 0, "has_baseball": 0, "has_softball": 0, "has_lacrosse": 0, "high_impact_game": 0}
@@ -26,6 +26,11 @@ def mock_enrichment():
 @pytest.fixture(scope="module")
 def registry():
     return ModelRegistry()
+
+
+@pytest.fixture(scope="module")
+def registry_v2():
+    return ModelRegistry(MODELS_V2_DIR)
 
 
 # ── Registry loading ─────────────────────────────────────────────────────────
@@ -148,6 +153,46 @@ def test_high_occupancy_lags_push_prediction_up(registry):
     mean_full, _, _ = registry.predict("CRI", "30min", X_full)
     mean_empty, _, _ = registry.predict("CRI", "30min", X_empty)
     assert mean_full > mean_empty, "High occupancy lags should predict higher than low occupancy lags"
+
+
+# ── V2 registry ──────────────────────────────────────────────────────────────
+
+def test_v2_total_models_loaded(registry_v2):
+    assert registry_v2.list_models()["total"] == 30
+
+
+def test_v2_feature_names_baseline_length(registry_v2):
+    """V2 baseline has 27 features (25 v1 + minute_sin + minute_cos)."""
+    names = registry_v2.get_feature_names("CRI", "baseline")
+    assert len(names) == 27
+
+
+def test_v2_feature_names_horizon_length(registry_v2):
+    """V2 horizon models have 32 features (27 baseline + 5 lag features)."""
+    for lot in LOTS:
+        names_30 = registry_v2.get_feature_names(lot, "30min")
+        assert len(names_30) == 32, f"{lot} 30min_v2: expected 32, got {len(names_30)}"
+
+
+def test_v2_all_lots_baseline(registry_v2):
+    dt = datetime(2026, 3, 25, 14, 0)
+    for lot in LOTS:
+        fn = registry_v2.get_feature_names(lot, "baseline")
+        X = build_feature_vector(dt=dt, weather_row=WEATHER, feature_names=fn)
+        mean, low, high = registry_v2.predict(lot, "baseline", X)
+        assert 0.0 <= mean <= 1.0, f"{lot} baseline_v2 out of range: {mean}"
+        assert low <= mean <= high, f"{lot} baseline_v2 band ordering failed"
+
+
+def test_v2_all_lots_30min(registry_v2):
+    dt = datetime(2026, 3, 25, 14, 0)
+    recent = [0.5, 0.5, 0.5, 0.5]
+    for lot in LOTS:
+        fn = registry_v2.get_feature_names(lot, "30min")
+        X = build_feature_vector(dt=dt, weather_row=WEATHER, lot=lot, recent_values=recent, feature_names=fn)
+        mean, low, high = registry_v2.predict(lot, "30min", X)
+        assert 0.0 <= mean <= 1.0, f"{lot} 30min_v2 out of range: {mean}"
+        assert low <= mean <= high, f"{lot} 30min_v2 band ordering failed"
 
 
 def test_weekend_vs_weekday_baseline(registry):
