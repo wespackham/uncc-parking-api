@@ -399,7 +399,9 @@ def run_predictions():
             log.error(f"[V2] Failed on lot {lot}:\n{traceback.format_exc()}")
 
     # ── LightGBM predictions (all lots × all horizons in one batch) ──────────
-    if lgb_loaded and not stale:
+    # Runs regardless of stale flag — lag features fall back to 0 when data is
+    # old, so the model degrades to calendar/time-only predictions automatically.
+    if lgb_loaded:
         try:
             lgb_preds = _run_lgb_predictions(
                 now_utc, recent_rows, weather_df,
