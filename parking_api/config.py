@@ -7,6 +7,7 @@ load_dotenv()
 BASE_DIR = Path(__file__).resolve().parent.parent
 MODELS_DIR = BASE_DIR / "models"
 MODELS_V2_DIR = BASE_DIR / "models_v2"
+LGB_MODELS_DIR = BASE_DIR / "models_lgb"
 DATA_DIR = BASE_DIR / "data"
 
 SUPABASE_URL = os.environ.get("SUPABASE_URL", "")

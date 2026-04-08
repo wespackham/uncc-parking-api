@@ -29,7 +29,7 @@ load_dotenv()
 SUPABASE_URL = os.environ.get("SUPABASE_URL", "")
 SUPABASE_KEY = os.environ.get("SUPABASE_KEY", "")
 
-TIER_ORDER = ["30min", "30min_v2", "60min", "baseline", "baseline_v2"]
+TIER_ORDER = ["30min", "30min_v2", "60min", "baseline", "baseline_v2", "lgb"]
 
 # Maximum seconds between target_time and actual observation to count as a match
 MATCH_TOLERANCE_SEC = 4 * 60  # 4 minutes
@@ -178,16 +178,59 @@ def compute_metrics(df: pd.DataFrame) -> dict:
 
 
 def print_table(title: str, rows: list[dict], index_label: str):
-    print(f"\n{'=' * 60}")
+    print(f"\n{'=' * 72}")
     print(f"  {title}")
-    print(f"{'=' * 60}")
-    header = f"  {index_label:<12}  {'N':>7}  {'MAE':>7}  {'RMSE':>7}  {'R²':>7}  {'In Band':>8}"
+    print(f"{'=' * 72}")
+    header = f"  {index_label:<12}  {'N':>7}  {'MAE':>7}  {'MAE(1h)':>8}  {'RMSE':>7}  {'R²':>7}  {'In Band':>8}"
     print(header)
-    print(f"  {'-' * 56}")
+    print(f"  {'-' * 68}")
     for r in rows:
         r2_str = f"{r['r2']:.4f}" if not np.isnan(r['r2']) else "   N/A"
+        mae_1h_str = f"{r['mae_1h']:>8.4f}" if r.get("mae_1h") is not None else "     N/A"
         print(
-            f"  {r['label']:<12}  {r['n']:>7,}  {r['mae']:>7.4f}  {r['rmse']:>7.4f}  {r2_str:>7}  {r['within_band_pct']:>7.1f}%"
+            f"  {r['label']:<12}  {r['n']:>7,}  {r['mae']:>7.4f}  {mae_1h_str}  {r['rmse']:>7.4f}  {r2_str:>7}  {r['within_band_pct']:>7.1f}%"
+        )
+
+
+def print_by_horizon(tier: str, df: pd.DataFrame):
+    """Show MAE per prediction step (T+5, T+10, ...) to detect autoregressive error compounding."""
+    df = df.copy()
+    raw_min = (df["target_time"] - df["created_at"]).dt.total_seconds() / 60
+    df["minutes_ahead"] = (raw_min / 5).round().astype(int) * 5
+
+    steps = sorted(df["minutes_ahead"].unique())
+    if len(steps) <= 1:
+        print(f"\n  Horizon breakdown — {tier}: only one step, skipping.")
+        return
+
+    print(f"\n  Horizon breakdown — {tier}")
+    print(f"  {'T+min':>6}  {'N':>6}  {'MAE':>7}  {'RMSE':>7}  {'R²':>7}")
+    print(f"  {'-' * 42}")
+    for step in steps:
+        sub = df[df["minutes_ahead"] == step]
+        if sub.empty:
+            continue
+        errors = sub["prediction"].values - sub["actual"].values
+        mae = np.mean(np.abs(errors))
+        rmse = np.sqrt(np.mean(errors ** 2))
+        ss_res = np.sum(errors ** 2)
+        ss_tot = np.sum((sub["actual"].values - sub["actual"].mean()) ** 2)
+        r2 = 1 - ss_res / ss_tot if ss_tot > 0 else float("nan")
+        r2_str = f"{r2:.4f}" if not np.isnan(r2) else "   N/A"
+        print(f"  {f'T+{step}':>6}  {len(sub):>6,}  {mae:>7.4f}  {rmse:>7.4f}  {r2_str:>7}")
+
+
+def print_samples(tier: str, df: pd.DataFrame, n: int = 10):
+    sample = df.sample(min(n, len(df)), random_state=42)
+    sample = sample.sort_values("target_time")
+    print(f"\n  Sample predictions — {tier}")
+    print(f"  {'target_time':<22}  {'lot':<8}  {'pred':>6}  {'actual':>6}  {'error':>7}  {'low':>6}  {'high':>6}")
+    print(f"  {'-' * 72}")
+    for _, row in sample.iterrows():
+        ts = row["target_time"].strftime("%Y-%m-%d %H:%M UTC")
+        error = row["prediction"] - row["actual"]
+        print(
+            f"  {ts:<22}  {row['lot']:<8}  {row['prediction']:>6.3f}  {row['actual']:>6.3f}  {error:>+7.3f}  {row['confidence_low']:>6.3f}  {row['confidence_high']:>6.3f}"
         )
 
 
@@ -198,6 +241,7 @@ def main():
     parser.add_argument("--to", dest="to_dt", help="End datetime (ISO 8601, e.g. 2025-03-31)")
     parser.add_argument("--lot", help="Filter to a single lot (e.g. CRI)")
     parser.add_argument("--by-lot", action="store_true", help="Show per-lot breakdown within each tier")
+    parser.add_argument("--by-horizon", action="store_true", help="Show MAE per prediction step (T+5, T+10, ...) to detect error compounding")
     args = parser.parse_args()
 
     now = datetime.now(timezone.utc)
@@ -218,16 +262,31 @@ def main():
 
     matched = match_predictions_to_actuals(preds, actuals)
 
+    to_dt_ts = pd.Timestamp(to_dt, tz="UTC") if "+" not in to_dt and "Z" not in to_dt else pd.Timestamp(to_dt).tz_convert("UTC")
+    last_1h_cutoff = to_dt_ts - pd.Timedelta(hours=1)
+
     # --- Summary by tier ---
     tier_rows = []
+    tier_subsets = {}
     for tier in TIER_ORDER:
         subset = matched[matched["model_tier"] == tier]
         if subset.empty:
             continue
         m = compute_metrics(subset)
+        subset_1h = subset[subset["target_time"] >= last_1h_cutoff]
+        m["mae_1h"] = float(np.mean(np.abs(subset_1h["prediction"] - subset_1h["actual"]))) if not subset_1h.empty else None
         tier_rows.append({"label": tier, **m})
+        tier_subsets[tier] = subset
 
     print_table("Accuracy by Model Tier", tier_rows, "Tier")
+
+    for tier, subset in tier_subsets.items():
+        print_samples(tier, subset)
+
+    # --- Horizon breakdown ---
+    if args.by_horizon:
+        for tier, subset in tier_subsets.items():
+            print_by_horizon(tier, subset)
 
     # --- Per-lot breakdown ---
     if args.by_lot:

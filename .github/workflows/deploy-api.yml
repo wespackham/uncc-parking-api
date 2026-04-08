@@ -7,6 +7,7 @@ on:
       - 'parking_api/**'
       - 'models/**'
       - 'models_v2/**'
+      - 'models_lgb/**'
       - 'data/**'
       - 'requirements.txt'
       - 'parking-api.service'
