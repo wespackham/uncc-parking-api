@@ -5,12 +5,17 @@ on:
     branches: [main]
     paths:
       - 'parking_api/**'
-      - 'models_lgb/**'
+      - 'models_lgb_3h/**'
+      - 'models_lgb_24h/**'
       - 'data/**'
       - 'requirements.txt'
       - 'parking-api.service'
       - 'parking-predictor.service'
       - 'parking-predictor.timer'
+      - 'parking-predictor-24h.service'
+      - 'parking-predictor-24h.timer'
+      - 'parking-daily-report.service'
+      - 'parking-daily-report.timer'
 
 jobs:
   deploy:
@@ -29,6 +34,13 @@ jobs:
             sudo cp parking-api.service /etc/systemd/system/
             sudo cp parking-predictor.service /etc/systemd/system/
             sudo cp parking-predictor.timer /etc/systemd/system/
+            sudo cp parking-predictor-24h.service /etc/systemd/system/
+            sudo cp parking-predictor-24h.timer /etc/systemd/system/
             sudo systemctl daemon-reload
             sudo systemctl restart parking-api.service
             sudo systemctl restart parking-predictor.timer
+            sudo systemctl enable --now parking-predictor-24h.timer
+            sudo cp parking-daily-report.service /etc/systemd/system/
+            sudo cp parking-daily-report.timer /etc/systemd/system/
+            sudo systemctl daemon-reload
+            sudo systemctl enable --now parking-daily-report.timer

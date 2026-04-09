@@ -1,12 +1,17 @@
-"""Prediction loop: generates LightGBM forecasts for all lots across T+5 to T+180.
+"""Prediction loop: generates LightGBM forecasts for all lots.
 
-Run as CLI: python -m parking_api.predict
+Run as CLI:
+    python -m parking_api.predict           # 3h model (T+5-180, every 5 min)
+    python -m parking_api.predict --model 24h  # 24h model (T+5-1440, every hour)
 
-Produces 360 predictions per run (10 lots × 36 horizons in 5-min steps).
+3h model: 360 predictions per run (10 lots × 36 horizons), model_tier="lgb"
+24h model: 2,880 predictions per run (10 lots × 288 horizons), model_tier="lgb_24h"
+
 If parking data is stale (>15 min old), lag features fall back to 0 and the
 model relies on calendar/weather/time features only.
 """
 
+import argparse
 import json
 import logging
 import pickle
@@ -17,7 +22,7 @@ import httpx
 import numpy as np
 import pandas as pd
 
-from .config import LOTS, DISCORD_WEBHOOK_URL, LGB_MODELS_DIR
+from .config import LOTS, DISCORD_WEBHOOK_URL, LGB_MODELS_DIR, LGB_MODELS_V2_DIR
 from .features import (build_time_features, build_calendar_features,
                         build_sports_features, build_disruption_features,
                         build_weather_features)
@@ -64,8 +69,9 @@ def _run_lgb_predictions(
     lgb_lower,
     lgb_upper,
     lgb_config: dict,
+    model_tier: str = "lgb",
 ) -> list[dict]:
-    """Build 360-row inference batch (10 lots × 36 horizons) and run all 3 LGB models.
+    """Build inference batch (lots × horizons) and run all 3 LGB models.
 
     Target-time features (calendar, sports, weather, time encodings) are computed
     at t + horizon_minutes — matching how the model was trained.
@@ -155,7 +161,7 @@ def _run_lgb_predictions(
         {
             "target_time":     target_utc,
             "lot":             lot,
-            "model_tier":      "lgb",
+            "model_tier":      model_tier,
             "prediction":      round(float(preds[i]), 4),
             "confidence_low":  round(float(lows[i]),  4),
             "confidence_high": round(float(highs[i]), 4),
@@ -173,20 +179,22 @@ def _send_discord_alert(message: str):
         pass
 
 
-def run_predictions():
-    log.info("Loading LGB models...")
+def run_predictions(model: str = "3h"):
+    models_dir = LGB_MODELS_V2_DIR if model == "24h" else LGB_MODELS_DIR
+    model_tier = "lgb_24h" if model == "24h" else "lgb"
+    log.info(f"Loading LGB models from {models_dir} (tier={model_tier})...")
     try:
-        with open(LGB_MODELS_DIR / "lgb_point.pkl", "rb") as f:
+        with open(models_dir / "lgb_point.pkl", "rb") as f:
             lgb_point = pickle.load(f)
-        with open(LGB_MODELS_DIR / "lgb_lower.pkl", "rb") as f:
+        with open(models_dir / "lgb_lower.pkl", "rb") as f:
             lgb_lower = pickle.load(f)
-        with open(LGB_MODELS_DIR / "lgb_upper.pkl", "rb") as f:
+        with open(models_dir / "lgb_upper.pkl", "rb") as f:
             lgb_upper = pickle.load(f)
-        with open(LGB_MODELS_DIR / "lgb_config.pkl", "rb") as f:
+        with open(models_dir / "lgb_config.pkl", "rb") as f:
             lgb_config = pickle.load(f)
         log.info("LGB models loaded.")
     except Exception:
-        msg = "⚠️ Prediction service: failed to load LGB models"
+        msg = f"⚠️ Prediction service: failed to load LGB {model} models"
         log.error(f"{msg}\n{traceback.format_exc()}")
         _send_discord_alert(msg)
         return
@@ -214,10 +222,11 @@ def run_predictions():
         predictions = _run_lgb_predictions(
             now_utc, recent_rows, weather_df,
             lgb_point, lgb_lower, lgb_upper, lgb_config,
+            model_tier=model_tier,
         )
         log.info(f"Generated {len(predictions)} predictions")
     except Exception:
-        msg = "⚠️ LGB prediction run failed"
+        msg = f"⚠️ LGB {model} prediction run failed"
         log.error(f"{msg}\n{traceback.format_exc()}")
         _send_discord_alert(msg)
         return
@@ -233,4 +242,8 @@ def run_predictions():
 
 
 if __name__ == "__main__":
-    run_predictions()
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--model", choices=["3h", "24h"], default="3h",
+                        help="Which model to run: 3h (T+5-180, every 5 min) or 24h (T+5-1440, every hour)")
+    args = parser.parse_args()
+    run_predictions(model=args.model)

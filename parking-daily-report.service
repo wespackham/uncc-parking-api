@@ -1,0 +1,9 @@
+[Unit]
+Description=UNCC Parking Daily Accuracy Report
+
+[Service]
+Type=oneshot
+User=ubuntu
+WorkingDirectory=/home/ubuntu/uncc-parking-api
+EnvironmentFile=/home/ubuntu/uncc-parking-api/.env
+ExecStart=/home/ubuntu/uncc-parking-api/venv/bin/python -m parking_api.daily_report

@@ -1,0 +1,9 @@
+[Unit]
+Description=Send daily parking accuracy report at 6pm ET (22:00 UTC)
+
+[Timer]
+OnCalendar=*-*-* 22:00:00
+AccuracySec=60s
+
+[Install]
+WantedBy=timers.target

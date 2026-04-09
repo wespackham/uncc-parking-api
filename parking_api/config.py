@@ -5,7 +5,8 @@ from dotenv import load_dotenv
 load_dotenv()
 
 BASE_DIR = Path(__file__).resolve().parent.parent
-LGB_MODELS_DIR = BASE_DIR / "models_lgb"
+LGB_MODELS_DIR = BASE_DIR / "models_lgb_3h"
+LGB_MODELS_V2_DIR = BASE_DIR / "models_lgb_24h"
 DATA_DIR = BASE_DIR / "data"
 
 SUPABASE_URL = os.environ.get("SUPABASE_URL", "")
