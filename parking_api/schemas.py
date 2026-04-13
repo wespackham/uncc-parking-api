@@ -3,9 +3,10 @@ from pydantic import BaseModel
 
 
 class LotPrediction(BaseModel):
-    lot: str
+    created_at: datetime
     target_time: datetime
     model_tier: str
+    lot: str
     prediction: float
     confidence_low: float
     confidence_high: float

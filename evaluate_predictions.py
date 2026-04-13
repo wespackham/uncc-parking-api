@@ -42,35 +42,51 @@ def get_client():
 
 
 def fetch_predictions(client, from_dt: str, to_dt: str, lot: str | None) -> pd.DataFrame:
+    """Fetch predictions from the denormalized JSONB schema and explode into flat rows."""
     print(f"Fetching predictions from {from_dt} to {to_dt}...")
-    rows = []
+    raw_rows = []
     page_size = 1000
     offset = 0
     while True:
-        query = (
+        result = (
             client.table("parking_predictions")
-            .select("created_at, target_time, lot, model_tier, prediction, confidence_low, confidence_high")
+            .select("created_at, target_time, model_tier, data")
             .gte("target_time", from_dt)
             .lte("target_time", to_dt)
             .order("target_time")
             .range(offset, offset + page_size - 1)
+            .execute()
         )
-        if lot:
-            query = query.eq("lot", lot)
-        result = query.execute()
         batch = result.data
-        rows.extend(batch)
+        raw_rows.extend(batch)
         if len(batch) < page_size:
             break
         offset += page_size
+
+    # Explode JSONB → flat per-lot rows
+    rows = []
+    for row in raw_rows:
+        data = row.get("data") or {}
+        for lot_name, vals in data.items():
+            if lot and lot_name != lot:
+                continue
+            rows.append({
+                "created_at": row["created_at"],
+                "target_time": row["target_time"],
+                "model_tier": row["model_tier"],
+                "lot": lot_name,
+                "prediction": vals["prediction"],
+                "confidence_low": vals["confidence_low"],
+                "confidence_high": vals["confidence_high"],
+            })
 
     print(f"  {len(rows)} prediction rows")
     if not rows:
         sys.exit("No predictions found for the given range/lot.")
 
     df = pd.DataFrame(rows)
-    df["target_time"] = pd.to_datetime(df["target_time"], utc=True)
-    df["created_at"] = pd.to_datetime(df["created_at"], utc=True)
+    df["target_time"] = pd.to_datetime(df["target_time"], format="ISO8601", utc=True)
+    df["created_at"] = pd.to_datetime(df["created_at"], format="ISO8601", utc=True)
     return df
 
 

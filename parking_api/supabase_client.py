@@ -43,16 +43,38 @@ def write_predictions(predictions: list[dict]):
 
 
 def fetch_predictions(lot: str | None = None, from_time: str | None = None, to_time: str | None = None) -> list[dict]:
-    """Read predictions from parking_predictions table."""
-    client = _get_client()
-    query = client.table(TABLE_PREDICTIONS).select("*").order("target_time")
+    """Read predictions from parking_predictions table (denormalized JSONB schema).
 
-    if lot:
-        query = query.eq("lot", lot)
+    The table stores one row per (target_time, model_tier, run) with a JSONB
+    ``data`` column containing all lots. This function explodes the JSONB into
+    flat per-lot rows for backward compatibility with callers that expect
+    (lot, prediction, confidence_low, confidence_high) dicts.
+    """
+    client = _get_client()
+    query = client.table(TABLE_PREDICTIONS).select("created_at, target_time, model_tier, data").order("target_time")
+
     if from_time:
         query = query.gte("target_time", from_time)
     if to_time:
         query = query.lte("target_time", to_time)
 
     result = query.execute()
-    return result.data
+
+    # Explode JSONB → flat per-lot rows
+    rows = []
+    for row in result.data:
+        data = row.get("data") or {}
+        for lot_name, vals in data.items():
+            if lot and lot_name != lot:
+                continue
+            rows.append({
+                "created_at": row["created_at"],
+                "target_time": row["target_time"],
+                "model_tier": row["model_tier"],
+                "lot": lot_name,
+                "prediction": vals["prediction"],
+                "confidence_low": vals["confidence_low"],
+                "confidence_high": vals["confidence_high"],
+            })
+
+    return rows

@@ -32,13 +32,14 @@ def _get_client():
 
 
 def _fetch_predictions(client, from_dt: str, to_dt: str) -> pd.DataFrame:
-    rows = []
+    """Fetch predictions from the denormalized JSONB schema and explode into flat rows."""
+    raw_rows = []
     page_size = 1000
     offset = 0
     while True:
         result = (
             client.table("parking_predictions")
-            .select("created_at, target_time, lot, model_tier, prediction, confidence_low, confidence_high")
+            .select("created_at, target_time, model_tier, data")
             .gte("target_time", from_dt)
             .lte("target_time", to_dt)
             .order("target_time")
@@ -46,16 +47,32 @@ def _fetch_predictions(client, from_dt: str, to_dt: str) -> pd.DataFrame:
             .execute()
         )
         batch = result.data
-        rows.extend(batch)
+        raw_rows.extend(batch)
         if len(batch) < page_size:
             break
         offset += page_size
 
-    if not rows:
+    if not raw_rows:
         return pd.DataFrame()
+
+    # Explode JSONB → flat per-lot rows
+    rows = []
+    for row in raw_rows:
+        data = row.get("data") or {}
+        for lot, vals in data.items():
+            rows.append({
+                "created_at": row["created_at"],
+                "target_time": row["target_time"],
+                "model_tier": row["model_tier"],
+                "lot": lot,
+                "prediction": vals["prediction"],
+                "confidence_low": vals["confidence_low"],
+                "confidence_high": vals["confidence_high"],
+            })
+
     df = pd.DataFrame(rows)
-    df["target_time"] = pd.to_datetime(df["target_time"], utc=True)
-    df["created_at"] = pd.to_datetime(df["created_at"], utc=True)
+    df["target_time"] = pd.to_datetime(df["target_time"], format="ISO8601", utc=True)
+    df["created_at"] = pd.to_datetime(df["created_at"], format="ISO8601", utc=True)
     return df
 
 
