@@ -93,11 +93,19 @@ def _run_lgb_predictions(
     # Pre-extract per-lot current state (avoids repeated JSON parsing)
     lot_state = {lot: _extract_lgb_deltas(recent_rows, lot) for lot in lots}
 
+    # Snap to the nearest 5-min floor so all target times are clean multiples of 5
+    # e.g. 5:07:32 → base 5:05:00, so T+5 = 5:10, T+10 = 5:15, etc.
+    base_utc = now_utc.replace(
+        minute=(now_utc.minute // 5) * 5,
+        second=0,
+        microsecond=0,
+    )
+
     rows = []
     meta = []  # (lot, target_utc) for assembling prediction records
 
     for h in horizons:
-        target_dt  = now_utc + timedelta(minutes=h)
+        target_dt  = base_utc + timedelta(minutes=h)
         target_utc = target_dt.isoformat()
         tgt_date   = target_dt.strftime("%Y-%m-%d")
 
@@ -157,17 +165,24 @@ def _run_lgb_predictions(
     lows  = lgb_lower.predict(X).clip(0, 1)
     highs = lgb_upper.predict(X).clip(0, 1)
 
-    return [
-        {
-            "target_time":     target_utc,
-            "lot":             lot,
-            "model_tier":      model_tier,
+    # Collapse lots into a single JSONB-style dict per target_time.
+    # Old format: one row per (lot × target_time) — 360 rows for the 3h model.
+    # New format: one row per target_time — 36 rows for the 3h model.
+    result_map: dict[str, dict] = {}
+    for i, (lot, target_utc) in enumerate(meta):
+        if target_utc not in result_map:
+            result_map[target_utc] = {
+                "target_time": target_utc,
+                "model_tier":  model_tier,
+                "data":        {},
+            }
+        result_map[target_utc]["data"][lot] = {
             "prediction":      round(float(preds[i]), 4),
             "confidence_low":  round(float(lows[i]),  4),
             "confidence_high": round(float(highs[i]), 4),
         }
-        for i, (lot, target_utc) in enumerate(meta)
-    ]
+
+    return list(result_map.values())
 
 
 def _send_discord_alert(message: str):

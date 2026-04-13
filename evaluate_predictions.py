@@ -192,6 +192,34 @@ def print_table(title: str, rows: list[dict], index_label: str):
         )
 
 
+def print_early_horizons(tier_subsets: dict):
+    """Always-on table showing accuracy at T+5, T+10, T+15 across all tiers."""
+    HORIZONS = [5, 10, 15]
+    print(f"\n{'=' * 72}")
+    print(f"  Early-Horizon Accuracy (T+5 / T+10 / T+15)")
+    print(f"{'=' * 72}")
+    print(f"  {'Tier':<12}  {'T+min':>6}  {'N':>6}  {'MAE':>7}  {'RMSE':>7}  {'R²':>7}")
+    print(f"  {'-' * 52}")
+    for tier, df in tier_subsets.items():
+        df = df.copy()
+        raw_min = (df["target_time"] - df["created_at"]).dt.total_seconds() / 60
+        df["minutes_ahead"] = (raw_min / 5).round().astype(int) * 5
+        for h in HORIZONS:
+            sub = df[df["minutes_ahead"] == h]
+            if sub.empty:
+                print(f"  {tier:<12}  {f'T+{h}':>6}  {'—':>6}")
+                continue
+            errors = sub["prediction"].values - sub["actual"].values
+            mae = np.mean(np.abs(errors))
+            rmse = np.sqrt(np.mean(errors ** 2))
+            ss_res = np.sum(errors ** 2)
+            ss_tot = np.sum((sub["actual"].values - sub["actual"].mean()) ** 2)
+            r2 = 1 - ss_res / ss_tot if ss_tot > 0 else float("nan")
+            r2_str = f"{r2:.4f}" if not np.isnan(r2) else "   N/A"
+            print(f"  {tier:<12}  {f'T+{h}':>6}  {len(sub):>6,}  {mae:>7.4f}  {rmse:>7.4f}  {r2_str:>7}")
+        print(f"  {'-' * 52}")
+
+
 def print_by_horizon(tier: str, df: pd.DataFrame):
     """Show MAE per prediction step (T+5, T+10, ...) to detect autoregressive error compounding."""
     df = df.copy()
@@ -279,6 +307,7 @@ def main():
         tier_subsets[tier] = subset
 
     print_table("Accuracy by Model Tier", tier_rows, "Tier")
+    print_early_horizons(tier_subsets)
 
     for tier, subset in tier_subsets.items():
         print_samples(tier, subset)

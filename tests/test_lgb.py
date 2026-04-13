@@ -2,7 +2,7 @@
 
 import json
 import pickle
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
 import numpy as np
@@ -124,14 +124,14 @@ def test_deltas_lot_with_slash():
 # ── _run_lgb_predictions ──────────────────────────────────────────────────────
 
 def test_lgb_output_row_count(lgb_models):
-    """10 lots × 36 horizons = 360 rows."""
+    """One row per horizon (not per lot) — 36 rows for the 3h model."""
     point, lower, upper, config = lgb_models
     now_utc = datetime(2026, 4, 8, 14, 0, 0, tzinfo=timezone.utc)
     rows = _make_rows()
     weather_df = _make_weather_df()
 
     result = _run_lgb_predictions(now_utc, rows, weather_df, point, lower, upper, config)
-    assert len(result) == len(config["lots"]) * len(config["horizons"])
+    assert len(result) == len(config["horizons"])
 
 
 def test_lgb_all_predictions_in_unit_interval(lgb_models):
@@ -143,9 +143,10 @@ def test_lgb_all_predictions_in_unit_interval(lgb_models):
 
     result = _run_lgb_predictions(now_utc, rows, weather_df, point, lower, upper, config)
     for rec in result:
-        assert 0.0 <= rec["prediction"]      <= 1.0, f"prediction out of range: {rec}"
-        assert 0.0 <= rec["confidence_low"]  <= 1.0, f"confidence_low out of range: {rec}"
-        assert 0.0 <= rec["confidence_high"] <= 1.0, f"confidence_high out of range: {rec}"
+        for lot_data in rec["data"].values():
+            assert 0.0 <= lot_data["prediction"]      <= 1.0
+            assert 0.0 <= lot_data["confidence_low"]  <= 1.0
+            assert 0.0 <= lot_data["confidence_high"] <= 1.0
 
 
 def test_lgb_model_tier_is_lgb(lgb_models):
@@ -159,26 +160,29 @@ def test_lgb_model_tier_is_lgb(lgb_models):
 
 
 def test_lgb_all_lots_present(lgb_models):
+    """Every row's data dict must have all 10 lots as keys."""
     point, lower, upper, config = lgb_models
     now_utc = datetime(2026, 4, 8, 14, 0, 0, tzinfo=timezone.utc)
     rows = _make_rows()
     weather_df = _make_weather_df()
 
     result = _run_lgb_predictions(now_utc, rows, weather_df, point, lower, upper, config)
-    result_lots = {r["lot"] for r in result}
-    assert result_lots == set(config["lots"])
+    expected_lots = set(config["lots"])
+    for rec in result:
+        assert set(rec["data"].keys()) == expected_lots, \
+            f"Missing lots in {rec['target_time']}: {expected_lots - set(rec['data'].keys())}"
 
 
 def test_lgb_all_horizons_present(lgb_models):
+    """One unique target_time per horizon — 36 distinct target_times for the 3h model."""
     point, lower, upper, config = lgb_models
     now_utc = datetime(2026, 4, 8, 14, 0, 0, tzinfo=timezone.utc)
     rows = _make_rows()
     weather_df = _make_weather_df()
 
     result = _run_lgb_predictions(now_utc, rows, weather_df, point, lower, upper, config)
-    # Each lot should cover all horizons
-    cri_results = [r for r in result if r["lot"] == "CRI"]
-    assert len(cri_results) == len(config["horizons"])
+    unique_targets = {r["target_time"] for r in result}
+    assert len(unique_targets) == len(config["horizons"])
 
 
 def test_lgb_target_times_are_in_future(lgb_models):
@@ -195,7 +199,7 @@ def test_lgb_target_times_are_in_future(lgb_models):
 
 
 def test_lgb_values_are_rounded_to_4dp(lgb_models):
-    """Predictions should be rounded to 4 decimal places."""
+    """All numeric values in data must be rounded to 4 decimal places."""
     point, lower, upper, config = lgb_models
     now_utc = datetime(2026, 4, 8, 14, 0, 0, tzinfo=timezone.utc)
     rows = _make_rows()
@@ -203,9 +207,10 @@ def test_lgb_values_are_rounded_to_4dp(lgb_models):
 
     result = _run_lgb_predictions(now_utc, rows, weather_df, point, lower, upper, config)
     for rec in result:
-        for key in ("prediction", "confidence_low", "confidence_high"):
-            val = rec[key]
-            assert val == round(val, 4), f"{key} not rounded to 4dp: {val}"
+        for lot, lot_data in rec["data"].items():
+            for key in ("prediction", "confidence_low", "confidence_high"):
+                val = lot_data[key]
+                assert val == round(val, 4), f"{lot}.{key} not rounded to 4dp: {val}"
 
 
 def test_lgb_works_with_minimal_rows(lgb_models):
@@ -216,7 +221,7 @@ def test_lgb_works_with_minimal_rows(lgb_models):
     weather_df = _make_weather_df()
 
     result = _run_lgb_predictions(now_utc, rows, weather_df, point, lower, upper, config)
-    assert len(result) == len(config["lots"]) * len(config["horizons"])
+    assert len(result) == len(config["horizons"])
 
 
 # ── Model loading ─────────────────────────────────────────────────────────────
@@ -241,3 +246,183 @@ def test_lgb_config_has_required_keys():
     assert len(config["lots"]) == 10
     assert len(config["horizons"]) == 36
     assert len(config["features"]) == 35
+
+
+# ── JSON output format ───────────────────────────────────────────────────────
+
+def test_lgb_output_has_required_top_level_keys(lgb_models):
+    """Each row must have exactly target_time, model_tier, and data."""
+    point, lower, upper, config = lgb_models
+    now_utc = datetime(2026, 4, 8, 14, 0, 0, tzinfo=timezone.utc)
+    result = _run_lgb_predictions(now_utc, _make_rows(), _make_weather_df(),
+                                  point, lower, upper, config)
+    for rec in result:
+        assert set(rec.keys()) == {"target_time", "model_tier", "data"}, \
+            f"Unexpected top-level keys: {rec.keys()}"
+
+
+def test_lgb_output_no_lot_at_top_level(lgb_models):
+    """The old 'lot' key must not appear at the top level of any row."""
+    point, lower, upper, config = lgb_models
+    now_utc = datetime(2026, 4, 8, 14, 0, 0, tzinfo=timezone.utc)
+    result = _run_lgb_predictions(now_utc, _make_rows(), _make_weather_df(),
+                                  point, lower, upper, config)
+    for rec in result:
+        assert "lot" not in rec, f"'lot' found at top level in: {rec}"
+
+
+def test_lgb_output_no_flat_prediction_keys(lgb_models):
+    """prediction/confidence_low/confidence_high must not appear at top level."""
+    point, lower, upper, config = lgb_models
+    now_utc = datetime(2026, 4, 8, 14, 0, 0, tzinfo=timezone.utc)
+    result = _run_lgb_predictions(now_utc, _make_rows(), _make_weather_df(),
+                                  point, lower, upper, config)
+    for rec in result:
+        for key in ("prediction", "confidence_low", "confidence_high"):
+            assert key not in rec, f"'{key}' found at top level — should be inside data[lot]"
+
+
+def test_lgb_data_field_is_dict(lgb_models):
+    """data must be a plain dict (serialisable as JSONB)."""
+    point, lower, upper, config = lgb_models
+    now_utc = datetime(2026, 4, 8, 14, 0, 0, tzinfo=timezone.utc)
+    result = _run_lgb_predictions(now_utc, _make_rows(), _make_weather_df(),
+                                  point, lower, upper, config)
+    for rec in result:
+        assert isinstance(rec["data"], dict), f"data is not a dict: {type(rec['data'])}"
+
+
+def test_lgb_lot_entry_has_required_keys(lgb_models):
+    """Each lot entry inside data must have prediction, confidence_low, confidence_high."""
+    point, lower, upper, config = lgb_models
+    now_utc = datetime(2026, 4, 8, 14, 0, 0, tzinfo=timezone.utc)
+    result = _run_lgb_predictions(now_utc, _make_rows(), _make_weather_df(),
+                                  point, lower, upper, config)
+    expected = {"prediction", "confidence_low", "confidence_high"}
+    for rec in result:
+        for lot, lot_data in rec["data"].items():
+            assert set(lot_data.keys()) == expected, \
+                f"{lot} entry has unexpected keys: {lot_data.keys()}"
+
+
+def test_lgb_data_lot_count(lgb_models):
+    """data must contain exactly 10 lots per row."""
+    point, lower, upper, config = lgb_models
+    now_utc = datetime(2026, 4, 8, 14, 0, 0, tzinfo=timezone.utc)
+    result = _run_lgb_predictions(now_utc, _make_rows(), _make_weather_df(),
+                                  point, lower, upper, config)
+    for rec in result:
+        assert len(rec["data"]) == 10, \
+            f"Expected 10 lots in data, got {len(rec['data'])}: {list(rec['data'].keys())}"
+
+
+def test_lgb_no_duplicate_target_times(lgb_models):
+    """Each target_time must appear exactly once — no duplicate rows."""
+    point, lower, upper, config = lgb_models
+    now_utc = datetime(2026, 4, 8, 14, 0, 0, tzinfo=timezone.utc)
+    result = _run_lgb_predictions(now_utc, _make_rows(), _make_weather_df(),
+                                  point, lower, upper, config)
+    target_times = [r["target_time"] for r in result]
+    assert len(target_times) == len(set(target_times)), "Duplicate target_times in output"
+
+
+def test_lgb_lot_names_match_config(lgb_models):
+    """Lot keys in data must exactly match the lots list from config."""
+    point, lower, upper, config = lgb_models
+    now_utc = datetime(2026, 4, 8, 14, 0, 0, tzinfo=timezone.utc)
+    result = _run_lgb_predictions(now_utc, _make_rows(), _make_weather_df(),
+                                  point, lower, upper, config)
+    expected_lots = set(config["lots"])
+    for rec in result:
+        assert set(rec["data"].keys()) == expected_lots
+
+
+def test_lgb_row_count_is_horizons_not_lots_times_horizons(lgb_models):
+    """Sanity-check the 10x row reduction: 36 rows, not 360."""
+    point, lower, upper, config = lgb_models
+    now_utc = datetime(2026, 4, 8, 14, 0, 0, tzinfo=timezone.utc)
+    result = _run_lgb_predictions(now_utc, _make_rows(), _make_weather_df(),
+                                  point, lower, upper, config)
+    assert len(result) == len(config["horizons"])
+    assert len(result) != len(config["lots"]) * len(config["horizons"])
+
+
+# ── Target time snapping ──────────────────────────────────────────────────────
+
+def test_lgb_target_times_all_multiples_of_5(lgb_models):
+    """Every target_time must land on a :X0 or :X5 minute, second=0, microsecond=0."""
+    point, lower, upper, config = lgb_models
+    now_utc = datetime(2026, 4, 8, 14, 7, 32, 123456, tzinfo=timezone.utc)
+    result = _run_lgb_predictions(now_utc, _make_rows(), _make_weather_df(),
+                                  point, lower, upper, config)
+    for rec in result:
+        tgt = pd.Timestamp(rec["target_time"])
+        assert tgt.minute % 5 == 0,   f"minute not multiple of 5: {tgt}"
+        assert tgt.second == 0,        f"second nonzero: {tgt}"
+        assert tgt.microsecond == 0,   f"microsecond nonzero: {tgt}"
+
+
+def test_lgb_target_snap_mid_interval(lgb_models):
+    """At 14:07:32, base floors to 14:05:00; first target (h=5) must be 14:10:00."""
+    point, lower, upper, config = lgb_models
+    now_utc = datetime(2026, 4, 8, 14, 7, 32, tzinfo=timezone.utc)
+    result = _run_lgb_predictions(now_utc, _make_rows(), _make_weather_df(),
+                                  point, lower, upper, config)
+    unique_targets = sorted({pd.Timestamp(r["target_time"]) for r in result})
+    assert unique_targets[0] == pd.Timestamp("2026-04-08T14:10:00+00:00")
+
+
+def test_lgb_target_snap_on_boundary(lgb_models):
+    """At exactly 14:05:00 (already on boundary), first target must be 14:10:00."""
+    point, lower, upper, config = lgb_models
+    now_utc = datetime(2026, 4, 8, 14, 5, 0, tzinfo=timezone.utc)
+    result = _run_lgb_predictions(now_utc, _make_rows(), _make_weather_df(),
+                                  point, lower, upper, config)
+    unique_targets = sorted({pd.Timestamp(r["target_time"]) for r in result})
+    assert unique_targets[0] == pd.Timestamp("2026-04-08T14:10:00+00:00")
+
+
+def test_lgb_target_snap_top_of_hour(lgb_models):
+    """At 14:00:00, base is 14:00:00; first target (h=5) must be 14:05:00."""
+    point, lower, upper, config = lgb_models
+    now_utc = datetime(2026, 4, 8, 14, 0, 0, tzinfo=timezone.utc)
+    result = _run_lgb_predictions(now_utc, _make_rows(), _make_weather_df(),
+                                  point, lower, upper, config)
+    unique_targets = sorted({pd.Timestamp(r["target_time"]) for r in result})
+    assert unique_targets[0] == pd.Timestamp("2026-04-08T14:05:00+00:00")
+
+
+def test_lgb_target_snap_end_of_interval(lgb_models):
+    """At 14:09:59, base floors to 14:05:00; first target must be 14:10:00."""
+    point, lower, upper, config = lgb_models
+    now_utc = datetime(2026, 4, 8, 14, 9, 59, tzinfo=timezone.utc)
+    result = _run_lgb_predictions(now_utc, _make_rows(), _make_weather_df(),
+                                  point, lower, upper, config)
+    unique_targets = sorted({pd.Timestamp(r["target_time"]) for r in result})
+    assert unique_targets[0] == pd.Timestamp("2026-04-08T14:10:00+00:00")
+
+
+def test_lgb_target_snap_with_seconds_and_microseconds(lgb_models):
+    """Targets are clean even when now_utc has sub-minute noise."""
+    point, lower, upper, config = lgb_models
+    now_utc = datetime(2026, 4, 8, 14, 3, 47, 999999, tzinfo=timezone.utc)
+    result = _run_lgb_predictions(now_utc, _make_rows(), _make_weather_df(),
+                                  point, lower, upper, config)
+    for rec in result:
+        tgt = pd.Timestamp(rec["target_time"])
+        assert tgt.second == 0
+        assert tgt.microsecond == 0
+
+
+def test_lgb_target_snap_targets_cover_full_horizon_range(lgb_models):
+    """Snapped targets should still cover all expected horizon offsets."""
+    point, lower, upper, config = lgb_models
+    now_utc = datetime(2026, 4, 8, 14, 7, 32, tzinfo=timezone.utc)
+    base = datetime(2026, 4, 8, 14, 5, 0, tzinfo=timezone.utc)  # expected floor
+    result = _run_lgb_predictions(now_utc, _make_rows(), _make_weather_df(),
+                                  point, lower, upper, config)
+    unique_targets = sorted({pd.Timestamp(r["target_time"]) for r in result})
+    expected = sorted(
+        pd.Timestamp(base + timedelta(minutes=h)) for h in config["horizons"]
+    )
+    assert unique_targets == expected
