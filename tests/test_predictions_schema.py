@@ -295,6 +295,55 @@ class TestComputeMetrics:
         assert m["within_band_pct"] == 0.0
 
 
+# ── horizon helpers ────────────────────────────────────────────────────────
+
+class TestHorizonHelpers:
+    def test_add_minutes_ahead_rounds_to_5min(self):
+        from evaluate_predictions import add_minutes_ahead
+        df = pd.DataFrame({
+            "created_at": pd.to_datetime(["2026-04-13T12:01:00+00:00"], utc=True),
+            "target_time": pd.to_datetime(["2026-04-13T12:16:10+00:00"], utc=True),
+        })
+        out = add_minutes_ahead(df)
+        assert out.loc[0, "minutes_ahead"] == 15
+
+    def test_build_horizon_comparison_pivots_tiers(self):
+        from evaluate_predictions import build_horizon_metrics, build_horizon_comparison
+
+        matched = pd.DataFrame({
+            "created_at": pd.to_datetime([
+                "2026-04-13T12:00:00+00:00",
+                "2026-04-13T12:00:00+00:00",
+                "2026-04-13T12:00:00+00:00",
+                "2026-04-13T12:00:00+00:00",
+            ], utc=True),
+            "target_time": pd.to_datetime([
+                "2026-04-13T12:05:00+00:00",
+                "2026-04-13T12:10:00+00:00",
+                "2026-04-13T12:05:00+00:00",
+                "2026-04-13T12:10:00+00:00",
+            ], utc=True),
+            "model_tier": ["lgb", "lgb", "lgb_v3", "lgb_v3"],
+            "lot": ["CRI", "CRI", "CRI", "CRI"],
+            "prediction": [0.50, 0.62, 0.48, 0.58],
+            "confidence_low": [0.40, 0.52, 0.38, 0.48],
+            "confidence_high": [0.60, 0.72, 0.58, 0.68],
+            "actual": [0.55, 0.70, 0.50, 0.60],
+        })
+
+        tier_subsets = {
+            tier: matched[matched["model_tier"] == tier].copy()
+            for tier in ["lgb", "lgb_v3"]
+        }
+        horizon_metrics = build_horizon_metrics(tier_subsets)
+        comparison = build_horizon_comparison(horizon_metrics)
+
+        assert list(comparison["minutes_ahead"]) == [5, 10]
+        assert "lgb_mae" in comparison.columns
+        assert "lgb_v3_mae" in comparison.columns
+        assert comparison.loc[comparison["minutes_ahead"] == 5, "best_mae_tier"].iloc[0] == "lgb_v3"
+
+
 # ── match_predictions_to_actuals ──────────────────────────────────────────
 
 class TestMatchPredictions:

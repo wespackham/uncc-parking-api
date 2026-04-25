@@ -12,6 +12,8 @@ Usage:
     python evaluate_predictions.py --from 2025-03-01 --to 2025-03-31
     python evaluate_predictions.py --lot CRI
     python evaluate_predictions.py --by-lot           # show per-lot breakdown
+    python evaluate_predictions.py --by-horizon       # side-by-side horizon comparison
+    python evaluate_predictions.py --by-horizon --horizon-csv horizon_metrics.csv
 """
 
 import argparse
@@ -193,6 +195,63 @@ def compute_metrics(df: pd.DataFrame) -> dict:
     }
 
 
+def add_minutes_ahead(df: pd.DataFrame) -> pd.DataFrame:
+    """Derive the snapped horizon in minutes from target_time - created_at."""
+    df = df.copy()
+    raw_min = (df["target_time"] - df["created_at"]).dt.total_seconds() / 60
+    df["minutes_ahead"] = (raw_min / 5).round().astype(int) * 5
+    return df
+
+
+def build_horizon_metrics(tier_subsets: dict[str, pd.DataFrame]) -> pd.DataFrame:
+    """Return one row per (tier, horizon) with accuracy metrics."""
+    rows = []
+    for tier, df in tier_subsets.items():
+        df = add_minutes_ahead(df)
+        for step in sorted(df["minutes_ahead"].unique()):
+            sub = df[df["minutes_ahead"] == step]
+            if sub.empty:
+                continue
+            metrics = compute_metrics(sub)
+            rows.append({
+                "model_tier": tier,
+                "minutes_ahead": int(step),
+                **metrics,
+            })
+    return pd.DataFrame(rows).sort_values(["minutes_ahead", "model_tier"]).reset_index(drop=True)
+
+
+def build_horizon_comparison(horizon_metrics: pd.DataFrame) -> pd.DataFrame:
+    """Pivot per-horizon metrics into one comparison row per horizon."""
+    if horizon_metrics.empty:
+        return pd.DataFrame()
+
+    comparison = pd.DataFrame({
+        "minutes_ahead": sorted(horizon_metrics["minutes_ahead"].unique())
+    })
+    comparison["label"] = comparison["minutes_ahead"].map(lambda minutes: f"T+{minutes}")
+
+    for tier in TIER_ORDER:
+        tier_df = horizon_metrics[horizon_metrics["model_tier"] == tier][["minutes_ahead", "n", "mae", "rmse"]]
+        tier_df = tier_df.rename(columns={
+            "n": f"{tier}_n",
+            "mae": f"{tier}_mae",
+            "rmse": f"{tier}_rmse",
+        })
+        comparison = comparison.merge(tier_df, on="minutes_ahead", how="left")
+
+    def best_tier(row) -> str:
+        candidates = []
+        for tier in TIER_ORDER:
+            value = row.get(f"{tier}_mae")
+            if pd.notna(value):
+                candidates.append((float(value), tier))
+        return min(candidates)[1] if candidates else "—"
+
+    comparison["best_mae_tier"] = comparison.apply(best_tier, axis=1)
+    return comparison
+
+
 def print_table(title: str, rows: list[dict], index_label: str):
     print(f"\n{'=' * 72}")
     print(f"  {title}")
@@ -217,9 +276,7 @@ def print_early_horizons(tier_subsets: dict):
     print(f"  {'Tier':<12}  {'T+min':>6}  {'N':>6}  {'MAE':>7}  {'RMSE':>7}  {'R²':>7}")
     print(f"  {'-' * 52}")
     for tier, df in tier_subsets.items():
-        df = df.copy()
-        raw_min = (df["target_time"] - df["created_at"]).dt.total_seconds() / 60
-        df["minutes_ahead"] = (raw_min / 5).round().astype(int) * 5
+        df = add_minutes_ahead(df)
         for h in HORIZONS:
             sub = df[df["minutes_ahead"] == h]
             if sub.empty:
@@ -238,9 +295,7 @@ def print_early_horizons(tier_subsets: dict):
 
 def print_by_horizon(tier: str, df: pd.DataFrame):
     """Show MAE per prediction step (T+5, T+10, ...) to detect autoregressive error compounding."""
-    df = df.copy()
-    raw_min = (df["target_time"] - df["created_at"]).dt.total_seconds() / 60
-    df["minutes_ahead"] = (raw_min / 5).round().astype(int) * 5
+    df = add_minutes_ahead(df)
 
     steps = sorted(df["minutes_ahead"].unique())
     if len(steps) <= 1:
@@ -264,6 +319,36 @@ def print_by_horizon(tier: str, df: pd.DataFrame):
         print(f"  {f'T+{step}':>6}  {len(sub):>6,}  {mae:>7.4f}  {rmse:>7.4f}  {r2_str:>7}")
 
 
+def print_horizon_comparison(horizon_comparison: pd.DataFrame):
+    """Show side-by-side MAE/RMSE by horizon across all tiers."""
+    if horizon_comparison.empty:
+        print("\n  Horizon comparison — no rows.")
+        return
+
+    tier_columns = [tier for tier in TIER_ORDER if f"{tier}_mae" in horizon_comparison.columns]
+    print(f"\n{'=' * 104}")
+    print("  Horizon-by-Horizon Model Comparison")
+    print(f"{'=' * 104}")
+
+    header = f"  {'Horizon':<8}"
+    for tier in tier_columns:
+        header += f"  {tier + ' MAE':>10}  {tier + ' RMSE':>11}"
+    header += f"  {'Best':>10}"
+    print(header)
+    print(f"  {'-' * (len(header) - 2)}")
+
+    for _, row in horizon_comparison.iterrows():
+        line = f"  {row['label']:<8}"
+        for tier in tier_columns:
+            mae = row.get(f"{tier}_mae")
+            rmse = row.get(f"{tier}_rmse")
+            mae_str = f"{mae:>10.4f}" if pd.notna(mae) else f"{'—':>10}"
+            rmse_str = f"{rmse:>11.4f}" if pd.notna(rmse) else f"{'—':>11}"
+            line += f"  {mae_str}  {rmse_str}"
+        line += f"  {row['best_mae_tier']:>10}"
+        print(line)
+
+
 def print_samples(tier: str, df: pd.DataFrame, n: int = 10):
     sample = df.sample(min(n, len(df)), random_state=42)
     sample = sample.sort_values("target_time")
@@ -285,7 +370,8 @@ def main():
     parser.add_argument("--to", dest="to_dt", help="End datetime (ISO 8601, e.g. 2025-03-31)")
     parser.add_argument("--lot", help="Filter to a single lot (e.g. CRI)")
     parser.add_argument("--by-lot", action="store_true", help="Show per-lot breakdown within each tier")
-    parser.add_argument("--by-horizon", action="store_true", help="Show MAE per prediction step (T+5, T+10, ...) to detect error compounding")
+    parser.add_argument("--by-horizon", action="store_true", help="Show side-by-side horizon comparison and per-tier breakdowns")
+    parser.add_argument("--horizon-csv", help="Optional CSV path for per-(tier,horizon) metrics export")
     args = parser.parse_args()
 
     now = datetime.now(timezone.utc)
@@ -329,7 +415,13 @@ def main():
         print_samples(tier, subset)
 
     # --- Horizon breakdown ---
+    horizon_metrics = build_horizon_metrics(tier_subsets)
+    if args.horizon_csv:
+        horizon_metrics.to_csv(args.horizon_csv, index=False)
+        print(f"\n  Wrote horizon metrics CSV → {args.horizon_csv}")
+
     if args.by_horizon:
+        print_horizon_comparison(build_horizon_comparison(horizon_metrics))
         for tier, subset in tier_subsets.items():
             print_by_horizon(tier, subset)
 
