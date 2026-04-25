@@ -45,11 +45,13 @@ from .supabase_client import fetch_recent_rows, write_predictions
 from .weather import fetch_forecast_sync, get_weather_for_time
 
 logging.basicConfig(
-    level=logging.DEBUG,
+    level=logging.INFO,
     format="%(asctime)s [%(levelname)s] %(message)s",
     datefmt="%H:%M:%S",
 )
 log = logging.getLogger(__name__)
+logging.getLogger("httpx").setLevel(logging.WARNING)
+logging.getLogger("httpcore").setLevel(logging.WARNING)
 
 EMA_30_ALPHA = 2 / 7
 EMA_60_ALPHA = 2 / 13
