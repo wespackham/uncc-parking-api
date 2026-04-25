@@ -6,15 +6,23 @@ from .config import DATA_DIR
 _calendar = None
 _sports = None
 _disruptions = None
+_events = None
+_semester_metadata = None
 
 
 def _load_calendar():
-    global _calendar
+    global _calendar, _semester_metadata
     if _calendar is not None:
         return _calendar
 
     cal = pd.read_csv(DATA_DIR / "academic_calendar.csv")
     cal["date"] = cal["date"].astype(str)
+    finals_mask = cal["category"] == "finals"
+    _semester_metadata = {
+        "first_class_date": cal[cal["category"] == "semester_start"]["date"].min(),
+        "finals_start_date": cal[finals_mask]["date"].min(),
+        "total_weeks": 16,
+    }
     lookup = {}
     for _, row in cal.iterrows():
         cat = row.get("category", "")
@@ -75,6 +83,27 @@ def _load_disruptions():
     return _disruptions
 
 
+def _load_events():
+    global _events
+    if _events is not None:
+        return _events
+
+    impact_level = {"none": 0, "low": 1, "medium": 2, "high": 3}
+    events = pd.read_csv(DATA_DIR / "campus_events.csv")
+    events["date"] = events["date"].astype(str)
+    events["impact_num"] = events["parking_impact"].map(impact_level).fillna(0).astype(int)
+
+    lookup = {}
+    for date, group in events.groupby("date"):
+        impacts = group["impact_num"].tolist()
+        lookup[date] = {
+            "event_max_impact": max(impacts) if impacts else 0,
+            "event_high_count": int(sum(impact == 3 for impact in impacts)),
+        }
+    _events = lookup
+    return _events
+
+
 def get_calendar(date_str: str) -> dict:
     cal = _load_calendar()
     return cal.get(date_str, {
@@ -107,12 +136,27 @@ def get_disruptions(date_str: str) -> dict:
     })
 
 
+def get_events(date_str: str) -> dict:
+    events = _load_events()
+    return events.get(date_str, {
+        "event_max_impact": 0,
+        "event_high_count": 0,
+    })
+
+
+def get_semester_metadata() -> dict:
+    _load_calendar()
+    return dict(_semester_metadata or {})
+
+
 def get_coverage() -> dict:
     cal = _load_calendar()
     sports = _load_sports()
     dis = _load_disruptions()
+    events = _load_events()
     return {
         "academic_calendar": {"min": min(cal.keys()), "max": max(cal.keys()), "entries": len(cal)} if cal else None,
         "sports_schedule": {"min": min(sports.keys()), "max": max(sports.keys()), "entries": len(sports)} if sports else None,
         "campus_disruptions": {"min": min(dis.keys()), "max": max(dis.keys()), "entries": len(dis)} if dis else None,
+        "campus_events": {"min": min(events.keys()), "max": max(events.keys()), "entries": len(events)} if events else None,
     }

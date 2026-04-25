@@ -23,7 +23,7 @@ SUPABASE_URL = os.environ.get("SUPABASE_URL", "")
 SUPABASE_KEY = os.environ.get("SUPABASE_KEY", "")
 DISCORD_WEBHOOK_URL = os.environ.get("DISCORD_WEBHOOK_URL", "")
 
-TIER_ORDER = ["lgb", "lgb_24h"]
+TIER_ORDER = ["lgb", "lgb_v3", "lgb_24h"]
 MATCH_TOLERANCE_SEC = 4 * 60
 
 

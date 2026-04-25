@@ -10,7 +10,9 @@ from parking_api.features import (
     build_calendar_features,
     build_sports_features,
     build_disruption_features,
+    build_event_features,
     build_weather_features,
+    build_semester_features,
     build_lag_features,
     build_feature_vector,
 )
@@ -20,6 +22,7 @@ from parking_api.features import (
 MOCK_CAL     = {"is_class_day": 1, "is_break": 0, "is_finals": 0, "is_commencement": 0, "is_holiday": 0}
 MOCK_SPORTS  = {"home_game_count": 0, "has_basketball": 0, "has_baseball": 0, "has_softball": 0, "has_lacrosse": 0, "high_impact_game": 0}
 MOCK_DIS     = {"condition_level": 0, "is_remote": 0, "is_cancelled": 0}
+MOCK_EVENTS  = {"event_max_impact": 0, "event_high_count": 0}
 MOCK_WEATHER = {"temperature_f": 65.0, "humidity": 50.0, "precipitation_in": 0.0}
 
 BASELINE_FEATURE_NAMES = [
@@ -41,7 +44,8 @@ def mock_enrichment():
     """
     with patch("parking_api.features.get_calendar", side_effect=lambda *_: dict(MOCK_CAL)), \
          patch("parking_api.features.get_sports", side_effect=lambda *_: dict(MOCK_SPORTS)), \
-         patch("parking_api.features.get_disruptions", side_effect=lambda *_: dict(MOCK_DIS)):
+         patch("parking_api.features.get_disruptions", side_effect=lambda *_: dict(MOCK_DIS)), \
+         patch("parking_api.features.get_events", side_effect=lambda *_: dict(MOCK_EVENTS)):
         yield
 
 
@@ -172,6 +176,43 @@ def test_disruption_features_no_disruption():
     assert f["condition_level"] == 0
     assert f["is_remote"] == 0
     assert f["is_cancelled"] == 0
+
+
+# ── Event features ───────────────────────────────────────────────────────────
+
+def test_event_features_no_event():
+    f = build_event_features("2099-01-01")
+    assert f["event_max_impact"] == 0
+    assert f["event_high_count"] == 0
+
+
+# ── Semester features ────────────────────────────────────────────────────────
+
+def test_semester_features_in_class_week():
+    cal = {"is_class_day": 1, "is_break": 0, "is_finals": 0}
+    f = build_semester_features(
+        "2026-01-26",
+        cal,
+        first_class_date="2026-01-12",
+        finals_start_date="2026-05-04",
+        total_weeks=16,
+    )
+    assert f["tgt_class_week_3"] == 1
+    assert sum(v for k, v in f.items() if k.startswith("tgt_class_week_")) == 1
+    assert f["tgt_weeks_until_finals"] > 0
+
+
+def test_semester_features_out_of_session_zeroes_week():
+    cal = {"is_class_day": 0, "is_break": 0, "is_finals": 0}
+    f = build_semester_features(
+        "2026-06-01",
+        cal,
+        first_class_date="2026-01-12",
+        finals_start_date="2026-05-04",
+        total_weeks=16,
+    )
+    assert sum(v for k, v in f.items() if k.startswith("tgt_class_week_")) == 0
+    assert f["tgt_weeks_until_finals"] == 0.0
 
 
 # ── Weather features ─────────────────────────────────────────────────────────

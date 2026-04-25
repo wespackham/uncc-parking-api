@@ -9,8 +9,8 @@ import numpy as np
 import pandas as pd
 import pytest
 
-from parking_api.predict import _extract_lgb_deltas, _run_lgb_predictions
-from parking_api.config import LGB_MODELS_DIR, LOTS
+from parking_api.predict import _extract_lgb_deltas, _extract_lgb_state, _run_lgb_predictions, run_predictions
+from parking_api.config import LGB_MODELS_DIR, LGB_MODELS_V3_DIR, LOTS
 
 # ── Fixtures ─────────────────────────────────────────────────────────────────
 
@@ -55,6 +55,23 @@ def lgb_models():
         return point, lower, upper, config
     except FileNotFoundError:
         pytest.skip("LGB model files not found in models_lgb/")
+
+
+@pytest.fixture(scope="module")
+def lgb_v3_models():
+    """Load the v3 shadow models; skip if the artifacts are not on disk."""
+    try:
+        with open(LGB_MODELS_V3_DIR / "lgb_point.pkl", "rb") as f:
+            point = pickle.load(f)
+        with open(LGB_MODELS_V3_DIR / "lgb_lower.pkl", "rb") as f:
+            lower = pickle.load(f)
+        with open(LGB_MODELS_V3_DIR / "lgb_upper.pkl", "rb") as f:
+            upper = pickle.load(f)
+        with open(LGB_MODELS_V3_DIR / "lgb_config.pkl", "rb") as f:
+            config = pickle.load(f)
+        return point, lower, upper, config
+    except FileNotFoundError:
+        pytest.skip("LGB v3 model files not found in models_lgb_v3/")
 
 
 # ── _extract_lgb_deltas ───────────────────────────────────────────────────────
@@ -119,6 +136,22 @@ def test_deltas_lot_with_slash():
     rows = [_make_row({"ED2/3": 0.65})] * 10
     cap, d5, d15, d30 = _extract_lgb_deltas(rows, "ED2/3")
     assert cap == pytest.approx(0.65)
+
+
+def test_extract_lgb_state_extended_lags_and_ema():
+    rows = [_make_row({"CRI": round(0.90 - idx * 0.01, 2)}) for idx in range(25)]
+    state = _extract_lgb_state(rows, "CRI")
+    assert state["current_capacity"] == pytest.approx(0.90)
+    assert state["lag_5"] == pytest.approx(0.89)
+    assert state["lag_15"] == pytest.approx(0.87)
+    assert state["lag_30"] == pytest.approx(0.84)
+    assert state["lag_60"] == pytest.approx(0.78)
+    assert state["lag_90"] == pytest.approx(0.72)
+    assert state["lag_120"] == pytest.approx(0.66)
+    assert 0.66 <= state["ema_30"] <= 0.90
+    assert 0.66 <= state["ema_60"] <= 0.90
+    assert state["delta_60"] == pytest.approx(0.12)
+    assert state["delta_120"] == pytest.approx(0.24)
 
 
 # ── _run_lgb_predictions ──────────────────────────────────────────────────────
@@ -246,6 +279,31 @@ def test_lgb_config_has_required_keys():
     assert len(config["lots"]) == 10
     assert len(config["horizons"]) == 36
     assert len(config["features"]) == 35
+
+
+def test_lgb_v3_model_files_exist():
+    """All four v3 model files must be present."""
+    for name in ("lgb_point.pkl", "lgb_lower.pkl", "lgb_upper.pkl", "lgb_config.pkl"):
+        path = LGB_MODELS_V3_DIR / name
+        assert path.exists(), f"Missing model file: {path}"
+
+
+def test_lgb_v3_config_has_required_keys():
+    """v3 config must contain residual-mode metadata and expanded features."""
+    try:
+        with open(LGB_MODELS_V3_DIR / "lgb_config.pkl", "rb") as f:
+            config = pickle.load(f)
+    except FileNotFoundError:
+        pytest.skip("lgb_config.pkl not found in models_lgb_v3/")
+    assert config["target_mode"] == "residual"
+    assert "first_class_date" in config
+    assert "finals_start_date" in config
+    assert config["total_weeks"] == 16
+    assert len(config["lots"]) == 10
+    assert len(config["horizons"]) == 36
+    assert len(config["features"]) == 64
+    assert "tgt_event_max_impact" in config["features"]
+    assert "tgt_class_week_16" in config["features"]
 
 
 # ── JSON output format ───────────────────────────────────────────────────────
@@ -426,3 +484,108 @@ def test_lgb_target_snap_targets_cover_full_horizon_range(lgb_models):
         pd.Timestamp(base + timedelta(minutes=h)) for h in config["horizons"]
     )
     assert unique_targets == expected
+
+
+def test_lgb_v3_output_row_count(lgb_v3_models):
+    point, lower, upper, config = lgb_v3_models
+    now_utc = datetime(2026, 4, 25, 14, 0, 0, tzinfo=timezone.utc)
+    result = _run_lgb_predictions(now_utc, _make_rows(n=30), _make_weather_df(), point, lower, upper, config, model_tier="lgb_v3")
+    assert len(result) == len(config["horizons"])
+
+
+def test_lgb_v3_predictions_in_unit_interval(lgb_v3_models):
+    point, lower, upper, config = lgb_v3_models
+    now_utc = datetime(2026, 4, 25, 14, 0, 0, tzinfo=timezone.utc)
+    result = _run_lgb_predictions(now_utc, _make_rows(n=30), _make_weather_df(), point, lower, upper, config, model_tier="lgb_v3")
+    for rec in result:
+        for lot_data in rec["data"].values():
+            assert 0.0 <= lot_data["prediction"] <= 1.0
+            assert 0.0 <= lot_data["confidence_low"] <= 1.0
+            assert 0.0 <= lot_data["confidence_high"] <= 1.0
+
+
+def test_lgb_v3_model_tier_is_shadow(lgb_v3_models):
+    point, lower, upper, config = lgb_v3_models
+    now_utc = datetime(2026, 4, 25, 14, 0, 0, tzinfo=timezone.utc)
+    result = _run_lgb_predictions(now_utc, _make_rows(n=30), _make_weather_df(), point, lower, upper, config, model_tier="lgb_v3")
+    assert all(row["model_tier"] == "lgb_v3" for row in result)
+
+
+class _StubModel:
+    def __init__(self, value: float):
+        self.value = value
+
+    def predict(self, X):
+        return np.full(len(X), self.value, dtype=float)
+
+
+def test_residual_mode_adds_current_capacity_back():
+    now_utc = datetime(2026, 4, 25, 14, 0, 0, tzinfo=timezone.utc)
+    config = {
+        "lots": ["CRI"],
+        "horizons": [5],
+        "target_mode": "residual",
+        "first_class_date": "2026-01-12",
+        "finals_start_date": "2026-05-04",
+        "total_weeks": 16,
+        "features": [
+            "current_capacity", "lag_5", "lag_15", "lag_30", "lag_60", "lag_90", "lag_120",
+            "ema_30", "ema_60", "delta_5", "delta_15", "delta_30", "delta_60", "delta_120",
+            "cur_hour_sin", "cur_hour_cos", "cur_dow_sin", "cur_dow_cos", "cur_is_weekend",
+            "horizon_minutes", "deck_id",
+            "tgt_hour_sin", "tgt_hour_cos", "tgt_minute_sin", "tgt_minute_cos",
+            "tgt_dow_sin", "tgt_dow_cos", "tgt_is_weekend", "tgt_is_class_day",
+            "tgt_is_break", "tgt_is_finals", "tgt_is_commencement", "tgt_is_holiday",
+            "tgt_class_week_1", "tgt_weeks_until_finals",
+            "tgt_home_game_count", "tgt_has_basketball", "tgt_has_baseball",
+            "tgt_has_softball", "tgt_has_lacrosse", "tgt_high_impact_game",
+            "tgt_condition_level", "tgt_is_remote", "tgt_is_cancelled",
+            "tgt_temperature_f", "tgt_humidity", "tgt_precipitation_in",
+            "tgt_event_max_impact", "tgt_event_high_count",
+        ],
+    }
+    rows = [_make_row({"CRI": 0.40}) for _ in range(30)]
+    result = _run_lgb_predictions(
+        now_utc,
+        rows,
+        _make_weather_df(),
+        _StubModel(0.10),
+        _StubModel(-0.05),
+        _StubModel(0.20),
+        config,
+        model_tier="lgb_v3",
+    )
+    lot_data = result[0]["data"]["CRI"]
+    assert lot_data["prediction"] == pytest.approx(0.50)
+    assert lot_data["confidence_low"] == pytest.approx(0.35)
+    assert lot_data["confidence_high"] == pytest.approx(0.60)
+
+
+def test_run_predictions_keeps_live_tier_when_shadow_bundle_fails(monkeypatch):
+    written = []
+
+    class Bundle:
+        def __init__(self, model_tier, required):
+            self.model_tier = model_tier
+            self.required = required
+            self.point = object()
+            self.lower = object()
+            self.upper = object()
+            self.config = {"features": [], "horizons": [5]}
+            self.models_dir = Path(".")
+
+    monkeypatch.setattr("parking_api.predict._bundles_for_model", lambda model: [Bundle("lgb", True), Bundle("lgb_v3", False)])
+    monkeypatch.setattr("parking_api.predict.fetch_recent_rows", lambda n: [_make_row({"CRI": 0.5})] * n)
+    monkeypatch.setattr("parking_api.predict.fetch_forecast_sync", _make_weather_df)
+
+    def fake_run(now_utc, recent_rows, weather_df, point, lower, upper, config, model_tier="lgb"):
+        if model_tier == "lgb_v3":
+            raise RuntimeError("shadow failed")
+        return [{"target_time": "2026-04-25T14:05:00+00:00", "model_tier": "lgb", "data": {"CRI": {"prediction": 0.5, "confidence_low": 0.4, "confidence_high": 0.6}}}]
+
+    monkeypatch.setattr("parking_api.predict._run_lgb_predictions", fake_run)
+    monkeypatch.setattr("parking_api.predict.write_predictions", lambda predictions: written.extend(predictions))
+
+    run_predictions()
+    assert len(written) == 1
+    assert written[0]["model_tier"] == "lgb"

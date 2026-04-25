@@ -7,9 +7,9 @@ V2 models additionally use minute_sin and minute_cos (27 baseline features).
 
 import numpy as np
 import pandas as pd
-from datetime import datetime
+from datetime import date, datetime
 
-from .enrichment import get_calendar, get_sports, get_disruptions
+from .enrichment import get_calendar, get_sports, get_disruptions, get_events
 from .config import safe_name
 
 
@@ -47,6 +47,10 @@ def build_disruption_features(date_str: str) -> dict:
     return get_disruptions(date_str)
 
 
+def build_event_features(date_str: str) -> dict:
+    return get_events(date_str)
+
+
 def build_weather_features(weather_row: dict) -> dict:
     # Planned features (not yet in trained models — add after retraining):
     #   wind_speed_mph   — from Open-Meteo windspeed_10m (convert km/h * 0.621371)
@@ -57,6 +61,45 @@ def build_weather_features(weather_row: dict) -> dict:
         "humidity": weather_row.get("humidity", 0.0),
         "precipitation_in": weather_row.get("precipitation_in", 0.0),
     }
+
+
+def _coerce_date(value: str | date) -> date:
+    if isinstance(value, date):
+        return value
+    return pd.Timestamp(value).date()
+
+
+def build_semester_features(
+    date_str: str,
+    calendar_features: dict,
+    *,
+    first_class_date: str | date,
+    finals_start_date: str | date,
+    total_weeks: int = 16,
+) -> dict:
+    """Build v3 semester-relative features for a target date."""
+    first_class = _coerce_date(first_class_date)
+    finals_start = _coerce_date(finals_start_date)
+    target_date = pd.Timestamp(date_str).date()
+
+    days_since_start = (target_date - first_class).days
+    week_num = max(0, min(total_weeks, days_since_start // 7 + 1))
+    in_session = any((
+        calendar_features.get("is_class_day", 0),
+        calendar_features.get("is_finals", 0),
+        calendar_features.get("is_break", 0),
+    ))
+    if not in_session:
+        week_num = 0
+
+    features = {
+        f"tgt_class_week_{week}": int(week_num == week)
+        for week in range(1, total_weeks + 1)
+    }
+
+    days_to_finals = (finals_start - target_date).days
+    features["tgt_weeks_until_finals"] = float(np.clip(days_to_finals / 7, 0, 20))
+    return features
 
 
 def build_lag_features(recent_values: list[float], lot: str) -> dict:
