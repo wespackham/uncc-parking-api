@@ -1,2 +1,4 @@
 models_lgb_3h/*.pkl filter=lfs diff=lfs merge=lfs -text
 models_lgb_24h/*.pkl filter=lfs diff=lfs merge=lfs -text
+models_lgb_v4/*.pkl filter=lfs diff=lfs merge=lfs -text
+models_lgb_24h_v2/*.pkl filter=lfs diff=lfs merge=lfs -text

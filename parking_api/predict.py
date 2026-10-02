@@ -27,10 +27,13 @@ import pandas as pd
 
 from .config import (
     DISCORD_WEBHOOK_URL,
+    SUPPRESSED_LOTS,
     discord_labeled,
     LGB_MODELS_DIR,
     LGB_MODELS_V2_DIR,
     LGB_MODELS_V3_DIR,
+    LGB_MODELS_V4_DIR,
+    LGB_MODELS_24H_V2_DIR,
 )
 from .enrichment import get_semester_metadata
 from .features import (
@@ -38,6 +41,7 @@ from .features import (
     build_disruption_features,
     build_event_features,
     build_semester_features,
+    build_semester_features_multi,
     build_sports_features,
     build_time_features,
     build_weather_features,
@@ -192,7 +196,17 @@ def _build_target_feature_dict(target_dt: datetime, weather_df: pd.DataFrame, fe
         "tgt_precipitation_in": tgt_wthr.get("precipitation_in", 0.0),
     }
 
-    if any(name.startswith("tgt_class_week_") for name in feature_names) or "tgt_weeks_until_finals" in feature_names:
+    wants_semester = any(name.startswith("tgt_class_week_") for name in feature_names) or "tgt_weeks_until_finals" in feature_names
+    if wants_semester and lgb_config.get("semesters"):
+        target_features.update(
+            build_semester_features_multi(
+                tgt_date,
+                tgt_cal,
+                semesters=lgb_config["semesters"],
+                total_weeks=int(lgb_config.get("total_weeks", 16)),
+            )
+        )
+    elif wants_semester:
         semester_meta = get_semester_metadata()
         first_class_date = lgb_config.get("first_class_date") or semester_meta.get("first_class_date")
         finals_start_date = lgb_config.get("finals_start_date") or semester_meta.get("finals_start_date")
@@ -209,7 +223,9 @@ def _build_target_feature_dict(target_dt: datetime, weather_df: pd.DataFrame, fe
             )
 
     if "tgt_event_max_impact" in feature_names or "tgt_event_high_count" in feature_names:
-        target_features.update(build_event_features(tgt_date))
+        events = build_event_features(tgt_date)
+        target_features["tgt_event_max_impact"] = events.get("event_max_impact", 0)
+        target_features["tgt_event_high_count"] = events.get("event_high_count", 0)
 
     return target_features
 
@@ -294,6 +310,8 @@ def _run_lgb_predictions(
 
     result_map: dict[str, dict] = {}
     for idx, (lot, target_utc) in enumerate(meta):
+        if lot in SUPPRESSED_LOTS:
+            continue
         if target_utc not in result_map:
             result_map[target_utc] = {
                 "target_time": target_utc,
@@ -338,13 +356,20 @@ def _load_lgb_bundle(models_dir: Path, model_tier: str, *, required: bool) -> LG
 def _bundles_for_model(model: str) -> list[LGBBundle]:
     if model == "24h":
         bundle = _load_lgb_bundle(LGB_MODELS_V2_DIR, "lgb_24h", required=True)
-        return [bundle] if bundle else []
+        bundles = [bundle] if bundle else []
+        shadow_24h = _load_lgb_bundle(LGB_MODELS_24H_V2_DIR, "lgb_24h_v2", required=False)
+        if shadow_24h is not None:
+            bundles.append(shadow_24h)
+        return bundles
 
     primary = _load_lgb_bundle(LGB_MODELS_DIR, "lgb", required=True)
     bundles = [primary] if primary else []
     shadow = _load_lgb_bundle(LGB_MODELS_V3_DIR, "lgb_v3", required=False)
     if shadow is not None:
         bundles.append(shadow)
+    shadow_v4 = _load_lgb_bundle(LGB_MODELS_V4_DIR, "lgb_v4", required=False)
+    if shadow_v4 is not None:
+        bundles.append(shadow_v4)
     return bundles
 
 

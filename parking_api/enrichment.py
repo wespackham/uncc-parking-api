@@ -3,6 +3,8 @@
 import pandas as pd
 from .config import DATA_DIR
 
+BREAK_CATEGORIES = {"spring_recess", "fall_recess"}
+
 _calendar = None
 _sports = None
 _disruptions = None
@@ -28,7 +30,7 @@ def _load_calendar():
         cat = row.get("category", "")
         lookup[row["date"]] = {
             "is_class_day": int(row["is_class_day"]) if not pd.isna(row["is_class_day"]) else 0,
-            "is_break": int(cat == "spring_recess"),
+            "is_break": int(cat in BREAK_CATEGORIES),
             "is_finals": int(cat == "finals"),
             "is_commencement": int(cat == "commencement"),
             "is_holiday": int(cat == "university_closed"),

@@ -31,3 +31,113 @@ date,day_of_week,event,category,parking_impact,is_class_day
 2026-05-08,Friday,Commencement,commencement,high,False
 2026-05-09,Saturday,Commencement,commencement,high,False
 2026-05-11,Monday,Academic Year Ends,semester_end,low,False
+2026-05-12,Tuesday,Summer Session - No Regular Semester Classes,summer,low,False
+2026-05-13,Wednesday,Summer Session - No Regular Semester Classes,summer,low,False
+2026-05-14,Thursday,Summer Session - No Regular Semester Classes,summer,low,False
+2026-05-15,Friday,Summer Session - No Regular Semester Classes,summer,low,False
+2026-05-18,Monday,Summer Session - No Regular Semester Classes,summer,low,False
+2026-05-19,Tuesday,Summer Session - No Regular Semester Classes,summer,low,False
+2026-05-20,Wednesday,Summer Session - No Regular Semester Classes,summer,low,False
+2026-05-21,Thursday,Summer Session - No Regular Semester Classes,summer,low,False
+2026-05-22,Friday,Summer Session - No Regular Semester Classes,summer,low,False
+2026-05-25,Monday,Memorial Day - University Closed,university_closed,none,False
+2026-05-26,Tuesday,Summer Session - No Regular Semester Classes,summer,low,False
+2026-05-27,Wednesday,Summer Session - No Regular Semester Classes,summer,low,False
+2026-05-28,Thursday,Summer Session - No Regular Semester Classes,summer,low,False
+2026-05-29,Friday,Summer Session - No Regular Semester Classes,summer,low,False
+2026-06-01,Monday,Summer Session - No Regular Semester Classes,summer,low,False
+2026-06-02,Tuesday,Summer Session - No Regular Semester Classes,summer,low,False
+2026-06-03,Wednesday,Summer Session - No Regular Semester Classes,summer,low,False
+2026-06-04,Thursday,Summer Session - No Regular Semester Classes,summer,low,False
+2026-06-05,Friday,Summer Session - No Regular Semester Classes,summer,low,False
+2026-06-08,Monday,Summer Session - No Regular Semester Classes,summer,low,False
+2026-06-09,Tuesday,Summer Session - No Regular Semester Classes,summer,low,False
+2026-06-10,Wednesday,Summer Session - No Regular Semester Classes,summer,low,False
+2026-06-11,Thursday,Summer Session - No Regular Semester Classes,summer,low,False
+2026-06-12,Friday,Summer Session - No Regular Semester Classes,summer,low,False
+2026-06-15,Monday,Summer Session - No Regular Semester Classes,summer,low,False
+2026-06-16,Tuesday,Summer Session - No Regular Semester Classes,summer,low,False
+2026-06-17,Wednesday,Summer Session - No Regular Semester Classes,summer,low,False
+2026-06-18,Thursday,Summer Session - No Regular Semester Classes,summer,low,False
+2026-06-19,Friday,Summer Session - No Regular Semester Classes,summer,low,False
+2026-06-22,Monday,Summer Session - No Regular Semester Classes,summer,low,False
+2026-06-23,Tuesday,Summer Session - No Regular Semester Classes,summer,low,False
+2026-06-24,Wednesday,Summer Session - No Regular Semester Classes,summer,low,False
+2026-06-25,Thursday,Summer Session - No Regular Semester Classes,summer,low,False
+2026-06-26,Friday,Summer Session - No Regular Semester Classes,summer,low,False
+2026-06-29,Monday,Summer Session - No Regular Semester Classes,summer,low,False
+2026-06-30,Tuesday,Summer Session - No Regular Semester Classes,summer,low,False
+2026-07-01,Wednesday,Summer Session - No Regular Semester Classes,summer,low,False
+2026-07-02,Thursday,Summer Session - No Regular Semester Classes,summer,low,False
+2026-07-03,Friday,July 4th Holiday Observed - University Closed,university_closed,none,False
+2026-07-06,Monday,Summer Session - No Regular Semester Classes,summer,low,False
+2026-07-07,Tuesday,Summer Session - No Regular Semester Classes,summer,low,False
+2026-07-08,Wednesday,Summer Session - No Regular Semester Classes,summer,low,False
+2026-07-09,Thursday,Summer Session - No Regular Semester Classes,summer,low,False
+2026-07-10,Friday,Summer Session - No Regular Semester Classes,summer,low,False
+2026-07-13,Monday,Summer Session - No Regular Semester Classes,summer,low,False
+2026-07-14,Tuesday,Summer Session - No Regular Semester Classes,summer,low,False
+2026-07-15,Wednesday,Summer Session - No Regular Semester Classes,summer,low,False
+2026-07-16,Thursday,Summer Session - No Regular Semester Classes,summer,low,False
+2026-07-17,Friday,Summer Session - No Regular Semester Classes,summer,low,False
+2026-07-20,Monday,Summer Session - No Regular Semester Classes,summer,low,False
+2026-07-21,Tuesday,Summer Session - No Regular Semester Classes,summer,low,False
+2026-07-22,Wednesday,Summer Session - No Regular Semester Classes,summer,low,False
+2026-07-23,Thursday,Summer Session - No Regular Semester Classes,summer,low,False
+2026-07-24,Friday,Summer Session - No Regular Semester Classes,summer,low,False
+2026-07-27,Monday,Summer Session - No Regular Semester Classes,summer,low,False
+2026-07-28,Tuesday,Summer Session - No Regular Semester Classes,summer,low,False
+2026-07-29,Wednesday,Summer Session - No Regular Semester Classes,summer,low,False
+2026-07-30,Thursday,Summer Session - No Regular Semester Classes,summer,low,False
+2026-07-31,Friday,Summer Session - No Regular Semester Classes,summer,low,False
+2026-08-03,Monday,Summer Session - No Regular Semester Classes,summer,low,False
+2026-08-04,Tuesday,Summer Session - No Regular Semester Classes,summer,low,False
+2026-08-05,Wednesday,Summer Session - No Regular Semester Classes,summer,low,False
+2026-08-06,Thursday,Summer Session - No Regular Semester Classes,summer,low,False
+2026-08-07,Friday,Summer Session - No Regular Semester Classes,summer,low,False
+2026-08-10,Monday,Summer Session - No Regular Semester Classes,summer,low,False
+2026-08-11,Tuesday,Summer Session - No Regular Semester Classes,summer,low,False
+2026-08-12,Wednesday,Summer Session - No Regular Semester Classes,summer,low,False
+2026-08-13,Thursday,Summer Session - No Regular Semester Classes,summer,low,False
+2026-08-14,Friday,Summer Session - No Regular Semester Classes,summer,low,False
+2026-08-17,Monday,First Day of Classes,semester_start,high,True
+2026-08-22,Saturday,Saturday Classes Begin,saturday_classes_begin,normal,False
+2026-09-05,Saturday,No Saturday Classes,no_saturday_classes,low,False
+2026-09-07,Monday,Labor Day - University Closed,university_closed,none,False
+2026-10-12,Monday,Student Recess - No Classes,fall_recess,low,False
+2026-10-13,Tuesday,Student Recess - No Classes,fall_recess,low,False
+2026-10-14,Wednesday,Student Recess - No Classes,fall_recess,low,False
+2026-11-11,Wednesday,Veterans Day - No Classes,no_classes,low,False
+2026-11-25,Wednesday,Thanksgiving Break - University Closed,university_closed,none,False
+2026-11-26,Thursday,Thanksgiving Break - University Closed,university_closed,none,False
+2026-11-27,Friday,Thanksgiving Break - University Closed,university_closed,none,False
+2026-11-28,Saturday,Thanksgiving Break - University Closed,university_closed,none,False
+2026-11-29,Sunday,Thanksgiving Break - University Closed,university_closed,none,False
+2026-12-02,Wednesday,Last Day of Classes,semester_end,high,True
+2026-12-03,Thursday,Reading Day,reading_day,medium,False
+2026-12-04,Friday,Final Exams,finals,medium,False
+2026-12-05,Saturday,Final Exams,finals,medium,False
+2026-12-06,Sunday,Final Exams,finals,medium,False
+2026-12-07,Monday,Final Exams,finals,medium,False
+2026-12-08,Tuesday,Final Exams,finals,medium,False
+2026-12-09,Wednesday,Final Exams,finals,medium,False
+2026-12-10,Thursday,Final Exams,finals,medium,False
+2026-12-11,Friday,Final Exams / Commencement,commencement,high,False
+2026-12-12,Saturday,Commencement,commencement,high,False
+2026-12-13,Sunday,Commencement,commencement,high,False
+2026-12-14,Monday,Winter Break - No Classes,winter_break,low,False
+2026-12-15,Tuesday,Winter Break - No Classes,winter_break,low,False
+2026-12-16,Wednesday,Winter Break - No Classes,winter_break,low,False
+2026-12-17,Thursday,Winter Break - No Classes,winter_break,low,False
+2026-12-18,Friday,Winter Break - No Classes,winter_break,low,False
+2026-12-21,Monday,Winter Break - No Classes,winter_break,low,False
+2026-12-22,Tuesday,Winter Break - No Classes,winter_break,low,False
+2026-12-23,Wednesday,Winter Break - No Classes,winter_break,low,False
+2026-12-24,Thursday,Winter Break - University Closed,university_closed,none,False
+2026-12-25,Friday,Winter Break - University Closed,university_closed,none,False
+2026-12-26,Saturday,Winter Break - University Closed,university_closed,none,False
+2026-12-27,Sunday,Winter Break - University Closed,university_closed,none,False
+2026-12-28,Monday,Winter Break - University Closed,university_closed,none,False
+2026-12-29,Tuesday,Winter Break - University Closed,university_closed,none,False
+2026-12-30,Wednesday,Winter Break - University Closed,university_closed,none,False
+2026-12-31,Thursday,Winter Break - University Closed,university_closed,none,False

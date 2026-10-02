@@ -1359,7 +1359,7 @@ date,day_of_week,event_name,venue,parking_impact
 2026-02-27,Friday,Movie Night! - Chasing Time,College of Health & Human Services (CHHS),low
 2026-02-27,Friday,CHARLOTTE'S GOT TALENT,Rowe,low
 2026-02-27,Friday,"LEGENDARY GAME NIGHT (we back, with NEW games!) (Cancelled)",College of Health & Human Services (CHHS),low
-2026-02-27,Friday,Slam's Birthday Party,N/A,low
+2026-02-27,Friday,Slam's Birthday Party,,low
 2026-02-27,Friday,Bonfire,Crossway Community Church,low
 2026-02-27,Friday,Symphonic Band,Robinson Hall,low
 2026-02-27,Friday,"Movie: ""Zootopia 2""",Popp Martin Student Union,medium
@@ -3038,3 +3038,2051 @@ date,day_of_week,event_name,venue,parking_impact
 2026-07-30,Thursday,Self-Accountability: Building Discipline and Achieving Your Goals,,low
 2026-07-30,Thursday,Ace Your Graduate School Application:Tips and Tricks for Success,,low
 2026-07-31,Friday,Last Day of Classes,UNC Charlotte Academic Calendar,low
+2026-08-01,Saturday,Annual Piano Sale,Robinson Hall,low
+2026-08-01,Saturday,Carolina New Works Play Festival,Arts Factory,medium
+2026-08-02,Sunday,Carolina New Works Play Festival,Arts Factory,medium
+2026-08-03,Monday,Funding Your Future: Navigating Graduate Funding Strategies,,low
+2026-08-04,Tuesday,Final Examinations,UNC Charlotte Academic Calendar,low
+2026-08-04,Tuesday,Niners in the Queen City: Exploring Life in Charlotte and NC,,low
+2026-08-05,Wednesday,Payment Due Date/Cancellation for non-payment,UNC Charlotte Academic Calendar,low
+2026-08-05,Wednesday,Final Examinations,UNC Charlotte Academic Calendar,low
+2026-08-05,Wednesday,AI@Work Discussion Series,,low
+2026-08-05,Wednesday,Know Before You Go: Essential Steps for Newly Admitted Students,,high
+2026-08-05,Wednesday,The Impacts Of Job Insecurity On Employee Engagement and Well-being Webinar,,none
+2026-08-05,Wednesday,Data Made Easy: Simplifying Your Workflow with Google Sheets & Forms,,low
+2026-08-05,Wednesday,Charlotte 49ers Women's Soccer at Appalachian State,"Boone, NC",low
+2026-08-06,Thursday,Final Examinations,UNC Charlotte Academic Calendar,low
+2026-08-07,Friday,Commencement,UNC Charlotte Academic Calendar,high
+2026-08-08,Saturday,Charlotte 49ers Women's Soccer vs Queens (N.C.),"Charlotte, N.C., Jen Gaber Field",low
+2026-08-10,Monday,Academic Year Begins,UNC Charlotte Academic Calendar,low
+2026-08-10,Monday,Grades Due by noon,UNC Charlotte Academic Calendar,low
+2026-08-10,Monday,Venture Bound - Outdoor Orientation Trip for New Students,Pisgah National Forest,high
+2026-08-10,Monday,Canvas: Starting Fresh,,low
+2026-08-10,Monday,Canvas: Quizzing,,low
+2026-08-10,Monday,Ace Your Graduate School Application: Tips and Tricks for Succes,,low
+2026-08-10,Monday,Canvas: Assignments and Gradebook,,low
+2026-08-10,Monday,Canvas Studio: Engaging Learners with interactive videos,,low
+2026-08-11,Tuesday,Spring Academic Suspension Appeal Deadline,UNC Charlotte Academic Calendar,low
+2026-08-11,Tuesday,Venture Bound - Outdoor Orientation Trip for New Students,Pisgah National Forest,high
+2026-08-11,Tuesday,Know Before You Go: Essential Steps for Newly Admitted Students,,high
+2026-08-11,Tuesday,The Art of Asking Good Questions: Designing and Implementing Focus Groups,Cone Center 175,low
+2026-08-12,Wednesday,Venture Bound - Outdoor Orientation Trip for New Students,Pisgah National Forest,high
+2026-08-12,Wednesday,Master Your Workflow with Google Gmail and Calendar,,low
+2026-08-12,Wednesday,Grad School 101: Start Your Program Search with Confidence,,low
+2026-08-12,Wednesday,"Syllabus: Recent Changes, policies, and best practices",,low
+2026-08-12,Wednesday,Writing Effective Prompts Gemini & Copilot for a Smarter To-Do List Workflow,,low
+2026-08-12,Wednesday,Faculty Learning Community to Infuse Research in the Undergraduate Curriculum,,low
+2026-08-13,Thursday,Niners in the Queen City: Exploring Life in Charlotte and NC,,low
+2026-08-13,Thursday,Venture Bound - Outdoor Orientation Trip for New Students,Pisgah National Forest,high
+2026-08-13,Thursday,Generative AI 101: Getting Started with Gemini & CoPilot,,low
+2026-08-13,Thursday,Prospecting for Niner Success,,low
+2026-08-13,Thursday,Prospecting for Niner Success; Virtual Adult Student Q&A,Online,none
+2026-08-13,Thursday,New Grad Student Virtual Orientation,,none
+2026-08-13,Thursday,Charlotte 49ers Women's Soccer vs Furman,"Charlotte, N.C., Jen Gaber Field",low
+2026-08-14,Friday,New Doctoral Student Orientation,Harris Alumni Center,high
+2026-08-14,Friday,Venture Bound - Outdoor Orientation Trip for New Students,Pisgah National Forest,high
+2026-08-14,Friday,Active Learning with Poll Everywhere,,low
+2026-08-14,Friday,CCI and SDS Fall Graduate Orientation,Woodward,high
+2026-08-14,Friday,Getting Started with Active Teaching and Learning,,low
+2026-08-14,Friday,RSA NinerFest,Field 14A-R,low
+2026-08-15,Saturday,Movie Night at Jerry Richardson Stadium,Jerry Richardson Stadium,low
+2026-08-15,Saturday,New Grad Student Welcome Reception,Hauser Alumni Pavilion,low
+2026-08-15,Saturday,New Grad Student Welcome Reception!,Hauser Alumni Pavilion,low
+2026-08-15,Saturday,Charlotte 49ers Women's Volleyball vs USC Upstate - Exhibition,"Charlotte, N.C.",low
+2026-08-15,Saturday,CAB-Chella,49th Acre,low
+2026-08-16,Sunday,New Student Convocation,UNC Charlotte Academic Calendar,high
+2026-08-16,Sunday,Presidents' Leadership Workshop,Popp Martin Student Union,medium
+2026-08-16,Sunday,Niner Career Challenge 2026!,Online,high
+2026-08-16,Sunday,Niner New Year,"Barnhardt Student Activity Center, Halton Arena",high
+2026-08-16,Sunday,49er Frenzy,Popp Martin Student Union,medium
+2026-08-16,Sunday,RecFest,University Recreation Center,low
+2026-08-16,Sunday,Charlotte 49ers Women's Soccer at Radford,"Radford, VA",low
+2026-08-16,Sunday,Lime Ride Along,Craver Road,low
+2026-08-16,Sunday,Race to the Parking Line,Union Parking Deck,low
+2026-08-17,Monday,First day of classes,UNC Charlotte Academic Calendar,low
+2026-08-17,Monday,First Day Free Coffee,Popp Martin Student Union,medium
+2026-08-17,Monday,Part 1: Canvas Accessibility with UDOIT,,low
+2026-08-17,Monday,SPAN 1101,"Mebane Hall, Cato College of Education, 8838 Craver Rd, Charlotte, NC 28223, USA, UNC Charlotte Academic Calendar",low
+2026-08-17,Monday,"Part 2: Files and PDF Accessibility Checkers: Using Grackle, Adobe, and Microsoft Tools",,low
+2026-08-17,Monday,GPPA Virtual Town Hall,Online,none
+2026-08-17,Monday,Part 3: Designing Accessible Course Media,,low
+2026-08-17,Monday,Digital Accessibility ‘Fix-It Clinic’,,low
+2026-08-17,Monday,Cafe GBM,Fretwell,low
+2026-08-17,Monday,2026 Interest Meeting,Popp Martin Student Union,medium
+2026-08-17,Monday,How to Have Gospel Conversations,Popp Martin Student Union,medium
+2026-08-17,Monday,Make Your Own Monday!,Wilson and Levine Halls Courtyard,low
+2026-08-17,Monday,Niner Media Interest Meeting,Popp Martin Student Union,medium
+2026-08-17,Monday,Co-Ed Small Group,CHHS 128,low
+2026-08-17,Monday,Game Night,Popp Martin Student Union,medium
+2026-08-17,Monday,Student Athletics Pep Rally,Jerry Richardson Stadium,low
+2026-08-17,Monday,Student Athletics Pep Rally presented by Harris Teeter - Class of 2030 Photo,Jerry Richardson Stadium,low
+2026-08-18,Tuesday,Customer Service: Elevating from Good to Great,,low
+2026-08-18,Tuesday,Funding Your Future: Navigating Graduate Funding Strategies,,low
+2026-08-18,Tuesday,Beyond the Basics: Designing Dynamic Google Docs,,low
+2026-08-18,Tuesday,Canvas: Quizzing,,low
+2026-08-18,Tuesday,Transfer T-Shirt Giveaway,Belk Plaza,low
+2026-08-18,Tuesday,Canvas: Assignments and Gradebook,,low
+2026-08-18,Tuesday,Invest in Your Academic Success with the UCAE - Gold Rush,Colvard Breezway,low
+2026-08-18,Tuesday,Bad Art Day,"Area 49 Makerspace, Atkins Library 2nd Floor",low
+2026-08-18,Tuesday,Canvas: Starting Fresh,,low
+2026-08-18,Tuesday,Automating Tasks with Google Gemini: Building Custom Gems,,low
+2026-08-18,Tuesday,Therapy Dogs at Atkins,"Atkins First Floor Atrium, near the back",low
+2026-08-18,Tuesday,Canvas Studio: Engaging Learners with interactive videos,,low
+2026-08-18,Tuesday,"Film Screening: ""The AI Doc: Or How I Became an Apocaloptimist""",Popp Martin Student Union,medium
+2026-08-18,Tuesday,LoSo Fest,Hunt and Holshouser Halls Quad Area,medium
+2026-08-18,Tuesday,The Fall Of Madam President,Robinson Hall Room 109,low
+2026-08-19,Wednesday,Grad School 101: Start Your Program Search with Confidence,,low
+2026-08-19,Wednesday,Part 1: Introduction to Gen-AI and Prompt Writing,,low
+2026-08-19,Wednesday,Cartoons & Crunch,Popp Martin Student Union,medium
+2026-08-19,Wednesday,Overview of Gen-AI Tools in Education,,low
+2026-08-19,Wednesday,Open Swim Q&A: Mastering Google Workspace & Generative AI,,low
+2026-08-19,Wednesday,Classroom Communication on AI Tools,,low
+2026-08-19,Wednesday,Part 2: Student Study Skills with Gen-AI,,low
+2026-08-19,Wednesday,PHD Counselor Education and Supervision Information Session,,low
+2026-08-19,Wednesday,Girls Who Code Ice Cream Social,Star Quad,low
+2026-08-19,Wednesday,Microsoft Learn Interest Meeting - Aug 19th,Denny 203,low
+2026-08-19,Wednesday,ASA x HSA Water Wars,Field 14A,low
+2026-08-19,Wednesday,Gold Rush - SEASA Edition,DENNY 200,low
+2026-08-19,Wednesday,WIAS Membership & Board Interest Meeting,Storrs Library - Second Floor,low
+2026-08-19,Wednesday,LoSo Fest,Hunt and Holshouser Halls Quad Area,medium
+2026-08-19,Wednesday,SKY Weekly Meditation Meetings,FRET 305,low
+2026-08-19,Wednesday,Welcome Home Bingo,Hauser Alumni Pavilion,low
+2026-08-19,Wednesday,Campus Outreach Quad Volleyball,South Village Quad,low
+2026-08-19,Wednesday,Craft Fair,Robinson Hall 308,medium
+2026-08-19,Wednesday,Men In Treble Interest meeting,Student union 261,low
+2026-08-19,Wednesday,South Village Quad Volleyball,South Village Quad,low
+2026-08-19,Wednesday,Coffee House,Norms Lounge,low
+2026-08-19,Wednesday,Equestrian Club Interest Meeting,Fretwell 306,low
+2026-08-19,Wednesday,Glow in the Dark Dodgeball,Belk Gym,low
+2026-08-20,Thursday,Ace Your Graduate School Application: Tips and Tricks for Succes,,low
+2026-08-20,Thursday,8/20:  NC Energy & Electrical Virtual Career Fair-open to all majors & students,Online,none
+2026-08-20,Thursday,Canvas: Assignments and Gradebook,,low
+2026-08-20,Thursday,The Knowledge Navigator: Using Notebook LM to Transform Docs into Deliverables,,low
+2026-08-20,Thursday,Jamil Niner Student Pantry: Thursday Volunteer Shift  | 10:30am – 12:45pm,Jamil Niner Student Pantry,low
+2026-08-20,Thursday,"Exploring Canvas Course Analytics for Assignments, Quizzes, and Videos",,low
+2026-08-20,Thursday,Scout Motors Campfire Conversations: A Virtual Engineering Recruitment Information Series,,none
+2026-08-20,Thursday,Think about it Thursdays: Ed.D. Pathways,,low
+2026-08-20,Thursday,Jamil Niner Student Pantry: Thursday Volunteer Shift  | 12:30pm – 2:45pm,Joshua Boyd,low
+2026-08-20,Thursday,Campus Outreach Rowe Tabling,Outside Rowe Building,low
+2026-08-20,Thursday,Canvas: Quizzing,,low
+2026-08-20,Thursday,Student Org Advisor Workshop,Student Union 262,low
+2026-08-20,Thursday,49rNext Transfer Student Welcome Event,Career Center Classroom,low
+2026-08-20,Thursday,Canvas: Starting Fresh,,low
+2026-08-20,Thursday,Jamil Niner Student Pantry: Thursday Volunteer Shift  |  2:30pm – 5:00pm,Jamil Niner Student Pantry,low
+2026-08-20,Thursday,First-Gen Meet & Greet,Cone Center Lucas Room,low
+2026-08-20,Thursday,Group Fitness Sampler,University Recreation Center,low
+2026-08-20,Thursday,SOLD Council Workshop: Goal Setting,Cone 112,low
+2026-08-20,Thursday,Charlotte 49ers Women's Soccer at NC State,"Raleigh, NC",low
+2026-08-20,Thursday,FedEx Finders Scavenger Hunt,FedEx Office in Lower Prospector,low
+2026-08-20,Thursday,Outlaster GBM,Leving Field 14A,low
+2026-08-20,Thursday,Campus Outreach Cookout and Outdoor Sports,Northeast Recreational Field Complex (NRFC),low
+2026-08-20,Thursday,Club Pickleball Interest Meeting,CHHS 145,low
+2026-08-20,Thursday,It’s a 49er Affair,Martin Hall Patio,low
+2026-08-20,Thursday,SASA x ASA Speedfriending,Cone University Center,low
+2026-08-20,Thursday,Taekwondo Club Interest Meeting,Smith 348,low
+2026-08-20,Thursday,Aqua-Cinema,University Recreation Center,low
+2026-08-21,Friday,"Student Program, Substitution & Waiver submission deadline for Fall 2026",,low
+2026-08-21,Friday,Campus Outreach Union Tabling,Outside Student Union,low
+2026-08-21,Friday,Charlotte Mecklenburg Library in Atkins,Atkins Library - Main Entrance,low
+2026-08-21,Friday,Graduate Admissions Virtual Office Hours,,none
+2026-08-21,Friday,"Syllabus: Recent Changes, policies, and best practices",,low
+2026-08-21,Friday,SDS Back-to-School Kick Off,Colvard South,low
+2026-08-21,Friday,Getting Started with Active Teaching and Learning,,low
+2026-08-21,Friday,Designing and Implementing Group Projects,,low
+2026-08-21,Friday,Active Learning with Poll Everywhere,,low
+2026-08-21,Friday,26-27 Auditions,Robinson Hall,low
+2026-08-21,Friday,Charlotte 49ers Women's Volleyball vs Campbell - Exhibition,"Charlotte, N.C.",low
+2026-08-22,Saturday,Saturday classes begin,UNC Charlotte Academic Calendar,low
+2026-08-22,Saturday,"Student Program, Substitution & Waiver submission deadline for Fall 2026",,low
+2026-08-22,Saturday,49rNext Transfer Student Welcome Event,Career Center Classroom,low
+2026-08-22,Saturday,Charlotte 49ers Women's Volleyball vs Campbell - Exhibition,"Charlotte, N.C.",low
+2026-08-22,Saturday,Cheer Nation Back to School Pep Rally,49th ACre,low
+2026-08-22,Saturday,26-27 Auditions,Robinson Hall,low
+2026-08-23,Sunday,Fall 2026 Graduate Education Summit,Cone University Center,medium
+2026-08-23,Sunday,Social Kickball League - COED,Revolution Park,low
+2026-08-23,Sunday,NPHC 2026 Yard Show,Star Quad,low
+2026-08-23,Sunday,Charlotte 49ers Women's Soccer vs USC Upstate,"Charlotte, N.C., Jen Gaber Field",low
+2026-08-24,Monday,"Last day to add, drop a course with no grade",UNC Charlotte Academic Calendar,none
+2026-08-24,Monday,Know Before You Go: Essential Steps for Newly Admitted Students,,high
+2026-08-24,Monday,Supporting Self-Directed Learning with Gemini Notebook,,low
+2026-08-24,Monday,Jamil Niner Student Pantry: Monday Volunteer Shift  |  11:00am – 1pm,Jamil Niner Student Pantry,low
+2026-08-24,Monday,Master of Accountancy (MACC) Virtual Information Session,,none
+2026-08-24,Monday,Career Meet Up: Resumes for the Healthcare Industry,,low
+2026-08-24,Monday,Ethical Considerations for Teaching with Gen-AI,,low
+2026-08-24,Monday,Casual Chess Meetup,Popp Martin Student Union,medium
+2026-08-24,Monday,Ready-to-Use AI Literacy Canvas Modules for Students,,low
+2026-08-24,Monday,Career Meet Up: Brand You!,,low
+2026-08-24,Monday,Zoom AI for Teaching,,none
+2026-08-24,Monday,Sigma Tau Delta Interest Meeting- SLOT 1,Fretwell,low
+2026-08-24,Monday,Info Session —England: Career Quest in London Study Abroad Program,,low
+2026-08-24,Monday,Men In Treble Acapella Auditions,Student union 261,low
+2026-08-24,Monday,The Riffters Acapella Auditions,Student union 261,low
+2026-08-24,Monday,2026-2027 Interest Meeting,Mebane Hall,low
+2026-08-24,Monday,Fall '26 Rush Day 1!,Popp Martin Student Union,medium
+2026-08-24,Monday,How to Have Gospel Conversations,Popp Martin Student Union,medium
+2026-08-24,Monday,Interest Meeting,Popp Martin Student Union,medium
+2026-08-24,Monday,Welcome Back Bingo Bash,Popp Martin Student Union,medium
+2026-08-24,Monday,Bible Study,Colvard,low
+2026-08-24,Monday,Interest Meeting - 2026/2027 Season,Colvard,low
+2026-08-24,Monday,Co-Ed Small Group,CHHS 128,low
+2026-08-24,Monday,The Newsies at Charlotte,Robinson Hall 109,low
+2026-08-25,Tuesday,Second Cancellation for nonpayment,UNC Charlotte Academic Calendar,low
+2026-08-25,Tuesday,Ace Your Graduate School Application: Tips and Tricks for Success,,low
+2026-08-25,Tuesday,Designing and Implementing Group Projects,,low
+2026-08-25,Tuesday,Jamil Niner Student Pantry: Tuesday Volunteer Shift  |  10:30am – 12:45pm,Jamil Niner Student Pantry,low
+2026-08-25,Tuesday,Career Meet Up: Resume Strategies that Get You Noticed Led by Driven Brands,,low
+2026-08-25,Tuesday,Coffee & Conversation; Adult Student Meet ‘n Greet,Colvard North,low
+2026-08-25,Tuesday,"Syllabus: Recent Changes, policies, and best practices",,low
+2026-08-25,Tuesday,"Career Meet Up: Building a Strong Resume for Technology, Data & Analytics",,low
+2026-08-25,Tuesday,Splash-A-Poodle,Cauble Quad,low
+2026-08-25,Tuesday,UCAE Goal Setting Speed Learning Workshop,Colvard North 2006,low
+2026-08-25,Tuesday,Jamil Niner Student Pantry: Tuesday Volunteer Shift  |  12:30pm – 2:45pm,Jamil Niner Student Pantry,low
+2026-08-25,Tuesday,Active Learning with Poll Everywhere,,low
+2026-08-25,Tuesday,Getting Started with Active Teaching and Learning,,low
+2026-08-25,Tuesday,Jamil Niner Student Pantry: Tuesday Volunteer Shift  |  2:30pm – 5:00pm,Jamil Niner Student Pantry,low
+2026-08-25,Tuesday,CCI/SDS Tuesday Seminar Series - Recent Alumni Panel,Main Campus,low
+2026-08-25,Tuesday,Tea Club Interest meeting,McEniry,low
+2026-08-25,Tuesday,Acapella Auditions,Student union 260,low
+2026-08-25,Tuesday,Men In Treble Acapella Auditions,Student union 260,low
+2026-08-25,Tuesday,"Welcome Back, Writers! | H.E.R. Society First Meeting",Online,low
+2026-08-25,Tuesday,Microsoft Learn Interest Meeting - Aug 25th,Denny 203,low
+2026-08-25,Tuesday,MiS Meet & Mingle,Popp Martin Student Union,medium
+2026-08-25,Tuesday,Fall Semester 2026 Tryouts,NRFC Fields 14 & 15,low
+2026-08-25,Tuesday,Women's Club Softball Interest Meeting,Fretwell Room 202,low
+2026-08-25,Tuesday,"Faculty & Friends: Jessica Lindsey, clarinet",Rowe,low
+2026-08-26,Wednesday,Writing Effective Prompts Gemini & Copilot for a Smarter To-Do List Workflow,,low
+2026-08-26,Wednesday,Grad School 101: Start Your Program Search with Confidence,,low
+2026-08-26,Wednesday,"Part 2: Files and PDF Accessibility Checkers: Using Grackle, Adobe, and Microsoft Tools",,low
+2026-08-26,Wednesday,Effective Networking: Building Connections in Every Direction,,low
+2026-08-26,Wednesday,Jamil Niner Student Pantry: Wednesday Volunteer Shift  |  10:30am – 12:45pm,Jamil Niner Student Pantry,low
+2026-08-26,Wednesday,Career Center Art Gallery Opening Reception,,low
+2026-08-26,Wednesday,Clothing Closet Pop Up,"Career Center Walkway, Atkins Annex, 150",low
+2026-08-26,Wednesday,Clothing Closet Pop Up! - Gold Rush,,low
+2026-08-26,Wednesday,Craft & Graze Session 1 Demo Kitchen,UREC Demo Kitchen,low
+2026-08-26,Wednesday,Gold Rush Resource Fair,Cauble Quad (formerly CHHS/COED Plaza),medium
+2026-08-26,Wednesday,Digital Accessibility ‘Fix-It Clinic’,,low
+2026-08-26,Wednesday,DSBA and DSHA Prospective Graduate Student Information Session,,low
+2026-08-26,Wednesday,Craft & Graze Session 2 Demo Kitchen,UREC Demo Kitchen,low
+2026-08-26,Wednesday,Jamil Niner Student Pantry: Wednesday Volunteer Shift  |  12:30pm – 3:30pm,Jamil Niner Student Pantry,low
+2026-08-26,Wednesday,Part 1: Canvas Accessibility with UDOIT,,low
+2026-08-26,Wednesday,Write that down! Journal Decorating and Making,"Area 49 Makerspace, Atkins Library 2nd Floor",low
+2026-08-26,Wednesday,Open Swim: PD Resources,Friday,low
+2026-08-26,Wednesday,Career Meet Up: Effective Cover Letter Writing,,low
+2026-08-26,Wednesday,UCAE Getting Organized Speed Learning Workshop,Colvard North 2006,low
+2026-08-26,Wednesday,Career Meet Up: Using Mindfulness and Self-Awareness to Develop Your Professional Brand,,low
+2026-08-26,Wednesday,Part 4: Creating Accessible Instructional Materials with AI,,low
+2026-08-26,Wednesday,Fall 2026: The Kickstart: College of Engineering NEW Student Resource Fair-don't miss it!  (Cancelled),Student Activity Center /Arena - Food Court,medium
+2026-08-26,Wednesday,Center for Wellness Promotion Tour,Waddell Center for Student Health and Wellbeing,low
+2026-08-26,Wednesday,Connect with CAPS,Christine F. Price Center for Counseling and Psychological Services,low
+2026-08-26,Wednesday,2026 Back to School Bash,Harris Alumni Center,low
+2026-08-26,Wednesday,Rep Ya Flag Game Night,McEniry,low
+2026-08-26,Wednesday,Gold Rush Interest Meeting,Cone University Center,low
+2026-08-26,Wednesday,Belk College of Business Triangle Alumni Reception,The Lenny 555,medium
+2026-08-26,Wednesday,Interest Meeting - Niner Esports,Friday,low
+2026-08-26,Wednesday,CAB: Event Staff Interest Meeting,Popp Martin Student Union,medium
+2026-08-26,Wednesday,Internship Horror Stories: Campfire & S’mores,Woodward 335,low
+2026-08-27,Thursday,Niners in the Queen City: Exploring Life in Charlotte and NC,,low
+2026-08-27,Thursday,Part 2: Student Study Skills with Gen-AI,,low
+2026-08-27,Thursday,Jamil Niner Student Pantry: Thursday Volunteer Shift  | 10:30am – 12:45pm,Jamil Niner Student Pantry,low
+2026-08-27,Thursday,EPIC BLOCK PARTY & JOB FAIR for College of Engineering Students,"EPIC Building, Lobby",high
+2026-08-27,Thursday,Popsicles & Pop-Up Advising - Transfer Credit Edition,Belk Plaza,low
+2026-08-27,Thursday,Popsicles and Pop Up Advising - Transfer Credit Edition,Belk Plaza,low
+2026-08-27,Thursday,Career Meet Up: Building Your LinkedIn Profile - Led by Dimensional Fund Advisors,,low
+2026-08-27,Thursday,Mechanical Engineering Graduate Programs Information Session,,low
+2026-08-27,Thursday,Part 3: Student Writing Skills with Gen-AI,,low
+2026-08-27,Thursday,PhD in Computing and Information Systems,,low
+2026-08-27,Thursday,Student Org Advisor Workshop,Popp Martin Student Union,medium
+2026-08-27,Thursday,UCAE Time Management Speed Learning Workshop,Colvard North 2006,low
+2026-08-27,Thursday,Jamil Niner Student Pantry: Thursday Volunteer Shift  | 12:30pm – 2:45pm,Jamil Niner Student Pantry,low
+2026-08-27,Thursday,Generative AI 101: Getting Started with Gemini & CoPilot,,low
+2026-08-27,Thursday,Overview of Gen-AI Tools in Education,,low
+2026-08-27,Thursday,"Question, Persuade, Refer Training (Student)",,low
+2026-08-27,Thursday,Career Meet Up: My First College Resume,,low
+2026-08-27,Thursday,Jamil Niner Student Pantry: Thursday Volunteer Shift  |  2:30pm – 5:00pm,Jamil Niner Student Pantry,low
+2026-08-27,Thursday,Understanding Gen Z: The AI Generation,,low
+2026-08-27,Thursday,8/27 Interest Meeting,Atkins Library,low
+2026-08-27,Thursday,Family Feud: Sustainability Edition,Cone University Center Room 112B,low
+2026-08-27,Thursday,Gold Rush Family Feud: Sustainability Edition,Cone University Center,low
+2026-08-27,Thursday,Gold Rush Takeover - Overwatch,Esports Arena - Student Union Mezzanine Level,low
+2026-08-27,Thursday,Intrest Meeting,College of Health & Human Services (CHHS),low
+2026-08-27,Thursday,Kickback into Entrepreneurship,Norms Lounge,low
+2026-08-27,Thursday,Niner Times Interest Meeting,Niner Times Newsroom,low
+2026-08-27,Thursday,Asians in STEM Interest Meeting + a fun little competition,Colvard,low
+2026-08-27,Thursday,Kick Off Interest Meeting!,McEniry,low
+2026-08-27,Thursday,Society of Systems Engineers Interest Meeting,Cameron,low
+2026-08-27,Thursday,The Pre-Dental Club Interest Meeting,McEniry,low
+2026-08-27,Thursday,180 Degrees Consulting Interest Meeting,Friday,low
+2026-08-27,Thursday,Exhibition Reception: Holding a Bright Untroubled Sky,Rowe,low
+2026-08-27,Thursday,Fall '26 Rush Day 4!,Field 14A,low
+2026-08-27,Thursday,Fall Semester 2026 Tryouts,NRFC Field 14 & 15,low
+2026-08-27,Thursday,Loteria Night,McEniry,low
+2026-08-27,Thursday,Sigma Tau Delta Interest Meeting- SLOT 2,Fretwell,low
+2026-08-27,Thursday,Walk In The Park,Botanical Gardens,low
+2026-08-27,Thursday,Club Golf Interest Meeting,Denny 200,low
+2026-08-27,Thursday,Foundations,Denny 122,low
+2026-08-27,Thursday,Minute To Win It,Cone University Center,low
+2026-08-27,Thursday,Psychology Student Coalition Interest Meeting,Friday,low
+2026-08-27,Thursday,ALPFA Interest Meeting,Cone University Center,low
+2026-08-27,Thursday,Rhythm,Fretwell 205,low
+2026-08-27,Thursday,Thursday College Gathering,Popp Martin Student Union,medium
+2026-08-28,Friday,Census date for Fall Enrollment,UNC Charlotte Academic Calendar,low
+2026-08-28,Friday,Niner Course Pack Last Day to Opt Out,UNC Charlotte Academic Calendar,low
+2026-08-28,Friday,Slip N Slide Kickball,Crossway Church,low
+2026-08-28,Friday,Public Speaking: Presentation Strategies for Professional Success,,low
+2026-08-28,Friday,Canvas Studio: Engaging Learners with interactive videos,,low
+2026-08-28,Friday,Career Trek: Truist Financial,Truist Center,low
+2026-08-28,Friday,Canvas: Collaboration with Groups and Peer Review,,low
+2026-08-28,Friday,College Colors Day,Barnes & Noble Charlotte,low
+2026-08-28,Friday,Niner Finances Walk In Hours,King 210,low
+2026-08-28,Friday,Walk In Hours,King,low
+2026-08-28,Friday,Info Session —England: Career Quest in London Study Abroad Program,,low
+2026-08-28,Friday,2026 CoAA Distinguished Alumni Awards Ceremony,Robinson Hall,medium
+2026-08-28,Friday,Burnout to Balance,Atkins Library,low
+2026-08-28,Friday,Canvas: Starting Fresh,,low
+2026-08-28,Friday,Presidents' Leadership Workshop,Popp Martin Student Union,medium
+2026-08-28,Friday,Canvas: Assignments and Gradebook,,low
+2026-08-28,Friday,Charlotte 49ers Women's Volleyball vs Bryant,"Charlotte, N.C.",low
+2026-08-28,Friday,CABCade: Frankie's Edition,Frankie's Fun Park,low
+2026-08-29,Saturday,First Adventure: Whitewater Rafting on the French Broad,French Broad River (or similar based on water levels),low
+2026-08-29,Saturday,Niner Notes Music Festival,49 Acre,medium
+2026-08-29,Saturday,Charlotte 49ers Women's Volleyball vs App State,"Charlotte, N.C.",low
+2026-08-30,Sunday,"New Semester, New Trails - A Gold Rush Hike",Pisgah National Forest,low
+2026-08-30,Sunday,Charlotte 49ers Women's Soccer at Liberty,"Lynchburg, VA",low
+2026-08-30,Sunday,Charlotte 49ers Women's Volleyball vs North Carolina A&T,"Charlotte, N.C.",low
+2026-08-30,Sunday,Social Kickball League - COED,Revolution Park,low
+2026-08-31,Monday,The Periodic Table of Emotions: Fostering Human-First Classrooms,,low
+2026-08-31,Monday,Financial Survival: Escape Room,Popp Martin Student Union,medium
+2026-08-31,Monday,Getting Around Charlotte,Atkins Library,low
+2026-08-31,Monday,M.S. in Management Virtual Information Session,,none
+2026-08-31,Monday,Career Meet Up: Building Your Career Game Plan for the Semester,,low
+2026-08-31,Monday,Career Meet Up: Career Fair Crash Course,,high
+2026-08-31,Monday,Microcredential Minute: UNC Charlotte's Microcredentials,,low
+2026-08-31,Monday,Orientation to the Scholarship of Teaching and Learning (SoTL) Program,,high
+2026-08-31,Monday,General Interest Meeting,Duke Centennial Hall,low
+2026-08-31,Monday,First Day of Wrestling Practice,University Recreation Center,low
+2026-08-31,Monday,Interest Meeting: Pre-Anesthesiologist Assistant Association at UNCC,Mebane,low
+2026-08-31,Monday,PES Interest Meeting,EPIC G222,low
+2026-08-31,Monday,Bhakti Yoga Club Interest Meeting,College of Health & Human Services (CHHS),low
+2026-08-31,Monday,BMES Interest Meeting,Popp Martin Student Union,medium
+2026-08-31,Monday,Earth Club Interest Meeting,McEniry 118,low
+2026-08-31,Monday,How to Have Gospel Conversations,Popp Martin Student Union,medium
+2026-08-31,Monday,WiCyS Interest Meeting!✨,Fretwell 223,low
+2026-08-31,Monday,Bible Study,Colvard 4123,low
+2026-08-31,Monday,Co-Ed Small Group,CHHS 128,low
+2026-09-01,Tuesday,Early Alert Deadline,,low
+2026-09-01,Tuesday,Ombuds Office Open House,"Colvard South, Suite 1043A",high
+2026-09-01,Tuesday,Enhancing Workflows with Google Gemini: Building Custom Gems,,low
+2026-09-01,Tuesday,PAL Session: CHEM 1203 (ONLINE),Online,none
+2026-09-01,Tuesday,Student Org Advisor Workshop,Popp Martin Student Union,medium
+2026-09-01,Tuesday,Jamil Niner Student Pantry: Tuesday Volunteer Shift  |  10:30am – 12:45pm,Jamil Niner Student Pantry,low
+2026-09-01,Tuesday,"Reclaim Your Energy: Applying the ""Let Them Theory"" in the Workplace",,low
+2026-09-01,Tuesday,Professional in Residence:  Lowe's (Finance Area Focused),,low
+2026-09-01,Tuesday,Professional in Residence:  Lowe's (Marketing Area Focused),,low
+2026-09-01,Tuesday,Professional in Residence:  Lowe's (Merchandising Area Focused),,low
+2026-09-01,Tuesday,Professional in Residence:  Lowe's (Technology Area Focused),,low
+2026-09-01,Tuesday,Professional In Residence: Resumes by PSA Airlines (Drop-ins),,low
+2026-09-01,Tuesday,Career Meet Up: Career Fair Crash Course,,high
+2026-09-01,Tuesday,Customizing Gemini Gems for Course Assignments,,low
+2026-09-01,Tuesday,PAL Session - ECON 2102 (FRIDAY 130),FRIDAY 130,none
+2026-09-01,Tuesday,PAL Session - CHEM 2131 (DENNY 206),DENNY 206,none
+2026-09-01,Tuesday,Discovering Your Edge: Workshop Series for Creative and Innovative Thinkers,PORTAL Building,low
+2026-09-01,Tuesday,Weekly Science Topical Meeting,"Grigg Library, 3rd Floor of Grigg",low
+2026-09-01,Tuesday,Wells Fargo Early Careers Lunch & Learn: Explore 2027 Opportunities,,low
+2026-09-01,Tuesday,Jamil Niner Student Pantry: Tuesday Volunteer Shift  |  12:30pm – 2:45pm,Jamil Niner Student Pantry,low
+2026-09-01,Tuesday,"Leadership in the Workplace: Building Influence, Trust, and High-Performing Teams",Atkins Library,low
+2026-09-01,Tuesday,UCAE Science of Learning Workshop,Colvard North 2006,low
+2026-09-01,Tuesday,Grad School 101: Start Your Program Search with Confidence,,low
+2026-09-01,Tuesday,Lake Days,Hechenbleikner Lake,low
+2026-09-01,Tuesday,Ethical Considerations for Teaching with Gen-AI,,low
+2026-09-01,Tuesday,Jamil Niner Student Pantry: Tuesday Volunteer Shift  |  2:30pm – 5:00pm,Jamil Niner Student Pantry,low
+2026-09-01,Tuesday,PAL Session: CHEM 1251 (ONLINE),Online,none
+2026-09-01,Tuesday,Presidents' Leadership Workshop,Popp Martin Student Union,medium
+2026-09-01,Tuesday,PAL Session: CHEM 1252 (MCEN 123),MCENIRY 123,none
+2026-09-01,Tuesday,Tuesday Seminar- Introduction to the Wells Fargo Externship Program,Dubois Center at UNC Charlotte Center City,low
+2026-09-01,Tuesday,Kappa Kickball,Levine Field,low
+2026-09-01,Tuesday,The Mind Matters Society Interest Meeting,Smith 327,low
+2026-09-01,Tuesday,Marketing 101,McEniry 125,low
+2026-09-01,Tuesday,Society of Undergraduate Historians Interest Meeting #1,Denny 103,low
+2026-09-01,Tuesday,Sumobot Smackdown,Popp Martin Student Union Room 340,medium
+2026-09-01,Tuesday,Technical Resumé Roast with Jacob Krevat,Woodward 154,low
+2026-09-01,Tuesday,PAL Session - ECON 3125 (ONLINE),Online,none
+2026-09-01,Tuesday,BSU Freshman Convocation,McKnight Hall,high
+2026-09-01,Tuesday,Machiah's House Interest Meeting,Fretwell,low
+2026-09-01,Tuesday,PAL Session - ECON 2101 (ONLINE),Online,none
+2026-09-01,Tuesday,Pitch Perfect With Terracon,Colvard 5091,low
+2026-09-01,Tuesday,Women's Club Basketball Tryouts,Belk Gym,low
+2026-09-01,Tuesday,ETHEL Interest Meeting,Cone University Center,low
+2026-09-01,Tuesday,Pre-Career Fair Resume Workshop,Denny 109,high
+2026-09-01,Tuesday,Tuesday Sports Night,King's Church (Gym),low
+2026-09-01,Tuesday,Volunteer Interest Meeting,Popp Martin Student Union,medium
+2026-09-01,Tuesday,"All it takes is one ""Yes""",CHHS 145,low
+2026-09-01,Tuesday,KUNG FU DEMO DAY,University Recreation Center,low
+2026-09-02,Wednesday,PAL Session - ECON 2102 (SMITH 217),SMITH 217,none
+2026-09-02,Wednesday,"Introduction to Python: Variables, Data Types, Arithmetic and User Input",Atkins Library,low
+2026-09-02,Wednesday,Part 3: Student Writing Skills with Gen-AI,,low
+2026-09-02,Wednesday,Career Meet Up: How to Conquer Networking Led by Equitable,,low
+2026-09-02,Wednesday,Jamil Niner Student Pantry: Wednesday Volunteer Shift  |  10:30am – 12:45pm,Jamil Niner Student Pantry,low
+2026-09-02,Wednesday,Professional In Residence: Resumes by Equitable (Drop-ins),,low
+2026-09-02,Wednesday,Wellness Wednesday,Atkins Library,low
+2026-09-02,Wednesday,"Part 2: Files and PDF Accessibility Checkers: Using Grackle, Adobe, and Microsoft Tools",,low
+2026-09-02,Wednesday,Becoming a Better Listener Webinar,,none
+2026-09-02,Wednesday,Introduction to the Graduate and Postdoctoral Writing Center,,low
+2026-09-02,Wednesday,PAL Session - CHEM 2131 (CHHS 294),CHHS 294,none
+2026-09-02,Wednesday,PAL Session - CHEM 2131 (COLVD 5092),COLVD 5092,none
+2026-09-02,Wednesday,Plantiful Bowl Demo Kitchen,UREC Demo Kitchen,low
+2026-09-02,Wednesday,Popp Into Student Involvement,Popp Martin Student Union,medium
+2026-09-02,Wednesday,The Knowledge Navigator: Using Notebook LM to Transform Docs into Deliverables,,low
+2026-09-02,Wednesday,Time Management,,low
+2026-09-02,Wednesday,Career Meet Up: Career Fair Crash Course,,high
+2026-09-02,Wednesday,Career Meet Up: Inside the World of Consulting,,low
+2026-09-02,Wednesday,Get to Know the Gold Steppaz,Popp Martin Student Union,medium
+2026-09-02,Wednesday,Jamil Niner Student Pantry: Wednesday Volunteer Shift  |  12:30pm – 3:30pm,Jamil Niner Student Pantry,low
+2026-09-02,Wednesday,GIS Tabling Event (September 2nd),First Floor of Friday Building,low
+2026-09-02,Wednesday,"Sipping and Sexing Safely:  College student experiences, norms, and outcomes of bystander intervention across alcohol-involved sexual contexts",Register through this form to receive Zoom link: http://bit.ly/3L2dE5U,low
+2026-09-02,Wednesday,New Accessibility Policy: What it means for Teaching,,low
+2026-09-02,Wednesday,PAL Session: CHEM 1200 (COLVD 5096),COLVD 5096,none
+2026-09-02,Wednesday,BFSL Drop-Ins,,low
+2026-09-02,Wednesday,Ace Your Graduate School Application: Tips and Tricks for Success,,low
+2026-09-02,Wednesday,Mix & Mingle: Mocktail Hour,Star Quad,low
+2026-09-02,Wednesday,Career Meet Up: The Mindful Networker,,low
+2026-09-02,Wednesday,PAL Session - CHEM 2132 (FRIDAY 130),FRIDAY 130,none
+2026-09-02,Wednesday,PAL Session - ECON 2101 (COLVD 5092),COLVD 5092,none
+2026-09-02,Wednesday,Navigating Career Fairs,Student Union Movie Theather,high
+2026-09-02,Wednesday,PAL Session: CHEM 1252 (FRIDAY 385),FRIDAY 385,none
+2026-09-02,Wednesday,Niner Networking Mixer 2026,,low
+2026-09-02,Wednesday,2nd Interest Meeting,Popp Martin Student Union,medium
+2026-09-02,Wednesday,Deloitte Cross-Business Recruiting Session,,low
+2026-09-02,Wednesday,Holistic Founder,CO-LAB,low
+2026-09-02,Wednesday,Perfect Your Elevator Pitch with TIAA Professionals,Woodward 335,low
+2026-09-02,Wednesday,AWS SBG x AWS: Workshop with Sudhan Rameshwaram (Cancelled),CHHS 161,low
+2026-09-02,Wednesday,JAMS (Japanese Anime and Manga Society) Interest Meeting!,Denny,low
+2026-09-02,Wednesday,ROLLING AUDITIONS,Student union 266,low
+2026-09-03,Thursday,Classroom Communication on AI Tools,,low
+2026-09-03,Thursday,Jamil Niner Student Pantry: Thursday Volunteer Shift  | 10:30am – 12:45pm,Jamil Niner Student Pantry,low
+2026-09-03,Thursday,Maker Crawl 2026,,low
+2026-09-03,Thursday,MSC Career LAUNCH Mentorship Program: Launch with Purpose,,low
+2026-09-03,Thursday,Professional In Residence: Resumes by Altec (Drop-ins),,low
+2026-09-03,Thursday,"Career Meet Up: Exploring Careers in Business Analytics, Data & Operations",,low
+2026-09-03,Thursday,PAL Session - ECON 2101 (SMITH 204),SMITH 204,none
+2026-09-03,Thursday,ELITE cleanup,Reedy Creek Park,low
+2026-09-03,Thursday,Jamil Niner Student Pantry: Thursday Volunteer Shift  | 12:30pm – 2:45pm,Jamil Niner Student Pantry,low
+2026-09-03,Thursday,"Exploring Canvas Course Analytics for Assignments, Quizzes, and Videos",,low
+2026-09-03,Thursday,Master Your Workflow with Google Gmail and Calendar,,low
+2026-09-03,Thursday,Funding Your Future: Navigating Graduate Funding Strategies,,low
+2026-09-03,Thursday,Career Meet Up: How to Conquer Networking Led by Equitable,,low
+2026-09-03,Thursday,Exploring Careers in Finance Panel,,low
+2026-09-03,Thursday,Jamil Niner Student Pantry: Thursday Volunteer Shift  |  2:30pm – 5:15pm  (Cancelled),Jamil Niner Student Pantry,low
+2026-09-03,Thursday,UCAE Notetaking and Reading Workshop,Colvard North 2006,low
+2026-09-03,Thursday,CBRE,Iron District,low
+2026-09-03,Thursday,PAL Session - CHEM 2132 (CHHS 124),CHHS 124,none
+2026-09-03,Thursday,International Coffee Hour,Popp Martin Student Union,medium
+2026-09-03,Thursday,Writing Synthesized Literature Reviews,Atkins Library,low
+2026-09-03,Thursday,PAL Session - CHEM 1252 (ONLINE),Online,none
+2026-09-03,Thursday,PAL Session: CHEM 1203 (DENNY 109),DENNY 109,none
+2026-09-03,Thursday,Exhibition Reception: Recent Acquisitions,Dubois Center at UNC Charlotte Center City,low
+2026-09-03,Thursday,PAL Session - CHEM 2131 (ONLINE),Online,none
+2026-09-03,Thursday,Pop the Balloon: Speed Connections,Popp Martin Student Union,medium
+2026-09-03,Thursday,STEM Fair Readiness Workshop,Denny 120,medium
+2026-09-03,Thursday,Thursday Worship Night,Popp Martin Student Union,medium
+2026-09-03,Thursday,Rhythm,Fretwell 205,low
+2026-09-04,Friday,Graduate Admissions Virtual Office Hours,,none
+2026-09-04,Friday,PAL Session - ECON 2102 (FRIDAY 155),FRIDAY 155,none
+2026-09-04,Friday,PAL Session: CHEM 1200 (ONLINE),Online,none
+2026-09-04,Friday,Presidents' Leadership Workshop,Popp Martin Student Union,medium
+2026-09-04,Friday,STEM Fair,,medium
+2026-09-04,Friday,STEM Job Fair Sept. 4th,Student Activity Center /Arena,high
+2026-09-04,Friday,Zoom AI for Teaching,,none
+2026-09-04,Friday,"""Why AI Makes Mistakes"" with Dr. Keith Burghardt",Friday,low
+2026-09-04,Friday,College Colors Day,Popp Martin Student Union,medium
+2026-09-04,Friday,Supporting Self-Directed Learning with Gemini Notebook,,low
+2026-09-04,Friday,Niner Finances Walk In Hours,King 210,low
+2026-09-04,Friday,Walk In Hours,King,low
+2026-09-04,Friday,"Question, Persuade, Refer Training (Faculty/Staff)",,low
+2026-09-04,Friday,Charlotte 49ers Women's Volleyball vs Wofford,"Raleigh, N.C.",low
+2026-09-04,Friday,Niners with Novels Reading Club,Fretwell 202,low
+2026-09-04,Friday,ECU Brody Medical School Info Session,Online,low
+2026-09-04,Friday,Weekly Art Meet-Up,College of Health & Human Services (CHHS),low
+2026-09-05,Saturday,No Saturday Classes,UNC Charlotte Academic Calendar,low
+2026-09-05,Saturday,Citadel Tailgate,Lot 25,low
+2026-09-05,Saturday,Charlotte 49ers Women's Volleyball vs George Washington,"Raleigh, N.C.",low
+2026-09-06,Sunday,September Sends! Rock Climbing,Pisgah National Forest (or similar climbing area),low
+2026-09-06,Sunday,Zero Waste Crew Sorting - Sept 6,Jerry Richardson Stadium between Gates 3 and 4,low
+2026-09-06,Sunday,Charlotte 49ers Women's Soccer at Mississippi State,"Starkville, MS",low
+2026-09-06,Sunday,Charlotte 49ers Women's Volleyball at NC State,"Raleigh, N.C.",low
+2026-09-06,Sunday,Social Kickball League - COED,Revolution Park,low
+2026-09-07,Monday,Labor Day – University Closed/No Classes,UNC Charlotte Academic Calendar,low
+2026-09-07,Monday,National Suicide Prevention Week,,low
+2026-09-07,Monday,Jamil Niner Student Pantry: Monday Volunteer Shift  |  11:00am – 1pm (Cancelled),Jamil Niner Student Pantry,low
+2026-09-07,Monday,Co-Ed Small Group,CHHS 128,low
+2026-09-08,Tuesday,National Suicide Prevention Week,,low
+2026-09-08,Tuesday,Grad School 101: Start Your Program Search with Confidence,,low
+2026-09-08,Tuesday,Overview of Gen-AI Tools in Education,,low
+2026-09-08,Tuesday,PAL Session: CHEM 1203 (ONLINE),Online,none
+2026-09-08,Tuesday,Jamil Niner Student Pantry: Tuesday Volunteer Shift  |  10:30am – 12:45pm,Jamil Niner Student Pantry,low
+2026-09-08,Tuesday,Fidelity Investments Employer in the Foyer Table,Woodward Hall Second Floor,low
+2026-09-08,Tuesday,Generative AI 101: Getting Started with Gemini & CoPilot,,low
+2026-09-08,Tuesday,Career Meet Up: My First Internship Search,,low
+2026-09-08,Tuesday,PAL Session - ECON 2102 (FRIDAY 130),FRIDAY 130,none
+2026-09-08,Tuesday,PAL Session - CHEM 2131 (DENNY 206),DENNY 206,none
+2026-09-08,Tuesday,Jamil Niner Student Pantry: Tuesday Volunteer Shift  |  12:30pm – 2:45pm,Jamil Niner Student Pantry,low
+2026-09-08,Tuesday,Career Meet Up: Effective Cover Letter Writing,,low
+2026-09-08,Tuesday,"Career Meet Up: Experiential Learning Opportunities for Technology, Data, and Analytics",,low
+2026-09-08,Tuesday,Part 1: Canvas Accessibility with UDOIT,,low
+2026-09-08,Tuesday,"Question, Persuade, Refer Training (Student)",,low
+2026-09-08,Tuesday,Streamline Your Storage: Mastering Google Drive,,low
+2026-09-08,Tuesday,Transfer Student Social Series: Education Abroad Edition,The University Transfer and Adult Student Center,low
+2026-09-08,Tuesday,AI in Research: Guarding Against AI Hallucinated Citations,,low
+2026-09-08,Tuesday,CABnic on the Quad,West Quad,low
+2026-09-08,Tuesday,Career Meet Up: On-Campus Experiential Learning Opportunities,,low
+2026-09-08,Tuesday,Jamil Niner Student Pantry: Tuesday Volunteer Shift  |  2:30pm – 5:00pm,Jamil Niner Student Pantry,low
+2026-09-08,Tuesday,PAL Session: CHEM 1251 (ONLINE),Online,none
+2026-09-08,Tuesday,Demystifying the Application Process - Led by Compass Group USA,Virtual,low
+2026-09-08,Tuesday,Presidents' Leadership Workshop,,low
+2026-09-08,Tuesday,PAL Session: CHEM 1252 (MCEN 123),MCENIRY 123,none
+2026-09-08,Tuesday,Tuesday Seminar- A Perspective on AI in Sports,Dubois Center at UNC Charlotte Center City,low
+2026-09-08,Tuesday,PAL Session - ECON 3125 (ONLINE),Online,none
+2026-09-08,Tuesday,PAL Session - ECON 2101 (ONLINE),Online,none
+2026-09-09,Wednesday,National Suicide Prevention Week,,low
+2026-09-09,Wednesday,DSBA and DSHA Prospective Graduate Student Information Session,,low
+2026-09-09,Wednesday,Know Before You Go: Essential Steps for Newly Admitted Students,,high
+2026-09-09,Wednesday,PAL Session - ECON 2102 (SMITH 217),SMITH 217,none
+2026-09-09,Wednesday,AI@Work Discussion Series,,low
+2026-09-09,Wednesday,CHESS Graduate School Pathways Workshop,Fretwell,low
+2026-09-09,Wednesday,"Introduction to Python 2: Control Flow, Data Structures, and Functions",Atkins Library,low
+2026-09-09,Wednesday,Jamil Niner Student Pantry: Wednesday Volunteer Shift  |  10:30am – 12:45pm,Jamil Niner Student Pantry,low
+2026-09-09,Wednesday,Wellness Wednesday,Atkins Library,low
+2026-09-09,Wednesday,LinkedIn: Build Your Profile and Grow Your Network,,low
+2026-09-09,Wednesday,PAL Session - CHEM 2131 (CHHS 294),CHHS 294,none
+2026-09-09,Wednesday,PAL Session - CHEM 2131 (COLVD 5092),COLVD 5092,none
+2026-09-09,Wednesday,Popp Into Student Involvement,Popp Martin Student Union,medium
+2026-09-09,Wednesday,Writing Effective Prompts Gemini & Copilot for a Smarter To-Do List Workflow,,low
+2026-09-09,Wednesday,Career Meet Up: Academic Credit for Internships,,low
+2026-09-09,Wednesday,Jamil Niner Student Pantry: Wednesday Volunteer Shift  |  12:30pm – 3:30pm,Jamil Niner Student Pantry,low
+2026-09-09,Wednesday,PAL Session: CHEM 1200 (COLVD 5096),COLVD 5096,none
+2026-09-09,Wednesday,Lake Days,Hechenbleikner Lake,low
+2026-09-09,Wednesday,Canvas: Quizzing,,low
+2026-09-09,Wednesday,Career Meet Up: Manage Your Internship Search,,low
+2026-09-09,Wednesday,PAL Session - CHEM 2132 (FRIDAY 130),FRIDAY 130,none
+2026-09-09,Wednesday,PAL Session - ECON 2101 (COLVD 5092),COLVD 5092,none
+2026-09-09,Wednesday,Reach New Heights at Atkins: Tower Reopening Event,Atkins Library Dalton Tower,low
+2026-09-09,Wednesday,PAL Session: CHEM 1252 (FRIDAY 385),FRIDAY 385,none
+2026-09-09,Wednesday,UCAE Time Management Workshop,Colvard North 2006,low
+2026-09-09,Wednesday,UCAE Time Management Workshop (Cancelled),Colvard North 2006,low
+2026-09-09,Wednesday,Deloitte Consulting: Resume Workshop,,low
+2026-09-09,Wednesday,Fireside Chat w/ Mike Cowell,"Cone Center, 210",low
+2026-09-09,Wednesday,CLTivate Your Career: Interview Strategies and Professional Attire (Sophomores),Halton Arena - SAC Salons,high
+2026-09-09,Wednesday,Grad Student Online Art Session,,none
+2026-09-09,Wednesday,NetWorth Exchange,Dubois Center at UNC Charlotte Center City,low
+2026-09-09,Wednesday,Resume Recruitment Event,Denny 200,low
+2026-09-09,Wednesday,Secure the Bag: Career Workshop,Fretwell 114,low
+2026-09-09,Wednesday,Rolling Auditions,Membane 167,low
+2026-09-10,Thursday,National Suicide Prevention Week,,low
+2026-09-10,Thursday,Reading Day for Mini-Fall Term,,low
+2026-09-10,Thursday,Pinewood Elementary Gardening,Pinewood Elementary,low
+2026-09-10,Thursday,Ace Your Graduate School Application:Tips and Tricks for Success,,low
+2026-09-10,Thursday,Part 1: Introduction to Gen-AI and Prompt Writing,,low
+2026-09-10,Thursday,Presidents' Leadership Workshop,Popp Martin Student Union,medium
+2026-09-10,Thursday,Jamil Niner Student Pantry: Thursday Volunteer Shift  | 10:30am – 12:45pm,Jamil Niner Student Pantry,low
+2026-09-10,Thursday,Climate Change Quilt Workshop,"Area 49 Makerspace, Atkins Library 2nd Floor",low
+2026-09-10,Thursday,Professional In Residence: Resumes by Ally (Drop-ins),,low
+2026-09-10,Thursday,Wells Fargo Employer in the Foyer Table,Woodward Hall Second Floor,low
+2026-09-10,Thursday,Writing Group,Colvard 5100,low
+2026-09-10,Thursday,Getting Started with Active Teaching and Learning,,low
+2026-09-10,Thursday,Mechanical Engineering and Engineering Science Seminar Series: Dr. Stephanie Schuckers,Duke Centennial Hall,low
+2026-09-10,Thursday,PAL Session - ECON 2101 (SMITH 204),SMITH 204,none
+2026-09-10,Thursday,Lunch & Learn: Getting the Internship—and Making It Count,Cone 210 B and Zoom,low
+2026-09-10,Thursday,Jamil Niner Student Pantry: Thursday Volunteer Shift  | 12:30pm – 2:45pm,Jamil Niner Student Pantry,low
+2026-09-10,Thursday,Career Meet Up: Internships vs Co-ops Experiential Learning Opportunities,,low
+2026-09-10,Thursday,Mastering Time Management: Proven Techniques for Prioritizing Tasks,,low
+2026-09-10,Thursday,Career Meet Up: Internship/Co-Op Search for Engineers,,low
+2026-09-10,Thursday,Jamil Niner Student Pantry: Thursday Volunteer Shift  |  2:30pm – 5:15pm,Jamil Niner Student Pantry,low
+2026-09-10,Thursday,PAL Session - CHEM 2132 (CHHS 124),CHHS 124,none
+2026-09-10,Thursday,Lift & Learn: Calisthenics,Belk Gym,low
+2026-09-10,Thursday,Career Meet Up: Finding Nonprofit Internships,,low
+2026-09-10,Thursday,Negotiating Your Employment Offer,,low
+2026-09-10,Thursday,Career Meet Up: Using AI in the Internship Search,,low
+2026-09-10,Thursday,Niner Times General Meeting,Popp Martin Student Union,medium
+2026-09-10,Thursday,PAL Session - CHEM 1252 (ONLINE),Online,none
+2026-09-10,Thursday,PAL Session: CHEM 1203 (DENNY 109),DENNY 109,none
+2026-09-10,Thursday,PAL Session - CHEM 2131 (ONLINE),Online,none
+2026-09-10,Thursday,#TBT: 2016,Popp Martin Student Union,medium
+2026-09-10,Thursday,Charlotte 49ers Women's Soccer vs UNCW,"Charlotte, N.C., Jen Gaber Field",low
+2026-09-10,Thursday,Rhythm,Fretwell 205,low
+2026-09-11,Friday,Charlotte 49ers Women's Tennis vs Kitty Harrison Invitational,"Chapel Hill, N.C.",low
+2026-09-11,Friday,Early Alert Deadline,UNC Charlotte Academic Calendar,low
+2026-09-11,Friday,National Suicide Prevention Week,,low
+2026-09-11,Friday,Slip N Slide Kickball,Crossway Church,low
+2026-09-11,Friday,Mental Health First Aid (Faculty and Staff),,low
+2026-09-11,Friday,PAL Session - ECON 2102 (FRIDAY 155),FRIDAY 155,none
+2026-09-11,Friday,PAL Session: CHEM 1200 (ONLINE),Online,none
+2026-09-11,Friday,CEI WhopAthon Virtual Info Session (Cancelled),Online,none
+2026-09-11,Friday,Career Meet Up:  How To Gain Academic Credit for Internships Abroad,,low
+2026-09-11,Friday,MSRE Seminar Series,Olde Mecklenburg Brewery,low
+2026-09-11,Friday,Wells Fargo Internal Audit Case Competition,,low
+2026-09-11,Friday,Charlotte 49ers Women's Volleyball at LSU,"Baton Rouge, La.",low
+2026-09-11,Friday,Niner Finances Walk In Hours,King 210,low
+2026-09-11,Friday,Walk In Hours,King,low
+2026-09-11,Friday,Career Meet Up: Project-Based Internships,,low
+2026-09-11,Friday,GIG: Graduate International Gathering,Atkins Library,low
+2026-09-11,Friday,Active Learning with Poll Everywhere,,low
+2026-09-11,Friday,Bioinformatics ZOOM Info Session,,none
+2026-09-11,Friday,Part 3: Student Writing Skills with Gen-AI,,low
+2026-09-11,Friday,"Career Meet Up: Healthcare, Science & Research Internship & Career Strategies",,low
+2026-09-11,Friday,Innovation Barn,Innovation Barn,low
+2026-09-11,Friday,Student Org Advisor Workshop,Popp Martin Student Union,medium
+2026-09-11,Friday,Niners with Novels Reading Club,Fretwell 202,low
+2026-09-11,Friday,Career Meet Up: Finding Nonprofit Internships,,low
+2026-09-11,Friday,Fall Kickoff Game Jam 2026,Woodward,low
+2026-09-11,Friday,Weekly Art Meet-Up,College of Health & Human Services (CHHS),low
+2026-09-11,Friday,Printed Circuit Board Design Workshop,EPIC 2222,low
+2026-09-11,Friday,A Working Man,Popp Martin Student Union,medium
+2026-09-11,Friday,Nintendo Gamenight,Smith,low
+2026-09-11,Friday,Charlotte Knights Game!,Truist Field,low
+2026-09-11,Friday,Game Night: Casino Night!,CHHS 128,low
+2026-09-11,Friday,Charlotte 49ers Women's Volleyball at Southeastern Louisiana,"Hammond, La.",low
+2026-09-11,Friday,Caught Stealing,Popp Martin Student Union,medium
+2026-09-12,Saturday,Charlotte 49ers Women's Tennis vs Kitty Harrison Invitational,"Chapel Hill, N.C.",low
+2026-09-12,Saturday,Waterway Getaway  Canoe Camping,Lake James (or similar canoeing location),low
+2026-09-12,Saturday,Belk College of Business Graduate Programs Open House,Dubois Center at UNC Charlotte Center City,high
+2026-09-12,Saturday,Around the World in Objects: A World-Building Adventure,University City Regional Library,low
+2026-09-12,Saturday,HOME GAME (VS FURMAN),NRFC Field 16,low
+2026-09-12,Saturday,Charlotte 49ers Women's Volleyball vs Texas Southern,"Hammond, La.",low
+2026-09-12,Saturday,Fitness Photoshoot,UREC mindfulness studio,low
+2026-09-12,Saturday,Caught Stealing,Popp Martin Student Union,medium
+2026-09-12,Saturday,Faculty Dance Concert,Robinson Hall,high
+2026-09-12,Saturday,A Working Man,Popp Martin Student Union,medium
+2026-09-13,Sunday,Waterway Getaway  Canoe Camping,Lake James (or similar canoeing location),low
+2026-09-13,Sunday,Home Tournament,Field 13,low
+2026-09-13,Sunday,AWAY GAME (VS CATAWBA),Catawba,low
+2026-09-13,Sunday,Social Kickball League - COED,Revolution Park,low
+2026-09-13,Sunday,A Working Man,Popp Martin Student Union,medium
+2026-09-13,Sunday,Caught Stealing,Popp Martin Student Union,medium
+2026-09-14,Monday,Intro to Learning Objectives and Backwards Design,,low
+2026-09-14,Monday,Student Org Advisor Workshop,Popp Martin Student Union,medium
+2026-09-14,Monday,"“When Technology Meets Trauma"": Integrating Reproductive Grief Screening into the Technological Continuum of Care by Drs. Jennifer Bute and Maria Brann (IU Indianapolis)",Cone ,low
+2026-09-14,Monday,Jamil Niner Student Pantry: Monday Volunteer Shift | 11:00am – 1pm,Jamil Niner Student Pantry,low
+2026-09-14,Monday,Ethical Considerations for Teaching with Gen-AI,,low
+2026-09-14,Monday,Brown Bag Lecture - Dr. Melissa Manus,Barnard 244 Conference Room,low
+2026-09-14,Monday,Critical Thinking,Popp Martin Student Union,medium
+2026-09-14,Monday,M.S. in Economics Virtual Information Session,,none
+2026-09-14,Monday,PAL Session: CHEM 1203 (CHHS 294),CHHS 294,none
+2026-09-14,Monday,National Wellness Week De-Stress Session,Waddell Center for Student Health and Wellbeing,low
+2026-09-14,Monday,Casual Chess Meetup,Popp Martin Student Union,medium
+2026-09-14,Monday,PAL Session: CHEM 1252 (FRET 116),FRET 116,none
+2026-09-14,Monday,PAL Session: CHEM 1251 (CHHS 134),CHHS 134,none
+2026-09-14,Monday,Open Swim: Personal Brand,Friday,low
+2026-09-14,Monday,PAL Session - CHEM 2131 (GYMNS 207),GYMNS 207,none
+2026-09-14,Monday,PAL Session: CHEM 1200 (GYMNS 206),GYMNS 206,none
+2026-09-14,Monday,Part 1: Overview and Benefits of Globally Networked Learning (GNL),,low
+2026-09-14,Monday,PAL Session - CHEM 2132 (ONLINE),Online,none
+2026-09-14,Monday,PAL Session - ECON 3125 (COLVD 5092),COLVD 5092,none
+2026-09-14,Monday,Ace Your Graduate School Application:Tips and Tricks for Success,,low
+2026-09-14,Monday,Master of Public Health- Admissions Virtual Drop-In Hour,,none
+2026-09-14,Monday,Capstone Pathways for M.S. Students in Data Science and Business Analytics (DSBA) and Data Science and Health Analytics (DSHA),,low
+2026-09-14,Monday,AI Debate Night with CAIR,Woodward 335,low
+2026-09-14,Monday,Biology Club 2026-2027 Interest Meeting,Denny 122,low
+2026-09-14,Monday,Earth Club General Body Meeting- Rock Painting!,McEniry 118,low
+2026-09-14,Monday,Finding the Real You |GBM 1,CHHS 294,low
+2026-09-14,Monday,ISE DAY GAME NIGHT,Cameron 153,low
+2026-09-14,Monday,Linkedin & Dress to Impress,Fretwell 106,low
+2026-09-14,Monday,PAL Session - ECON 2102,Online,none
+2026-09-14,Monday,Pancakes and Prayers,Denny 106,low
+2026-09-14,Monday,Spill the Tea,Cone 109,low
+2026-09-14,Monday,UPHA: Fall 2026 Interest Meeting,Smith building: 269,low
+2026-09-14,Monday,Bible Study,Colvard,low
+2026-09-14,Monday,Welcome To The Mine Social,Cone Center Rm 113,low
+2026-09-14,Monday,Co-Ed Small Group,CHHS 128,low
+2026-09-14,Monday,Introduction Meeting,Friday 385,low
+2026-09-14,Monday,Open Mic Night,After Hours,low
+2026-09-14,Monday,PAL Session - CHEM 2131 (ONLINE),Online,none
+2026-09-14,Monday,Rock Climbing Night at the SAC,,low
+2026-09-15,Tuesday,Intro to Learning Objectives and Backwards Design,,low
+2026-09-15,Tuesday,Dimensions of Wellness tabling,South Village (Sovi),low
+2026-09-15,Tuesday,Data Cleaning with Pandas,Atkins Library,low
+2026-09-15,Tuesday,Open Swim Q&A: Mastering Google Workspace & Generative AI,,low
+2026-09-15,Tuesday,PAL Session: CHEM 1203 (ONLINE),Online,none
+2026-09-15,Tuesday,Jamil Niner Student Pantry: Tuesday Volunteer Shift | 10:30am – 12:45pm,Jamil Niner Student Pantry,low
+2026-09-15,Tuesday,Navigating Your Tableau Dashboard,Cone Center 113B,low
+2026-09-15,Tuesday,TIAA Employer in the Foyer Table,Woodward Hall Second Floor,low
+2026-09-15,Tuesday,OSHR Lunch & Learn: The Importance of Protein at Breakfast,,low
+2026-09-15,Tuesday,PAL Session - ECON 2102 (FRIDAY 130),FRIDAY 130,none
+2026-09-15,Tuesday,Part 3: Designing Accessible Course Media,,low
+2026-09-15,Tuesday,Lunch & Learn with Burns McDonnell,EPIC 1332,low
+2026-09-15,Tuesday,PAL Session - CHEM 2131 (DENNY 206),DENNY 206,none
+2026-09-15,Tuesday,Jamil Niner Student Pantry: Tuesday Volunteer Shift | 12:30pm – 2:45pm,Jamil Niner Student Pantry,low
+2026-09-15,Tuesday,Canvas Studio: Engaging Learners with interactive videos,,low
+2026-09-15,Tuesday,Emotional Intelligence: Enhancing Self-Awareness and Interpersonal Skills,,low
+2026-09-15,Tuesday,Bloom Through Creativity,Belk Plaza,low
+2026-09-15,Tuesday,Lake Days,Hechenbleikner Lake,low
+2026-09-15,Tuesday,The Knowledge Navigator: Using Notebook LM to Transform Docs into Deliverables and Success,,low
+2026-09-15,Tuesday,Jamil Niner Student Pantry: Tuesday Volunteer Shift | 2:30pm – 5:00pm,Jamil Niner Student Pantry,low
+2026-09-15,Tuesday,PAL Session: CHEM 1251 (ONLINE),Online,none
+2026-09-15,Tuesday,Tuesday Seminar - Jobs of the Future: Building the Agent-Driven Enterprise,Dubois Center at UNC Charlotte Center City,low
+2026-09-15,Tuesday,2026 Fall SMBC On-Site Information Session (Off-Campus),,low
+2026-09-15,Tuesday,Alcoholics Anonymous (AA),Waddell Center for Student Health and Wellbeing,low
+2026-09-15,Tuesday,Bank of America:  Recruiter Q&A,,low
+2026-09-15,Tuesday,PAL Session: CHEM 1252 (MCEN 123),MCENIRY 123,none
+2026-09-15,Tuesday,Niner Networking Mixer hosted by the Career Center,Cone University Center,low
+2026-09-15,Tuesday,Niner Networking Mixer 2026,,low
+2026-09-15,Tuesday,AIS ICE CREAM SOCIAL,"Norm Gameroom, Popp Martin Student Union",medium
+2026-09-15,Tuesday,Personality to Profession,Smith 327,low
+2026-09-15,Tuesday,UCAE Mindset and Motivation Workshop,Colvard North 2006,low
+2026-09-15,Tuesday,Wells Fargo's Industry Q&A Panel,Woodward 154,low
+2026-09-15,Tuesday,PAL Session - ECON 3125 (ONLINE),Online,none
+2026-09-15,Tuesday,"“The United States and Mexico: Unequal Neighbors” by Jürgen Buchenau, Ph.D.",Independent Picture House,low
+2026-09-15,Tuesday,AWS SBG Introduction to Financial Technology & Cloud – Workshop Series Kickoff (Cancelled),CHHS 146,low
+2026-09-15,Tuesday,Exhibition Reception: The Distance of the Moon,Storrs,low
+2026-09-15,Tuesday,PAL Session - ECON 2101 (ONLINE),Online,none
+2026-09-15,Tuesday,Squid Games,Student Union 340CF,low
+2026-09-15,Tuesday,Fall 2026 fashion show casting call,"Rowe Arts, Room 161",low
+2026-09-15,Tuesday,Study Hall,Fretwell 106,low
+2026-09-15,Tuesday,Campus Outreach UNCC Soccer Game,Jen Gaber Field,low
+2026-09-15,Tuesday,Introduction to Indoor Climbing and Belay Clinic,Barnhardt Student Activity Center (SAC),medium
+2026-09-15,Tuesday,Faculty & Friends: Brass Area Faculty,Rowe,low
+2026-09-16,Wednesday,Intro to Learning Objectives and Backwards Design,,low
+2026-09-16,Wednesday,VAW Global Health Outreach Info Session,Atkins Murray Library Room G48,low
+2026-09-16,Wednesday,PAL Session - ECON 2102 (SMITH 217),SMITH 217,none
+2026-09-16,Wednesday,"Coaching Drop-ins for Technology, Data and Analytics",,low
+2026-09-16,Wednesday,Jamil Niner Student Pantry: Wednesday Volunteer Shift | 10:30am – 12:45pm,Jamil Niner Student Pantry,low
+2026-09-16,Wednesday,Enhancing Workflows with Google Gemini: Building Custom Gems,,low
+2026-09-16,Wednesday,MSW Information Session,,low
+2026-09-16,Wednesday,Splash-A-Stepper Tabling,Union,low
+2026-09-16,Wednesday,UREC Wellness Wed Tabling SAMHSA Dimensions of Wellness,University Recreation Center,low
+2026-09-16,Wednesday,Wellness Wednesday,University Recreation Center,low
+2026-09-16,Wednesday,BISOM Networking Essentials,,low
+2026-09-16,Wednesday,BISOM Networking Prep Session,,low
+2026-09-16,Wednesday,Using Gemini Notebook AI for Teaching,,low
+2026-09-16,Wednesday,Feeling stuck? Practical Ways to Get Yourself Going Again Webinar,,none
+2026-09-16,Wednesday,PAL Session - CHEM 2131 (CHHS 294),CHHS 294,none
+2026-09-16,Wednesday,PAL Session - CHEM 2131 (COLVD 5092),COLVD 5092,none
+2026-09-16,Wednesday,Popp Into Student Involvement,Popp Martin Student Union,medium
+2026-09-16,Wednesday,Science of Learning; Adult Student Webinar,,none
+2026-09-16,Wednesday,Career Meet Up: How to Set Up Your LinkedIn Profile,,low
+2026-09-16,Wednesday,Jamil Niner Student Pantry: Wednesday Volunteer Shift | 12:30pm – 3:30pm,Jamil Niner Student Pantry,low
+2026-09-16,Wednesday,Presidents' Leadership Workshop,Popp Martin Student Union,medium
+2026-09-16,Wednesday,SMBC Information Session & Networking Reception,,low
+2026-09-16,Wednesday,The Art of Being: Learning to Cope Creatively (9/16),Price Center for Counseling,low
+2026-09-16,Wednesday,Cracking The Cloud- How AWS Certifications Build Real Cloud Careers,Woodward,low
+2026-09-16,Wednesday,Cracking the Cloud: How AWS Certifications Build Real Cloud Careers,Woodward 335,low
+2026-09-16,Wednesday,"Internship/Co-Op strategies for Technology, Data and Analytics",,low
+2026-09-16,Wednesday,Ready-to-Use AI Literacy Canvas Modules for Students,,low
+2026-09-16,Wednesday,PAL Session: CHEM 1252 (FRIDAY 385),FRIDAY 385,none
+2026-09-16,Wednesday,Financial Services Career Fair Prep Event,2nd Floor of Friday (Truist Reading Room),high
+2026-09-16,Wednesday,Public Policy PHD Information Session,,low
+2026-09-16,Wednesday,Deloitte Consulting: Case Prep Workshop,,low
+2026-09-16,Wednesday,TCB - Toni Cade Bambara School of Organizing Film Screening,Atkins Library,low
+2026-09-16,Wednesday,CLTivate Your Career: Career Skills and What Employers Value,Halton Arena - SAC Salons,high
+2026-09-16,Wednesday,Bloom Your Network,Cone 112,low
+2026-09-16,Wednesday,Emerging Leaders Career Fair,Popp Martin Student Union 340GHI,high
+2026-09-16,Wednesday,Habitat Social,Smith Rm. 301,low
+2026-09-16,Wednesday,Interest Meeting for Collegiate Deca!,Friday 141,low
+2026-09-16,Wednesday,PharmCAS Workshop,CHHS 128,low
+2026-09-16,Wednesday,SKY Weekly Meditation Meetings,Fretwell,low
+2026-09-16,Wednesday,Speed Friending,Cone University Center,low
+2026-09-16,Wednesday,Spirituality & Science,Klein 104,low
+2026-09-16,Wednesday,Transpersonal Counseling with Dr. Holden,,low
+2026-09-16,Wednesday,The Pathways Relay,Cone 111,low
+2026-09-16,Wednesday,Free Headshots,Friday 141,low
+2026-09-16,Wednesday,CEPA Study Night,Denny 220,low
+2026-09-17,Thursday,Deadline to apply for December 2026 Graduation,UNC Charlotte Academic Calendar,low
+2026-09-17,Thursday,Intro to Learning Objectives and Backwards Design,,low
+2026-09-17,Thursday,Designing in a Dash: Adobe Express Basics,,low
+2026-09-17,Thursday,Student Org Advisor Workshop,Popp Martin Student Union,medium
+2026-09-17,Thursday,Designing and Implementing Group Projects,,low
+2026-09-17,Thursday,Presidents' Leadership Workshop,Popp Martin Student Union,medium
+2026-09-17,Thursday,Jamil Niner Student Pantry: Thursday Volunteer Shift | 10:30am – 12:45pm,Jamil Niner Student Pantry,low
+2026-09-17,Thursday,Get to Know CEI - Norms Vintage Market Tabling,Popp Martin Student Union,medium
+2026-09-17,Thursday,TIAA Employer in the Foyer Table,Woodward Hall Second Floor,low
+2026-09-17,Thursday,Oakworth Capital Bank Meet & Greet,,low
+2026-09-17,Thursday,PAL Session - ECON 2101 (SMITH 204),SMITH 204,none
+2026-09-17,Thursday,The Periodic Table of Emotions: Fostering Human-First Classrooms,,low
+2026-09-17,Thursday,Beyond Summary: Strategies for Effective Literature Synthesis,Atkins Library,low
+2026-09-17,Thursday,"Student Org: ""Drop In Hour""",Popp Martin Student Union,medium
+2026-09-17,Thursday,Tau Sigma Ice Cream Social,Colvard,low
+2026-09-17,Thursday,Think about it Thursdays: Ed.D. Pathways,,low
+2026-09-17,Thursday,Thoughtful Thursday,Popp Martin Student Union,medium
+2026-09-17,Thursday,Virtual Lunch and Learn: Ballin' on a Budget,Online,none
+2026-09-17,Thursday,Jamil Niner Student Pantry: Thursday Volunteer Shift | 12:30pm – 2:45pm,Jamil Niner Student Pantry,low
+2026-09-17,Thursday,Constitution Day & Citizenship Day,Popp Martin Student Union,medium
+2026-09-17,Thursday,Midday Devotion,Union 200,low
+2026-09-17,Thursday,CCI Research Seminar with Ron Yorko: College Football Volatility: A Bayesian state-space model of the transfer portal and NIL impact,Cone University Center,low
+2026-09-17,Thursday,Jamil Niner Student Pantry: Thursday Volunteer Shift | 2:30pm – 5:15pm,Jamil Niner Student Pantry,low
+2026-09-17,Thursday,CFP Planner Pathways Event,Student Union Room 340,low
+2026-09-17,Thursday,Grad School 101: Start Your Program Search with Confidence,,low
+2026-09-17,Thursday,TDA Week: AWS DevOps Agent GameDay Competition for CCI Majors ONLY,,low
+2026-09-17,Thursday,Lift & Learn: Compound Lifting 101,Belk Gym,low
+2026-09-17,Thursday,International Coffee Hour,Popp Martin Student Union,medium
+2026-09-17,Thursday,UCAE Goal Setting Workshop Simulcast,Colvard North 2006,low
+2026-09-17,Thursday,Writing Resources Center (WRC) Celebrates 50 years!,Harris Alumni Center,low
+2026-09-17,Thursday,SOLD Council Workshop: Funding & Budgeting,Cone University Center,low
+2026-09-17,Thursday,PAL Session - CHEM 1252 (ONLINE),Online,none
+2026-09-17,Thursday,VAW Global Health Outreach Info Session,Atkins Murray Library Room G48,low
+2026-09-17,Thursday,Breaking Into Research: Scholar Program Q&A + Application Tips,McEniry,low
+2026-09-17,Thursday,PAL Session: CHEM 1203 (DENNY 109),DENNY 109,none
+2026-09-17,Thursday,Best Buddies Field Day,Field 14A (in front of robinson hall),low
+2026-09-17,Thursday,Emily's AADSAS Dental School Application Walkthrough,Denny 200,low
+2026-09-17,Thursday,PAL Session - CHEM 2131 (ONLINE),Online,none
+2026-09-17,Thursday,ASME x BMES SolidWorks Workshop,Smith Building,low
+2026-09-17,Thursday,Fall 2026 fashion show casting call,Rowe,low
+2026-09-17,Thursday,Foundations,Denny 122,low
+2026-09-17,Thursday,Ally Resume Workshop,KLEIN 104,low
+2026-09-17,Thursday,Charlotte 49ers Women's Soccer at Florida Atlantic,"Boca Raton, FL",low
+2026-09-17,Thursday,Charlotte 49ers Women's Volleyball at Queens,"Charlotte, N.C.",low
+2026-09-17,Thursday,Meet The Neo's,Cone 109,low
+2026-09-17,Thursday,Thursday College Gathering,Popp Martin Student Union,medium
+2026-09-17,Thursday,Rhythm,Fretwell 205,low
+2026-09-18,Friday,Intro to Learning Objectives and Backwards Design,,low
+2026-09-18,Friday,ACCT 3323 Drop In Hours,Colvard,low
+2026-09-18,Friday,Jamil Niner Student Pantry Garden Day  (Cancelled),Jamil Niner Student Pantry,low
+2026-09-18,Friday,AI²: Investigating student use of artificial intelligence and faculty-student perspectives on academic integrity,McEniry,low
+2026-09-18,Friday,Graduate Admissions Virtual Office Hours,,none
+2026-09-18,Friday,PAL Session - ECON 2102 (FRIDAY 155),FRIDAY 155,none
+2026-09-18,Friday,PAL Session: CHEM 1200 (ONLINE),Online,none
+2026-09-18,Friday,Formatting and Submitting Your Thesis or Dissertation,,low
+2026-09-18,Friday,Career Meet Up: Transfer & Thrive: Your Career Starts Now,,low
+2026-09-18,Friday,Human Subjects Research & the IRB Review Process,,low
+2026-09-18,Friday,Niner Finances Walk In Hours,King 210,low
+2026-09-18,Friday,Walk In Hours,King,low
+2026-09-18,Friday,UCAE Stress Less Workshop,Colvard North 2006,low
+2026-09-18,Friday,Adopt A Spot,Lot 6,low
+2026-09-18,Friday,Beds For Kids,Beds for Kids,low
+2026-09-18,Friday,Motivation,Popp Martin Student Union,medium
+2026-09-18,Friday,Goal Setting,Popp Martin Student Union,medium
+2026-09-18,Friday,Presidents' Leadership Workshop,,low
+2026-09-18,Friday,Niners with Novels Reading Club,Fretwell 202,low
+2026-09-18,Friday,Growth Mindset,Popp Martin Student Union,medium
+2026-09-18,Friday,CyberMixer,CHHS 294,low
+2026-09-18,Friday,CGLL x CLT Together Graduate Game Night,Atkins Library,low
+2026-09-18,Friday,CGLL x CLT Together Monthly Grad Game Night,Atkins Library,low
+2026-09-18,Friday,Miles for Impact,Hauser Alumni Pavillion,low
+2026-09-18,Friday,Game Night: Jackbox Games,College of Health & Human Services (CHHS),low
+2026-09-19,Saturday,[N] Charlotte 49ers Women's Tennis vs ITA All Americans,"Cary, N.C.",low
+2026-09-19,Saturday,Pinewood Elementary Gardening,Pinewood Elementary,low
+2026-09-19,Saturday,King’s Mountain Hike,King's Church,low
+2026-09-19,Saturday,Monarch Festival,Reedy Creek Nature Center,medium
+2026-09-19,Saturday,CCI Open House,Woodward Hall,high
+2026-09-19,Saturday,International Festival,In and around the Barnhardt Student Activity Center,medium
+2026-09-19,Saturday,Residential Leadership Council Retreat,Fretwell 124,low
+2026-09-19,Saturday,Around the World in Objects: A World-Building Adventure,University City Regional Library,low
+2026-09-19,Saturday,AWAY GAME (VS COLLEGE OF CHARLESTON),College of Charleston,low
+2026-09-19,Saturday,Charlotte 49ers Women's Volleyball at Davidson,"Davidson, N.C.",low
+2026-09-19,Saturday,CAB Skate Night,Kates Skating Rink - Indian Trail,low
+2026-09-20,Sunday,[N] Charlotte 49ers Women's Tennis vs ITA All Americans,"Cary, N.C.",low
+2026-09-20,Sunday,Watchparty: Rocket League Championship Series (RLCS),"Room 267, Popp-Martin Student Union",medium
+2026-09-20,Sunday,Social Kickball League - COED,Revolution Park,low
+2026-09-21,Monday,[N] Charlotte 49ers Women's Tennis vs ITA All Americans,"Cary, N.C.",low
+2026-09-21,Monday,Entrepreneurial Mindset for Engineers,PORTAL,low
+2026-09-21,Monday,PHD Counselor Education and Supervision Information Session,,low
+2026-09-21,Monday,"Exploring Canvas Course Analytics for Assignments, Quizzes, and Videos",,low
+2026-09-21,Monday,Gold Rush Prize Pickup,Popp Martin Student Union,medium
+2026-09-21,Monday,Interlibrary Loan Workshop,Atkins Library Classroom 124,low
+2026-09-21,Monday,Jamil Niner Student Pantry: Monday Volunteer Shift | 11:00am – 1pm,Jamil Niner Student Pantry,low
+2026-09-21,Monday,MW AMA X Booby's Mobile Beverages,Storrs,low
+2026-09-21,Monday,Pie an SGSA Board Member,CHHS Plaza,low
+2026-09-21,Monday,Know Before You Go: Essential Steps for Newly Admitted Students,,high
+2026-09-21,Monday,MSW Information Session,,low
+2026-09-21,Monday,PAL Session: CHEM 1203 (CHHS 294),CHHS 294,none
+2026-09-21,Monday,Career Meet Up: Career Fair Crash Course,,high
+2026-09-21,Monday,UCAE Conquering Procrastination Workshop Simulcast,Colvard North 2006,low
+2026-09-21,Monday,Casual Chess Meetup,Student Union 264,low
+2026-09-21,Monday,PAL Session: CHEM 1252 (FRET 116),FRET 116,none
+2026-09-21,Monday,Part 1: Introduction to Gen-AI and Prompt Writing,,low
+2026-09-21,Monday,PAL Session: CHEM 1251 (CHHS 134),CHHS 134,none
+2026-09-21,Monday,Applying for the NSF Graduate Research Fellowship Program,Atkins Library,low
+2026-09-21,Monday,Qualtrics 101,Cone Center 113B,low
+2026-09-21,Monday,ACM-W Social with Free KONA ICE!!!,Norm Statue!!,low
+2026-09-21,Monday,PAL Session - CHEM 2131 (GYMNS 207),GYMNS 207,none
+2026-09-21,Monday,PAL Session: CHEM 1200 (GYMNS 206),GYMNS 206,none
+2026-09-21,Monday,PAL Session - CHEM 2132 (ONLINE),Online,none
+2026-09-21,Monday,PAL Session - ECON 3125 (COLVD 5092),COLVD 5092,none
+2026-09-21,Monday,Student Org Advisor Workshop,Popp Martin Student Union,medium
+2026-09-21,Monday,CHESS Success Summit AI Storytelling Lab,Fretwell ,medium
+2026-09-21,Monday,Green Dot Student Overview,,low
+2026-09-21,Monday,Ladies in Land,Cone 111A,low
+2026-09-21,Monday,A2i - Hidden Networking: Building Relationships Through Purpose and Community,,low
+2026-09-21,Monday,BISOM Networking Night,Popp Martin Student Union,medium
+2026-09-21,Monday,BISOM Networking Night 2026,,low
+2026-09-21,Monday,Ataya & Ludo Night,Union 266,low
+2026-09-21,Monday,Interest meeting,Denny 102,low
+2026-09-21,Monday,PAL Session - ECON 2102,Online,none
+2026-09-21,Monday,Picnic y Pachanga,StarQuad,low
+2026-09-21,Monday,Snowflake and Tableau Workshop,Mebane Hall 419,low
+2026-09-21,Monday,UPHA: Fall 2026 Interest Meeting,Smith building: 269,low
+2026-09-21,Monday,Bible Study,Colvard,low
+2026-09-21,Monday,Welcome To The Mine Social,Cone Center Rm 113,low
+2026-09-21,Monday,Get Career Fair Ready! _ Resume and LinkedIn Workshop with PRSSA,Friday 385,high
+2026-09-21,Monday,PAL Session - CHEM 2131 (ONLINE),Online,none
+2026-09-21,Monday,Rock Climbing Night at the SAC,,low
+2026-09-22,Tuesday,[N] Charlotte 49ers Women's Tennis vs ITA All Americans,"Cary, N.C.",low
+2026-09-22,Tuesday,RSA GB meeting,Colvard 5091,low
+2026-09-22,Tuesday,CHEM 1251 Drop In Hours,Learning Commons - Colvard North 2300,low
+2026-09-22,Tuesday,Dimensions of Wellness tabling,South Village (Sovi),low
+2026-09-22,Tuesday,Master Your Workflow with Google Gmail and Calendar,,low
+2026-09-22,Tuesday,PAL Session: CHEM 1203 (ONLINE),Online,none
+2026-09-22,Tuesday,Presidents' Leadership Workshop,Popp Martin Student Union,medium
+2026-09-22,Tuesday,Career Meet Up: My First Networking Event,,low
+2026-09-22,Tuesday,Mechanical Engineering and Engineering Science Seminar Series: Dr. Ronald D. Joslin,Duke Centennial Hall,low
+2026-09-22,Tuesday,PAL Session - ECON 2102 (FRIDAY 130),FRIDAY 130,none
+2026-09-22,Tuesday,Understanding Gen Z: The AI Generation,,low
+2026-09-22,Tuesday,PAL Session - CHEM 2131 (DENNY 206),DENNY 206,none
+2026-09-22,Tuesday,BIOL 2120 Drop In Hours,Learning Commons - Colvard North 2300,low
+2026-09-22,Tuesday,Niners in the Queen City: Exploring Life in Charlotte and NC,,low
+2026-09-22,Tuesday,Jamil Niner Student Pantry: Tuesday Volunteer Shift | 12:30pm – 2:45pm,Jamil Niner Student Pantry,low
+2026-09-22,Tuesday,Counseling MA Program Virtual Information Session,,none
+2026-09-22,Tuesday,Supporting Self-Directed Learning with Gemini Notebook,,low
+2026-09-22,Tuesday,UCAE Niner Focus Workshop,Colvard North 2006,low
+2026-09-22,Tuesday,Generative AI 101: Getting Started with Gemini & CoPilot,,low
+2026-09-22,Tuesday,Career Meet Up: Career Fair Crash Course,,high
+2026-09-22,Tuesday,Entrepreneurial Mindset for Engineers,PORTAL,low
+2026-09-22,Tuesday,Jamil Niner Student Pantry: Tuesday Volunteer Shift | 2:30pm – 5:00pm,Jamil Niner Student Pantry,low
+2026-09-22,Tuesday,PAL Session: CHEM 1251 (ONLINE),Online,none
+2026-09-22,Tuesday,"AI in Practice: Systems, Wikis, and the Future of Work",Woodward Hall 335,low
+2026-09-22,Tuesday,First-Gen September Meetup,"Bardnhardt Student Activity Center (SAC), Salons AB",medium
+2026-09-22,Tuesday,Lift & Learn: Functional Movement & Wellness Screen,University Recreation Center,low
+2026-09-22,Tuesday,Problem Solving,Popp Martin Student Union,medium
+2026-09-22,Tuesday,Alcoholics Anonymous (AA),Waddell Center for Student Health and Wellbeing,low
+2026-09-22,Tuesday,Fall 2026 Financial Services Career Fair,Student Union 340,high
+2026-09-22,Tuesday,Financial Services Career Fair,Popp Martin Student Union,high
+2026-09-22,Tuesday,PAL Session: CHEM 1252 (MCEN 123),MCENIRY 123,none
+2026-09-22,Tuesday,Tea House,Student Union 265,low
+2026-09-22,Tuesday,Tuesday Seminar- Applied AI in Sports Hospitality: From Fan Sentiment to Reducing Waste,Dubois Center at UNC Charlotte Center City,low
+2026-09-22,Tuesday,Writing Intelligently in the Age of GenAI,Atkins Library,low
+2026-09-22,Tuesday,VAW Global Health Outreach Info Session,Atkins Murray Library Room G48,low
+2026-09-22,Tuesday,Ames Construction Guest Speakers - Cost Estimating,College of Health and Human Services 281,low
+2026-09-22,Tuesday,Type Lab,Macy 106B,low
+2026-09-22,Tuesday,PAL Session - ECON 3125 (ONLINE),Online,none
+2026-09-22,Tuesday,Battle of the Orgs - Beach Volleyball,Star Quad,low
+2026-09-22,Tuesday,Colors of Culture,Cone After Hours,low
+2026-09-22,Tuesday,LASO Venture,Field 14A R,low
+2026-09-22,Tuesday,PAL Session - ECON 2101 (ONLINE),Online,none
+2026-09-22,Tuesday,Microsoft learn: WK3 Excel Workshop,Smith 303,low
+2026-09-22,Tuesday,Total Drama Island 2,Cone Lucas Room,low
+2026-09-23,Wednesday,[N] Charlotte 49ers Women's Tennis vs ITA All Americans,"Cary, N.C.",low
+2026-09-23,Wednesday,Fall 2026 Graduate Education Summit,Cone University Center,medium
+2026-09-23,Wednesday,Qualtrics 101,Cone Center 113B,low
+2026-09-23,Wednesday,PAL Session - ECON 2102 (SMITH 217),SMITH 217,none
+2026-09-23,Wednesday,AI@Work Discussion Series,,low
+2026-09-23,Wednesday,Data Visualization with Matplotlib,Atkins Library,low
+2026-09-23,Wednesday,Part 2: Student Study Skills with Gen-AI,,low
+2026-09-23,Wednesday,Entrepreneurial Mindset for Engineers,PORTAL,low
+2026-09-23,Wednesday,Jamil Niner Student Pantry: Wednesday Volunteer Shift | 10:30am – 12:45pm,Jamil Niner Student Pantry,low
+2026-09-23,Wednesday,Belk College of Business Alumni Coffee,Dubois Center at UNC Charlotte Center City,low
+2026-09-23,Wednesday,Professional in Residence: Pentair (Drop-Ins),University Career Center,low
+2026-09-23,Wednesday,Splash-A-Stepper Tabling,Union,low
+2026-09-23,Wednesday,Voting Registration Tabling,Atkins Library main entrance,low
+2026-09-23,Wednesday,Wellness Wednesday,Popp Martin Student Union,medium
+2026-09-23,Wednesday,Wellness Wednesday Social CRP Silent Disco,Popp Martin Student Union,medium
+2026-09-23,Wednesday,Grad School 101: Start Your Program Search with Confidence,,low
+2026-09-23,Wednesday,Honoring Dr. John Connaughton: A Regional Economic Forum & the Launch of the North Carolina Economic Impact Center,Dubois Center at UNC Charlotte Center City,low
+2026-09-23,Wednesday,PAL Session - CHEM 2131 (CHHS 294),CHHS 294,none
+2026-09-23,Wednesday,PAL Session - CHEM 2131 (COLVD 5092),COLVD 5092,none
+2026-09-23,Wednesday,Popp Into Student Involvement,Popp Martin Student Union,medium
+2026-09-23,Wednesday,Virtual Lunch and Learn: The Credit Game (Learn the Rules Win the Future),Online,none
+2026-09-23,Wednesday,Jamil Niner Student Pantry: Wednesday Volunteer Shift | 12:30pm – 3:30pm,Jamil Niner Student Pantry,low
+2026-09-23,Wednesday,The Art of Networking in the U.S.,Atkins 146,low
+2026-09-23,Wednesday,Canvas: Collaboration with Groups and Peer Review,,low
+2026-09-23,Wednesday,PAL Session: CHEM 1200 (COLVD 5096),COLVD 5096,none
+2026-09-23,Wednesday,Pumpkin Mug Cake Demo Kitchen,UREC Demo Kitchen,low
+2026-09-23,Wednesday,Sew Into Recovery,Atkins Library,low
+2026-09-23,Wednesday,ACCT 2121 Drop In Hours,Colvard,low
+2026-09-23,Wednesday,Clinical Mental Health Counseling Virtual Information Session,,none
+2026-09-23,Wednesday,Lake Days,Hechenbleikner Lake,low
+2026-09-23,Wednesday,Career Meet Up: Career Fair Crash Course,,high
+2026-09-23,Wednesday,PAL Session - CHEM 2132 (FRIDAY 130),FRIDAY 130,none
+2026-09-23,Wednesday,PAL Session - ECON 2101 (COLVD 5092),COLVD 5092,none
+2026-09-23,Wednesday,PAL Session: CHEM 1252 (FRIDAY 385),FRIDAY 385,none
+2026-09-23,Wednesday,"""The Documented Child: Migration, Personhood, and Citizenship in 21st Century U.S. Latinx Children's Literature"" by Maya Socolovsky, Ph.D.",Atkins Library,low
+2026-09-23,Wednesday,Green Dot Bystander Training,Popp Martin Student Union,medium
+2026-09-23,Wednesday,Adopt-A-Spot,Lot 7A,low
+2026-09-23,Wednesday,Art & Chill! Movie + Rock Painting,McEniry Room 401,low
+2026-09-23,Wednesday,Chapter Meeting and Speaker Panel,McEniry 116,low
+2026-09-23,Wednesday,Two ways to get your JL Price MBA - Virtual Information Session,,none
+2026-09-23,Wednesday,Wealth Management Club Fall Kickoff Meeting,Friday 386,low
+2026-09-23,Wednesday,LinkedIn Workshop with Microsoft Learn at UNCC,Smith 204,low
+2026-09-23,Wednesday,Charlotte 49ers Women's Volleyball at East Carolina,"Greenville, N.C.",low
+2026-09-23,Wednesday,Resume Building Workshop,Friday 144,low
+2026-09-23,Wednesday,SKY Weekly Meditation Meetings,Fretwell,low
+2026-09-23,Wednesday,Wingate University Information Session,Mebane 165,low
+2026-09-23,Wednesday,Bank of America Panel,Friday 130,low
+2026-09-23,Wednesday,IEEE Fall Interest Meeting,EPIC 3222,low
+2026-09-23,Wednesday,Rock Climbing Night at the SAC,,low
+2026-09-24,Thursday,[N] Charlotte 49ers Women's Tennis vs ITA All Americans,"Cary, N.C.",low
+2026-09-24,Thursday,Writing Effective Prompts Gemini & Copilot for a Smarter To-Do List Workflow,,low
+2026-09-24,Thursday,Entrepreneurial Mindset for Engineers,PORTAL,low
+2026-09-24,Thursday,Jamil Niner Student Pantry: Thursday Volunteer Shift | 10:30am – 12:45pm,Jamil Niner Student Pantry,low
+2026-09-24,Thursday,Student Org Advisor Workshop,,low
+2026-09-24,Thursday,CCI Tech Connect Networking Event,Cone Center Lucas Room,low
+2026-09-24,Thursday,CHEM 1251 Drop In Hours,Learning Commons - Colvard North 2300,low
+2026-09-24,Thursday,Splash-A-Stepper Tabling,Union,low
+2026-09-24,Thursday,Tech Connect Networking Event - College of Computing and Informatics,,low
+2026-09-24,Thursday,PAL Session - ECON 2101 (SMITH 204),SMITH 204,none
+2026-09-24,Thursday,Part 4: Creating Accessible Instructional Materials with AI,,low
+2026-09-24,Thursday,Ace Your Graduate School Application:Tips and Tricks for Success,,low
+2026-09-24,Thursday,Info Session - Cybersecurity & HCCE Grad Programs,,low
+2026-09-24,Thursday,M.S. in Real Estate Virtual Information Session,,none
+2026-09-24,Thursday,PhD in Computing and Information Systems,,low
+2026-09-24,Thursday,"Student Org: ""Drop In Hour""",Popp Martin Student Union,medium
+2026-09-24,Thursday,Jamil Niner Student Pantry: Thursday Volunteer Shift | 12:30pm – 2:45pm,Jamil Niner Student Pantry,low
+2026-09-24,Thursday,BIOL 2120 Drop In Hours,Learning Commons - Colvard North 2300,low
+2026-09-24,Thursday,Career Meet Up: Networking for Introverts & Extroverts,,low
+2026-09-24,Thursday,Midday Devotion,Cone 111,low
+2026-09-24,Thursday,Pumpkin Mug Cake Demo Kitchen,UREC Demo Kitchen,low
+2026-09-24,Thursday,Streamline Your Storage: Mastering Google Drive,,low
+2026-09-24,Thursday,Zoom AI for Teaching,,none
+2026-09-24,Thursday,Open Swim: LinkedIn,Friday,low
+2026-09-24,Thursday,Applying for the NSF Graduate Research Fellowship Program,Atkins Library,low
+2026-09-24,Thursday,Career Meet Up: Resume Writing Basics,,low
+2026-09-24,Thursday,Mini Printmaking Workshop,Atkins Library,low
+2026-09-24,Thursday,Navigating Your Tableau Dashboard,Cone Center 113B,low
+2026-09-24,Thursday,Verifying Your Values,Popp Martin Student Union,medium
+2026-09-24,Thursday,Jamil Niner Student Pantry: Thursday Volunteer Shift | 2:30pm – 5:15pm,Jamil Niner Student Pantry,low
+2026-09-24,Thursday,UCAE Campus Partner Workshop,Colvard North 2006,low
+2026-09-24,Thursday,PAL Session - CHEM 2132 (CHHS 124),CHHS 124,none
+2026-09-24,Thursday,Personal Branding,Popp Martin Student Union,medium
+2026-09-24,Thursday,Presidents' Leadership Workshop,Popp Martin Student Union,medium
+2026-09-24,Thursday,Addiction Counseling Virtual Information Session,,none
+2026-09-24,Thursday,SOLD Council Workshop: Engagement & Recruitment,Cone University Center,low
+2026-09-24,Thursday,Goal Setting,Popp Martin Student Union,medium
+2026-09-24,Thursday,PAL Session - CHEM 1252 (ONLINE),Online,none
+2026-09-24,Thursday,PAL Session: CHEM 1203 (DENNY 109),DENNY 109,none
+2026-09-24,Thursday,Exhibition Reception: Litmosphere,Dubois Center at UNC Charlotte Center City,low
+2026-09-24,Thursday,Mystery Fundraiser Night,UNC Charlotte,low
+2026-09-24,Thursday,PAL Session - CHEM 2131 (ONLINE),Online,none
+2026-09-24,Thursday,Risk Management & Insurance Alumni Reception,Harris Alumni Center,medium
+2026-09-24,Thursday,Foundations,Denny 122,low
+2026-09-24,Thursday,Charlotte 49ers Women's Soccer vs North Texas,"Charlotte, N.C., Jen Gaber Field",low
+2026-09-24,Thursday,Thursday Worship Night,Popp Martin Student Union,medium
+2026-09-24,Thursday,Rhythm,Fretwell 205,low
+2026-09-24,Thursday,Roots and Words,"Black Box Theater, Robinson Hall",low
+2026-09-25,Friday,[N] Charlotte 49ers Women's Tennis vs ITA All Americans,"Cary, N.C.",low
+2026-09-25,Friday,2026 Family Weekend,UNC Charlotte,low
+2026-09-25,Friday,ACCT 3323 Drop In Hours,Colvard,low
+2026-09-25,Friday,Conflict Resolution: Navigating Colleague-to-Colleague Differences,,low
+2026-09-25,Friday,Fall Career and Internship Fair,,high
+2026-09-25,Friday,Family Weekend Guided Bike Ride,Lot 27,low
+2026-09-25,Friday,Microcredential Minute: UNC Charlotte's Microcredentials,,low
+2026-09-25,Friday,Open Pitch Night (Daytime Edition),Popp Martin Student Union Theater,medium
+2026-09-25,Friday,PAL Session - ECON 2102 (FRIDAY 155),FRIDAY 155,none
+2026-09-25,Friday,PAL Session: CHEM 1200 (ONLINE),Online,none
+2026-09-25,Friday,2026 Family Weekend Legacy Luncheon,"Popp Martin Student Union,",medium
+2026-09-25,Friday,Niner Finances Walk In Hours,King 210,low
+2026-09-25,Friday,Walk In Hours,King,low
+2026-09-25,Friday,Customizing Gemini Gems for Course Assignments,,low
+2026-09-25,Friday,Actuarial Science Career Fair 2026,,high
+2026-09-25,Friday,Champion House of Care Food Pantry,Champion House of Care,low
+2026-09-25,Friday,Marketing Mixer,Star Quad,low
+2026-09-25,Friday,Niners with Novels Reading Club,Fretwell 202,low
+2026-09-25,Friday,Student Org Advisor Workshop,Cone University Center,low
+2026-09-25,Friday,NanoVNA Workshop,EPIC 2222,low
+2026-09-25,Friday,Teddies & Toast,Cone After Hours,low
+2026-09-25,Friday,Game Night: Mafia,College of Health & Human Services (CHHS),low
+2026-09-25,Friday,Roots and Words,"Black Box Theater, Robinson Hall",low
+2026-09-26,Saturday,[N] Charlotte 49ers Women's Tennis vs ITA All Americans,"Cary, N.C.",low
+2026-09-26,Saturday,Crowders Mtn Hike (Cancelled),Chickfila,low
+2026-09-26,Saturday,Feeding Charlotte,Elevation church,low
+2026-09-26,Saturday,Around the World in Objects: A World-Building Adventure,University City Regional Library,low
+2026-09-26,Saturday,Feeding Charlotte : 3rd annual food sustainability summit,Elevation Church,medium
+2026-09-26,Saturday,Roots and Words,"Black Box Theater, Robinson Hall",low
+2026-09-27,Sunday,Fall Colors Hike,Pisgah National Forest (or similar hiking area),low
+2026-09-27,Sunday,Zero Waste Crew Sorting - Sept 27,Jerry Richardson Stadium between Gates 3 and 4,low
+2026-09-27,Sunday,Home Tournament,Field 13,low
+2026-09-27,Sunday,2026 Bachata Brunch,Harris Alumni Center,low
+2026-09-27,Sunday,Sunday Worship,Mebane 065,low
+2026-09-27,Sunday,Charlotte 49ers Women's Volleyball at Temple,"Philadelphia, Pa.",low
+2026-09-27,Sunday,Charlotte 49ers Women's Soccer vs UTSA,"Charlotte, N.C., Jen Gaber Field",low
+2026-09-27,Sunday,HOME GAME (VS GEORGIA SOUTHERN),NRFC Field 16,low
+2026-09-28,Monday,Spring 2027 Schedule of Classes available on the web,UNC Charlotte Academic Calendar,low
+2026-09-28,Monday,Student registration appointment times available on the web,UNC Charlotte Academic Calendar,low
+2026-09-28,Monday,NNW Paint the Campus Green,Center for Student Involvement,low
+2026-09-28,Monday,Paint the Campus Green,Popp Martin Student Union,medium
+2026-09-28,Monday,Counseling MA Program Virtual Information Session,,none
+2026-09-28,Monday,49er ACE Awards & Appreciation Luncheon,Popp Martin Student Union,medium
+2026-09-28,Monday,Career Meet Up: How to Get an Internship,,low
+2026-09-28,Monday,PAL Session: CHEM 1203 (CHHS 294),CHHS 294,none
+2026-09-28,Monday,Student Org Advisor Workshop,Popp Martin Student Union,medium
+2026-09-28,Monday,Grad School 101: Start Your Program Search with Confidence,,low
+2026-09-28,Monday,Overview of Gen-AI Tools in Education,,low
+2026-09-28,Monday,PAL Session: CHEM 1252 (FRET 116),FRET 116,none
+2026-09-28,Monday,PAL Session: CHEM 1251 (CHHS 134),CHHS 134,none
+2026-09-28,Monday,PAL Session - CHEM 2131 (GYMNS 207),GYMNS 207,none
+2026-09-28,Monday,PAL Session: CHEM 1200 (GYMNS 206),GYMNS 206,none
+2026-09-28,Monday,PAL Session - CHEM 2132 (ONLINE),Online,none
+2026-09-28,Monday,PAL Session - ECON 3125 (COLVD 5092),COLVD 5092,none
+2026-09-28,Monday,Master of Public Health - Admissions Virtual Drop-In Hour,,none
+2026-09-28,Monday,The Washington Center Experience,Atkins Library,low
+2026-09-28,Monday,Hi-Wire Brewing Social,"Hi-Wire Brewing, South End",low
+2026-09-28,Monday,September Coffee Hour,Cone 210,low
+2026-09-28,Monday,Niner Home Videos: Digital Yearbook Screening,Atkins Library,low
+2026-09-28,Monday,PAL Session - ECON 2102,Online,none
+2026-09-28,Monday,Bible Study,Colvard,low
+2026-09-28,Monday,PAL Session - CHEM 2131 (ONLINE),Online,none
+2026-09-28,Monday,Choral Collage,Robinson Hall,low
+2026-09-29,Tuesday,Master’s Thesis Proposal Defense Deadline for December 2026 Graduation,UNC Charlotte Academic Calendar,low
+2026-09-29,Tuesday,CHEM 1251 Drop In Hours,Learning Commons - Colvard North 2300,low
+2026-09-29,Tuesday,Dimensions of Wellness tabling,South Village (Sovi),low
+2026-09-29,Tuesday,Homecoming Blood Drive,Cone University Center,high
+2026-09-29,Tuesday,Coffee Chat with Pentair: Explore Early Talent Careers,Atkins Library,low
+2026-09-29,Tuesday,CPL in Action,,low
+2026-09-29,Tuesday,PAL Session: CHEM 1203 (ONLINE),Online,none
+2026-09-29,Tuesday,Lincoln Financial - Employer in the Foyer Table,Woodward Hall Second Floor,low
+2026-09-29,Tuesday,Niner Nation Week Homecoming Kickoff,Cauble Quad,high
+2026-09-29,Tuesday,NNW: Homecoming Kick-Off Event,Cauble Quad,high
+2026-09-29,Tuesday,Presidents' Leadership Workshop,Popp Martin Student Union,medium
+2026-09-29,Tuesday,PAL Session - ECON 2102 (FRIDAY 130),FRIDAY 130,none
+2026-09-29,Tuesday,PAL Session - CHEM 2131 (DENNY 206),DENNY 206,none
+2026-09-29,Tuesday,BIOL 2120 Drop In Hours,Learning Commons - Colvard North 2300,low
+2026-09-29,Tuesday,Student Org Advisor Workshop,Popp Martin Student Union,medium
+2026-09-29,Tuesday,Ace Your Graduate School Application:Tips and Tricks for Success,,low
+2026-09-29,Tuesday,Meet Up: Choose Your Career Community & how to get involved,,low
+2026-09-29,Tuesday,Part 1: Canvas Accessibility with UDOIT,,low
+2026-09-29,Tuesday,PAL Session: CHEM 1251 (ONLINE),Online,none
+2026-09-29,Tuesday,Lincoln Financial - Professional Development Workshop (Cancelled),Woodward Hall 335,low
+2026-09-29,Tuesday,Alcoholics Anonymous (AA),Waddell Center for Student Health and Wellbeing,low
+2026-09-29,Tuesday,PAL Session: CHEM 1252 (MCEN 123),MCENIRY 123,none
+2026-09-29,Tuesday,"Tuesday Seminar Series - From SAS Viya to Global Competitions: Exploring Analytics, AI, and Innovation",Dubois Center at UNC Charlotte Center City,low
+2026-09-29,Tuesday,OMB Ballantyne Social,OMB Ballantyne,low
+2026-09-29,Tuesday,Alumni in Sports Panel,Student Union 265,low
+2026-09-29,Tuesday,PAL Session - ECON 3125 (ONLINE),Online,none
+2026-09-29,Tuesday,"Introduction to Python: Variables, Data Types, Arithmetic and User Input",Online,low
+2026-09-29,Tuesday,PAL Session - ECON 2101 (ONLINE),Online,none
+2026-09-29,Tuesday,Streetwear Couture ~ 2026 Homecoming Fashion Show,McKnight Hall,high
+2026-09-29,Tuesday,Homecoming Fashion Show,McKnight Hall,high
+2026-09-29,Tuesday,Microsoft learn: WK4 Excel Workshop,Smith 303,low
+2026-09-29,Tuesday,Rock Climbing Night at the SAC,,low
+2026-09-29,Tuesday,Cards for a Cure: St. Jude Bingo,Cone After Hours,low
+2026-09-29,Tuesday,Orchestra,Robinson Hall,low
+2026-09-30,Wednesday,PAL Session - ECON 2102 (SMITH 217),SMITH 217,none
+2026-09-30,Wednesday,Getting Started with Active Teaching and Learning,,low
+2026-09-30,Wednesday,Conflict Resolution: Employee-Manager Differences and Managing Up,,low
+2026-09-30,Wednesday,Jamil Niner Student Pantry: Wednesday Volunteer Shift | 10:30am – 12:45pm,Jamil Niner Student Pantry,low
+2026-09-30,Wednesday,Wellness Wednesday,Popp Martin Student Union,medium
+2026-09-30,Wednesday,Building the Network You Actually Need,,low
+2026-09-30,Wednesday,DSBA and DSHA Prospective Graduate Student Information Session,,low
+2026-09-30,Wednesday,Exploring Career Community Drop-ins,,low
+2026-09-30,Wednesday,Insights into Aerospace Careers (Zoom Webinar) Panel Discussion,Online,none
+2026-09-30,Wednesday,LinkedIn Training,Mebane Hall Room 032,low
+2026-09-30,Wednesday,M.S. in Financial Engineering & Fintech Virtual Information Session,,none
+2026-09-30,Wednesday,PAL Session - CHEM 2131 (CHHS 294),CHHS 294,none
+2026-09-30,Wednesday,PAL Session - CHEM 2131 (COLVD 5092),COLVD 5092,none
+2026-09-30,Wednesday,Popp Into Student Involvement,Popp Martin Student Union Room 210,medium
+2026-09-30,Wednesday,ECGR 2111 Drop In Hours,EPIC 2342,low
+2026-09-30,Wednesday,ECGR 2254 & ECGR 3111 Drop In Hours,EPIC 2342,low
+2026-09-30,Wednesday,Jamil Niner Student Pantry: Wednesday Volunteer Shift | 12:30pm – 3:30pm,Jamil Niner Student Pantry,low
+2026-09-30,Wednesday,Funding Your Future: Navigating Graduate Funding Strategies,,low
+2026-09-30,Wednesday,PAL Session: CHEM 1200 (COLVD 5096),COLVD 5096,none
+2026-09-30,Wednesday,Lunch & Learn: Standing Out in a Crowded Job Market,Cone 112 & Zoom,low
+2026-09-30,Wednesday,ACCT 2121 Drop In Hours,Colvard,low
+2026-09-30,Wednesday,Presidents' Leadership Workshop,Popp Martin Student Union,medium
+2026-09-30,Wednesday,The Art of Being: Learning to Cope Creatively (9/30),Price Center for Counseling,low
+2026-09-30,Wednesday,PAL Session - CHEM 2132 (FRIDAY 130),FRIDAY 130,none
+2026-09-30,Wednesday,PAL Session - ECON 2101 (COLVD 5092),COLVD 5092,none
+2026-09-30,Wednesday,UCAE Study Skills and Test Taking Workshop Simulcast,Colvard North 2006,low
+2026-09-30,Wednesday,MSAI Information Session,,low
+2026-09-30,Wednesday,PAL Session - ACCT 3323 (ONLINE),Online,none
+2026-09-30,Wednesday,PAL Session - CHEM 1200 (MEBANE 168),MEBANE 168,none
+2026-09-30,Wednesday,PAL Session: CHEM 1252 (FRIDAY 385),FRIDAY 385,none
+2026-09-30,Wednesday,Fall 2026 Business Etiquette Dinner,Cone University Center 210A/B,low
+2026-09-30,Wednesday,Sammy's Pub Social,Sammy's Neighborhood Pub,low
+2026-09-30,Wednesday,TSO Interest Meeting - Mocktail Mixer,Smith 219,low
+2026-09-30,Wednesday,Volunteer at Devonshire Elementary!,Devonshire Elementary School,low
+2026-09-30,Wednesday,Actuarial Science Club Meeting  3,SMITH 201,low
+2026-09-30,Wednesday,Niner  Night,Cauble Quad,low
+2026-09-30,Wednesday,PAL Session - BIOL 2120 (COLVD 5092),COLVD 5092,none
+2026-09-30,Wednesday,Microsoft Learn: Resume Workshop,Smith 204,low
+2026-09-30,Wednesday,$5 InBody Scan Night,University Recreation Center,low
+2026-09-30,Wednesday,Discussion on Death,Klein 104,low
+2026-09-30,Wednesday,Hispanic Heritage Month: Alumni Panel,BSAC Salon C,low
+2026-09-30,Wednesday,IRS: Criminal Investigation Unit Info Session,Fretwell 113,low
+2026-09-30,Wednesday,SKY Weekly Meditation Meetings,Fretwell,low
+2026-09-30,Wednesday,Spill the Tea and Hot Chocolate Senior Panel,EPIC 3222,low
+2026-09-30,Wednesday,Charlotte Birding Club - Swift Night Out,East Meck High School,low
+2026-09-30,Wednesday,General Meeting,Smith 267,low
+2026-09-30,Wednesday,Loteria Night,SAC AB,low
+2026-09-30,Wednesday,Rock Climbing Night at the SAC,,low
+2026-09-30,Wednesday,Symphonic Band & Wind Ensemble,Robinson Hall,low
+2026-10-01,Thursday,Charlotte 49ers Women's Tennis vs 49er Invite,"Charlotte, N.C., Halton-Wagner Tennis Complex",low
+2026-10-01,Thursday,Faculty Textbook Adoption Deadline (Spring),,low
+2026-10-01,Thursday,Jamil Niner Student Pantry: Thursday Volunteer Shift | 12:30pm – 2:45pm,Jamil Niner Student Pantry,low
+2026-10-01,Thursday,Niner Nation Week T-Shirt Swap,Popp Martin Student Union,medium
+2026-10-01,Thursday,CHEM 1251 Drop In Hours,Learning Commons - Colvard North 2300,low
+2026-10-01,Thursday,Fall Bake Sale,Popp Martin Student Union,medium
+2026-10-01,Thursday,MSC Career LAUNCH Mentorship Program: Leaders Unplugged,,low
+2026-10-01,Thursday,Spin Into Awareness,Student Union Front Porch,low
+2026-10-01,Thursday,The Hartford Employer in the Foyer Table,Woodward Hall Second Floor,low
+2026-10-01,Thursday,Transfer Social Series: Create your Transfer Career Experience,Career Center Classroom,low
+2026-10-01,Thursday,Transfer Student Social Series: Create Your Transfer Career Experience,University Career Center,low
+2026-10-01,Thursday,ECGR 2111 Drop In Hours,EPIC 2342,low
+2026-10-01,Thursday,ECGR 2254 & ECGR 3111 Drop In Hours,EPIC 2342,low
+2026-10-01,Thursday,"Mechanical Engineering and Engineering Science Seminar Series: Carlos Andrade, Ph.D. candidate",Duke Centennial Hall,low
+2026-10-01,Thursday,PAL Session - ECON 2101 (SMITH 204),SMITH 204,none
+2026-10-01,Thursday,Thirsty Thursdays start October 1st w/Gallo Winery,,low
+2026-10-01,Thursday,Formatting and Submitting Your Thesis or Dissertation,,low
+2026-10-01,Thursday,M.S. in Computer Science (MSCS) Virtual Information Session,,none
+2026-10-01,Thursday,"Student Org: ""Drop In Hour""",Student Union,low
+2026-10-01,Thursday,Thirsty Thursdays:  October 1st with McKenney's,Online,low
+2026-10-01,Thursday,BIOL 2120 Drop In Hours,Learning Commons - Colvard North 2300,low
+2026-10-01,Thursday,Midday Devotion,Union 200,low
+2026-10-01,Thursday,Part 2: Collaborative Projects of GNL,,low
+2026-10-01,Thursday,ECGR 2105 Drop In Hours,Learning Commons - Colvard North 2300,low
+2026-10-01,Thursday,Jamil Niner Student Pantry: Thursday Volunteer Shift | 2:30pm – 5:15pm,Jamil Niner Student Pantry,low
+2026-10-01,Thursday,PAL Session - CHEM 2132 (CHHS 124),CHHS 124,none
+2026-10-01,Thursday,International Coffee Hour,Popp Martin Student Union,medium
+2026-10-01,Thursday,UCAE Time Management Workshop,Colvard North 2006,low
+2026-10-01,Thursday,Cabarrus Brewing Co Social,Cabarrus Brewing Co,low
+2026-10-01,Thursday,Uptown Live,Truist Center Plaza,low
+2026-10-01,Thursday,Virtual Workshop - Beyond the Hype: Engineering AI Solutions That Actually Work in Banking,Online,none
+2026-10-01,Thursday,Build Your Network: LinkedIn & Networking Strategies,Smith Building Room 217,low
+2026-10-01,Thursday,Moon Festival GBM,Leving Field 14A,medium
+2026-10-01,Thursday,"Run, Toby, Run!",Hauser Alumni Pavilion,low
+2026-10-01,Thursday,Best Buddies Game night,CHHS 109,low
+2026-10-01,Thursday,Boba and Books,McEniry 401,low
+2026-10-01,Thursday,ARCHIVE interest meeting,Mebane Room 102,low
+2026-10-01,Thursday,Fall Ball Social Event,Cone Center After Hours,low
+2026-10-01,Thursday,I Just Want to Dance,Wilson/Levine Arch Way,low
+2026-10-01,Thursday,LWJ- Foundations,Denny 122,low
+2026-10-01,Thursday,Thursday College Gathering,STUN 262,low
+2026-10-01,Thursday,Homecoming Flag Football Tournament (Pre-Registration Required!),Jerry Richardson Stadium,high
+2026-10-01,Thursday,Jazz Ensemble and Combos,Robinson Hall,low
+2026-10-01,Thursday,Rhythm,Fretwell 205,low
+2026-10-01,Thursday,Aux Cord Wars,Popp Martin Student Union,medium
+2026-10-02,Friday,Charlotte 49ers Women's Tennis vs 49er Invite,"Charlotte, N.C., Halton-Wagner Tennis Complex",low
+2026-10-02,Friday,Unsatisfactory Mid-Term Grades due for Fall 2026 by,UNC Charlotte Academic Calendar,low
+2026-10-02,Friday,Waterbean Coffee Social,"Waterbean Coffee, Huntersville",low
+2026-10-02,Friday,ACCT 3323 Drop In Hours,Colvard,low
+2026-10-02,Friday,Jamil Niner Student Pantry Garden Day | 9:00am – 11:00am,Jamil Niner Student Pantry,low
+2026-10-02,Friday,Graduate Admissions Virtual Office Hours,,none
+2026-10-02,Friday,Science and Technology Development Grant Funding Presentation,UNC Charlotte,low
+2026-10-02,Friday,TIAA's Early Career ASPIRE Event,,low
+2026-10-02,Friday,Career Meet Up: Purpose Over Position: Designing a Career That Matters,,low
+2026-10-02,Friday,A2i: Negotiation in the Professional World,Atkins Library,low
+2026-10-02,Friday,Niner Finances Walk In Hours,King 210,low
+2026-10-02,Friday,Walk In Hours,King,low
+2026-10-02,Friday,Mechanical Engineering Research Open House and Manufacturing Day,Duke Centennial Hall,high
+2026-10-02,Friday,UTD | Tabling,PMSU | 1st Floor,low
+2026-10-02,Friday,Niners with Novels Reading Club,Fretwell 202,low
+2026-10-02,Friday,BAC History Makers' Old School Day Party,Harris Alumni Center,low
+2026-10-02,Friday,Homecoming Carnival,49th Acre,high
+2026-10-02,Friday,NNW: Homecoming Carnival,49th Acre,high
+2026-10-02,Friday,Shodō Club Kanji Telephone,CHHS,low
+2026-10-02,Friday,Holistic Founder,CO-LAB,low
+2026-10-02,Friday,Charlotte 49ers Women's Volleyball vs UTSA,"Charlotte, N.C.",low
+2026-10-02,Friday,Korea Traditional games,smith 229,low
+2026-10-02,Friday,Sunset Friday,CHHS 285,low
+2026-10-02,Friday,Annual UNC Charlotte NPHC Homecoming Stroll Competition,Popp Martin Student Union,high
+2026-10-02,Friday,Charlotte 49ers Women's Soccer at Tulsa,"Tulsa, OK",low
+2026-10-02,Friday,Game Night: Wii Sports!,College of Health & Human Services (CHHS),low
+2026-10-02,Friday,BAC Homecoming Welcome Reception,UNC Charlotte Marriott Hotel & Conference Center,high
+2026-10-03,Saturday,Alumni Tailgate (Homecoming),"Hauser Alumni Pavilion presented by Parks Chevrolet Charlotte, Official Hometown Dealer of the Charlotte 49ers",high
+2026-10-03,Saturday,Charlotte 49ers Women's Tennis vs 49er Invite,"Charlotte, N.C., Halton-Wagner Tennis Complex",low
+2026-10-03,Saturday,Homecoming Game,Jerry Richardson Stadium ,high
+2026-10-03,Saturday,Homecoming Spirit Tents,49th Acre,high
+2026-10-03,Saturday,Community Homecoming Tailgate,49th Acre,high
+2026-10-03,Saturday,Five Star Cheer Tailgate,West Quad,low
+2026-10-03,Saturday,Lifeline Christian Mission Meal Packing,Lifeline,low
+2026-10-03,Saturday,The 5th Annual Latinx Tailgate (Homecoming Edition),49th Acre,high
+2026-10-03,Saturday,Around the World in Objects: A World-Building Adventure,University City Regional Library,low
+2026-10-03,Saturday,GameDay Spirit Tents,49th Acre & 49er Way,low
+2026-10-03,Saturday,Homecoming Tailgate,Lot 25,high
+2026-10-03,Saturday,Niner Woods Sip and Paint,Niner Woods Pool/Clubhouse,low
+2026-10-03,Saturday,Green & Gold ThrowBAC,Popp Martin Student Union,medium
+2026-10-04,Sunday,Zero Waste Crew Sorting - Oct 4,Jerry Richardson Stadium between Gates 3 and 4,low
+2026-10-04,Sunday,"Question, Persuade, Refer Training (Faculty/Staff)",,low
+2026-10-04,Sunday,BAC Soulful Sunday Brunch,UNC Charlotte Marriott Hotel & Conference Center,low
+2026-10-04,Sunday,Charlotte 49ers Women's Volleyball vs North Texas,"Charlotte, N.C.",low
+2026-10-04,Sunday,AWAY GAME (VS USC),University of South Carolina,low
+2026-10-04,Sunday,PENSA CAMPUS MINISTRY REVIVAL,Austin Auditorium - Wingage University,low
+2026-10-04,Sunday,Charlotte Birding Club - Swift Night Out,Collinswood Language Academy,low
+2026-10-05,Monday,Unsatisfactory Mid-Term Grade notices emailed to students for Fall 2026,UNC Charlotte Academic Calendar,none
+2026-10-05,Monday,HOSA x OneBlood Drive,Student Union,medium
+2026-10-05,Monday,PAL Session - ACCT 3323 (MCENIRY 118),MCEN 118,none
+2026-10-05,Monday,RA Info Session  (In-person),Popp Martin Student Union,medium
+2026-10-05,Monday,Jamil Niner Student Pantry: Monday Volunteer Shift | 11:00am – 1pm,Jamil Niner Student Pantry,low
+2026-10-05,Monday,Master of Accountancy Virtual Information Session,,none
+2026-10-05,Monday,Using Gemini Notebook AI for Teaching,,low
+2026-10-05,Monday,PAL Session: CHEM 1203 (CHHS 294),CHHS 294,none
+2026-10-05,Monday,ECGR 2111 Drop In Hours,EPIC 2342,low
+2026-10-05,Monday,ECGR 2254 & ECGR 3111 Drop In Hours,EPIC 2342,low
+2026-10-05,Monday,Career Meet Up: Undergraduate Research & Your Future Career,,low
+2026-10-05,Monday,Casual Chess Meetup,Cone 109,low
+2026-10-05,Monday,PAL Session - CHEM 1200 (ONLINE),Online,none
+2026-10-05,Monday,PAL Session: CHEM 1252 (FRET 116),FRET 116,none
+2026-10-05,Monday,True Colors,Popp Martin Student Union,medium
+2026-10-05,Monday,PAL Session: CHEM 1251 (CHHS 134),CHHS 134,none
+2026-10-05,Monday,Feel Better Fast: Mindful or Mind Full?,Student Union 267,low
+2026-10-05,Monday,Career Meet Up: From Passion to Profession: Building a Career in Child Welfare,,low
+2026-10-05,Monday,COMM 1100 & COMM 2100 Drop In Hours,Learning Commons - Colvard North 2300,low
+2026-10-05,Monday,Establishing Your Ethics,Popp Martin Student Union,medium
+2026-10-05,Monday,Microcredential Minute: UNC Charlotte's Microcredentials,,low
+2026-10-05,Monday,PAL Session - ACCT 3323 (MEBANE 032),MEBANE 032,none
+2026-10-05,Monday,PAL Session - CHEM 2131 (GYMNS 207),GYMNS 207,none
+2026-10-05,Monday,PAL Session: CHEM 1200 (GYMNS 206),GYMNS 206,none
+2026-10-05,Monday,PAL Session - CHEM 2132 (ONLINE),Online,none
+2026-10-05,Monday,PAL Session - ECON 3125 (COLVD 5092),COLVD 5092,none
+2026-10-05,Monday,From Isolation to Community: Thriving in Grad School,Atkins Library,low
+2026-10-05,Monday,Interest Meeting,CHHS 289,low
+2026-10-05,Monday,Build & Share Night - Tech/AI,Smith 269,low
+2026-10-05,Monday,UCAE Bounce Back from Setbacks Simulcast,Colvard North 2006,low
+2026-10-05,Monday,Counseling MA Program Virtual Information Session,,none
+2026-10-05,Monday,PAL Session - ECON 2102,Online,none
+2026-10-05,Monday,Prism Interest Meeting,Smith 217,low
+2026-10-05,Monday,Clinical Mental Health Counseling Virtual Information Session,,none
+2026-10-05,Monday,LWJ- Bible Study,Colvard 4123,low
+2026-10-05,Monday,Meet Up: Careers in the Music Industry,,low
+2026-10-05,Monday,PAL Session - CHEM 2131 (ONLINE),Online,none
+2026-10-05,Monday,Rock Climbing Night at the SAC,,low
+2026-10-06,Tuesday,CHEM 1251 Drop In Hours,Learning Commons - Colvard North 2300,low
+2026-10-06,Tuesday,Grad School 101: Start Your Program Search with Confidence,,low
+2026-10-06,Tuesday,MSW Information Session,,low
+2026-10-06,Tuesday,PAL Session: CHEM 1203 (ONLINE),Online,none
+2026-10-06,Tuesday,Jamil Niner Student Pantry: Tuesday Volunteer Shift | 10:30am – 12:45pm,Jamil Niner Student Pantry,low
+2026-10-06,Tuesday,GluTrend Employer in the Foyer,Woodward Hall Second Floor,low
+2026-10-06,Tuesday,Mushroom Egg Bites Demo Kitchen,UREC Demo Kitchen,low
+2026-10-06,Tuesday,Customizing Gemini Gems for Course Assignments,,low
+2026-10-06,Tuesday,ECGR 2111 Drop In Hours,EPIC 2342,low
+2026-10-06,Tuesday,ECGR 2254 & ECGR 3111 Drop In Hours,EPIC 2342,low
+2026-10-06,Tuesday,ITE General Body Meeting,EPIC 3256,low
+2026-10-06,Tuesday,Mechanical Engineering and Engineering Science Seminar Series: Dr. Xiaocheng Mi,Duke Centennial Hall,low
+2026-10-06,Tuesday,PAL Session - ECON 2102 (FRIDAY 130),FRIDAY 130,none
+2026-10-06,Tuesday,PAL Session - CHEM 2131 (DENNY 206),DENNY 206,none
+2026-10-06,Tuesday,Bio Break: Meet Biology Professionals,,low
+2026-10-06,Tuesday,BIOL 2120 Drop In Hours,Learning Commons - Colvard North 2300,low
+2026-10-06,Tuesday,Jamil Niner Student Pantry: Tuesday Volunteer Shift | 12:30pm – 2:45pm,Jamil Niner Student Pantry,low
+2026-10-06,Tuesday,Career Meet Up: Interviewing 101,,low
+2026-10-06,Tuesday,ECGR 2105 Drop In Hours,Learning Commons - Colvard North 2300,low
+2026-10-06,Tuesday,Approaching Generative AI with C.A.R.E.: An Assessment Framework,,low
+2026-10-06,Tuesday,Approaching Generative AI with CARE: An Assessment Framework,Online,low
+2026-10-06,Tuesday,Health Supply Drives Tabling,Student Union Lobby,low
+2026-10-06,Tuesday,Canvas: Collaboration with Groups and Peer Review,,low
+2026-10-06,Tuesday,Jamil Niner Student Pantry: Tuesday Volunteer Shift | 2:30pm – 5:15pm,Jamil Niner Student Pantry,low
+2026-10-06,Tuesday,"Vibes, Values, and Red Flags: Communication & Listening Skills",Popp Martin Student Union,medium
+2026-10-06,Tuesday,PAL Session: CHEM 1251 (ONLINE),Online,none
+2026-10-06,Tuesday,Growing Through Grief,Price Center for Counseling,low
+2026-10-06,Tuesday,Interview Tips for Positions in the U.S.,,low
+2026-10-06,Tuesday,Alcoholics Anonymous (AA),Waddell Center for Student Health and Wellbeing,low
+2026-10-06,Tuesday,CAB Undercover,Popp Martin Student Union,medium
+2026-10-06,Tuesday,DSHA Group Advising Session,,low
+2026-10-06,Tuesday,Exploring Careers in Biology & the Sciences,,low
+2026-10-06,Tuesday,Finding Focus: ADHD and You,Popp Martin Student Union,medium
+2026-10-06,Tuesday,PAL Session: CHEM 1252 (MCEN 123),MCENIRY 123,none
+2026-10-06,Tuesday,PAL Session - ACCT 3323 (Friday 385),FRIDAY 385,none
+2026-10-06,Tuesday,Cafecito & Careers,TBD,low
+2026-10-06,Tuesday,Made to Unbox | Blind Box Design Challenge,Macy 106B,low
+2026-10-06,Tuesday,Writer Social hosted by H.E.R. Society,PMSU,low
+2026-10-06,Tuesday,PAL Session - ECON 3125 (ONLINE),Online,none
+2026-10-06,Tuesday,Alumbra Tu Semestre,Hechenbleikner Lake,low
+2026-10-06,Tuesday,"Introduction to Python 2: Control Flow, Data Structures, and Functions",Online,low
+2026-10-06,Tuesday,PAL Session - ECON 2101 (ONLINE),Online,none
+2026-10-06,Tuesday,Principal Financial Workshop Series: Introduction & AWS Services,McEniry 117,low
+2026-10-06,Tuesday,Microsoft learn: WK5 Excel Workshop,Smith 303,low
+2026-10-06,Tuesday,Faculty & Friends: Charlotte Strings Collective,Rowe,low
+2026-10-07,Wednesday,Know Before You Go: Essential Steps for Newly Admitted Students,,high
+2026-10-07,Wednesday,PAL Session - ECON 2102 (SMITH 217),SMITH 217,none
+2026-10-07,Wednesday,Jamil Niner Student Pantry: Wednesday Volunteer Shift | 10:30am – 12:45pm,Jamil Niner Student Pantry,low
+2026-10-07,Wednesday,Part Time Job Fair,,high
+2026-10-07,Wednesday,The Knowledge Navigator: Using Notebook LM to Transform Docs into Deliverables and Success,,low
+2026-10-07,Wednesday,Wellness Wednesday,Atkins Library,low
+2026-10-07,Wednesday,Part 3: GNL and Career Readiness: How to design assessments that boost students career skills,,low
+2026-10-07,Wednesday,Climate Change Quilt Workshop,"Area 49 Makerspace, Atkins Library 2nd Floor",low
+2026-10-07,Wednesday,Mock Dorm Room Burn,Recreational Field 14A,low
+2026-10-07,Wednesday,PAL Session - CHEM 2131 (CHHS 294),CHHS 294,none
+2026-10-07,Wednesday,PAL Session - CHEM 2131 (COLVD 5092),COLVD 5092,none
+2026-10-07,Wednesday,Popp Into Student Involvement,Popp Martin Student Union Room 210,medium
+2026-10-07,Wednesday,Prospective PhD Student Information Session,,low
+2026-10-07,Wednesday,What to Say When You Don’t Know What to Say Webinar,,none
+2026-10-07,Wednesday,Career Meet Up: Building Skills for the Future of Healthcare,,low
+2026-10-07,Wednesday,ECGR 2111 Drop In Hours,EPIC 2342,low
+2026-10-07,Wednesday,ECGR 2254 & ECGR 3111 Drop In Hours,EPIC 2342,low
+2026-10-07,Wednesday,Jamil Niner Student Pantry: Wednesday Volunteer Shift | 12:30pm – 3:30pm,Jamil Niner Student Pantry,low
+2026-10-07,Wednesday,The Digital & Automated Lab: How Technology Is Transforming Science,Bioinformatics,low
+2026-10-07,Wednesday,PAL Session: CHEM 1200 (COLVD 5096),COLVD 5096,none
+2026-10-07,Wednesday,Midterm Munchies,Atkins Library,low
+2026-10-07,Wednesday,ACCT 2121 Drop In Hours,Colvard,low
+2026-10-07,Wednesday,Beyond the Buzzwords,Waddell Center for Student Health and Wellbeing,low
+2026-10-07,Wednesday,Bad Art Day - Grad Student Edition!,Area 49 Makerspace (Atkins 223),low
+2026-10-07,Wednesday,PAL Session - CHEM 2132 (FRIDAY 130),FRIDAY 130,none
+2026-10-07,Wednesday,PAL Session - ECON 2101 (COLVD 5092),COLVD 5092,none
+2026-10-07,Wednesday,Crescent Communities,River District,low
+2026-10-07,Wednesday,DSBA Group Advising Session,,low
+2026-10-07,Wednesday,PAL Session - ACCT 3323 (ONLINE),Online,none
+2026-10-07,Wednesday,PAL Session - CHEM 1200 (MEBANE 168),MEBANE 168,none
+2026-10-07,Wednesday,PAL Session: CHEM 1252 (FRIDAY 385),FRIDAY 385,none
+2026-10-07,Wednesday,UCAE Bounce Back from Setbacks,Colvard North 2006,low
+2026-10-07,Wednesday,CRA Member's Circle: A Student's Guide to Navigating the Technical Interview,,low
+2026-10-07,Wednesday,Gallagher Speaker Meeting,Student Union 265,low
+2026-10-07,Wednesday,UCAE Course Support Leader Meet & Greet,Colvard 2006,low
+2026-10-07,Wednesday,Charlotte 49ers Women's Volleyball vs East Carolina,"Charlotte, N.C.",low
+2026-10-07,Wednesday,SKY Weekly Meditation Meetings,Fretwell,low
+2026-10-07,Wednesday,Meet the Firm: CliftonLarsonAllen,Fretwell 114,low
+2026-10-07,Wednesday,Roll to the Polls,CHHS 376,low
+2026-10-08,Thursday,Last day to change Grade Type (P/NC or Audit),UNC Charlotte Academic Calendar,low
+2026-10-08,Thursday,Last day to Change or Opt-Out of Grade Replacement,UNC Charlotte Academic Calendar,low
+2026-10-08,Thursday,Last day to withdraw from course(s); grade subject to Withdrawal Policy,UNC Charlotte Academic Calendar,none
+2026-10-08,Thursday,Ace Your Graduate School Application:Tips and Tricks for Success,,low
+2026-10-08,Thursday,AI@Work Discussion Series,,low
+2026-10-08,Thursday,Supporting Self-Directed Learning with Gemini Notebook,,low
+2026-10-08,Thursday,Jamil Niner Student Pantry: Thursday Volunteer Shift | 10:30am – 12:45pm,Jamil Niner Student Pantry,low
+2026-10-08,Thursday,CHEM 1251 Drop In Hours,Learning Commons - Colvard North 2300,low
+2026-10-08,Thursday,Enhancing Workflows with Google Gemini: Building Custom Gems,,low
+2026-10-08,Thursday,Green Dot Student Overview,,low
+2026-10-08,Thursday,Lucid Software Employer in the Foyer Table (Cancelled),Woodward Hall Second Floor,low
+2026-10-08,Thursday,Thirsty Thursdays with Ward Vessel - Oct. 8th,Duke Centennial Hall,low
+2026-10-08,Thursday,Botanical Gardens Scavenger Hunt,UNC Charlotte Botanical Gardens,low
+2026-10-08,Thursday,ECGR 2111 Drop In Hours,EPIC 2342,low
+2026-10-08,Thursday,ECGR 2254 & ECGR 3111 Drop In Hours,EPIC 2342,low
+2026-10-08,Thursday,PAL Session - ECON 2101 (SMITH 204),SMITH 204,none
+2026-10-08,Thursday,Ready-to-Use AI Literacy Canvas Modules for Students,,low
+2026-10-08,Thursday,M.S. in Management Virtual Information Session,,none
+2026-10-08,Thursday,"Student Org: ""Drop In Hour""",Student Union,low
+2026-10-08,Thursday,Virtual Lunch and Learn: Get Savvy w/ Saving & Investing,Online,none
+2026-10-08,Thursday,Jamil Niner Student Pantry: Thursday Volunteer Shift | 12:30pm – 2:45pm,Jamil Niner Student Pantry,low
+2026-10-08,Thursday,BIOL 2120 Drop In Hours,Learning Commons - Colvard North 2300,low
+2026-10-08,Thursday,Midday Devotion,Union 200,low
+2026-10-08,Thursday,Open Swim Q&A: Mastering Google Workspace & Generative AI,,low
+2026-10-08,Thursday,ECGR 2105 Drop In Hours,Learning Commons - Colvard North 2300,low
+2026-10-08,Thursday,Career Meet Up: Exploring Careers in Healthcare & Life Sciences with Labcorp,,low
+2026-10-08,Thursday,Great Groups,Popp Martin Student Union,medium
+2026-10-08,Thursday,MSW Information Session,,low
+2026-10-08,Thursday,Jamil Niner Student Pantry: Thursday Volunteer Shift | 2:30pm – 5:15pm,Jamil Niner Student Pantry,low
+2026-10-08,Thursday,A Day in the Life of a Software Engineer at Lucid Software Professional Development Workshop (Cancelled),Woodward Hall 335,low
+2026-10-08,Thursday,PAL Session - CHEM 2132 (CHHS 124),CHHS 124,none
+2026-10-08,Thursday,Problem Solving,Popp Martin Student Union,medium
+2026-10-08,Thursday,"""Language Brokers"": Children of Immigrants Translating Inequality and Belonging for Their Families",McEniry,low
+2026-10-08,Thursday,SOLD Council Workshop: Conflict & Sustainability,Cone University Center,low
+2026-10-08,Thursday,Stress Management,Popp Martin Student Union,medium
+2026-10-08,Thursday,18th Annual Dr. Bertha Maxwell Roddey Distinguished Africana Lecture,Cone University Center,low
+2026-10-08,Thursday,PAL Session - CHEM 1200 (Friday 130),FRIDAY 130,none
+2026-10-08,Thursday,PAL Session - CHEM 1252 (ONLINE),Online,none
+2026-10-08,Thursday,Build-a-Bear-Hand,Mebane Hall 032,low
+2026-10-08,Thursday,Fiqh of Internet,Popp Martin Student Union 340G,medium
+2026-10-08,Thursday,PAL Session: CHEM 1203 (DENNY 109),DENNY 109,none
+2026-10-08,Thursday,PES Talks: Maximizing Megawatts - Deriva Energy,EPIC G222,low
+2026-10-08,Thursday,General Body Meeting: Pumpkin Painting,Denny 200,low
+2026-10-08,Thursday,PAL Session - CHEM 2131 (ONLINE),Online,none
+2026-10-08,Thursday,The Culture We Create: Building a Safer Campus Community,Student Union 340,low
+2026-10-08,Thursday,Unidos Por Cultura,Hauser Alumni Pavilion,low
+2026-10-08,Thursday,Charlotte 49ers Women's Soccer vs East Carolina,"Charlotte, N.C., Jen Gaber Field",low
+2026-10-08,Thursday,Rock Climbing Night at the SAC,,low
+2026-10-08,Thursday,Thursday College Gathering,STUN 262,low
+2026-10-08,Thursday,Rhythm,Fretwell 205,low
+2026-10-09,Friday,ACCT 3323 Drop In Hours,Colvard,low
+2026-10-09,Friday,Designing and Implementing Group Projects,,low
+2026-10-09,Friday,MSRE Seminar Series,Olde Mecklenburg Brewery,low
+2026-10-09,Friday,Niner Finances Walk In Hours,King 210,low
+2026-10-09,Friday,Walk In Hours,King,low
+2026-10-09,Friday,UCAE Bounce Back from Setbacks Simulcast,Colvard North 2006,low
+2026-10-09,Friday,Mini Cross Stitch Workshop,Atkins Library,low
+2026-10-09,Friday,Niners with Novels Reading Club,Fretwell,low
+2026-10-09,Friday,LTspice Audio Workshop,EPIC 2222,low
+2026-10-09,Friday,Charlotte 49ers Women's Volleyball at Tulane,"New Orleans, La.",low
+2026-10-09,Friday,Game Night,College of Health & Human Services (CHHS),low
+2026-10-10,Saturday,More Than Pink Breast Cancer Walk,Symphony Park,low
+2026-10-10,Saturday,Alternative Spring Break - Roan Mountain Backpacking,Roan Mountain Highlands,low
+2026-10-10,Saturday,Around the World in Objects: A World-Building Adventure,University City Regional Library,low
+2026-10-10,Saturday,Student Sustainability Summit,Cone University Center,medium
+2026-10-11,Sunday,Alternative Spring Break - Roan Mountain Backpacking,Roan Mountain Highlands,low
+2026-10-11,Sunday,Charlotte 49ers Women's Soccer at Memphis,"Memphis, TN",low
+2026-10-11,Sunday,Biketoberfest,Triple C Brewing ,low
+2026-10-12,Monday,Student Recess – No Classes,UNC Charlotte Academic Calendar,low
+2026-10-12,Monday,Alternative Spring Break - Roan Mountain Backpacking,Roan Mountain Highlands,low
+2026-10-12,Monday,"Part 2: Files and PDF Accessibility Checkers: Using Grackle, Adobe, and Microsoft Tools",,low
+2026-10-12,Monday,Casual Chess Meetup,Cone 109,low
+2026-10-12,Monday,Ethical Considerations for Teaching with Gen-AI,,low
+2026-10-12,Monday,Niners in the Queen City: Exploring Life in Charlotte and NC,,low
+2026-10-12,Monday,The Salvation Army of Greater Charlotte,Salvation Army of Greater Charlotte,low
+2026-10-12,Monday,Master of Public Health - Admissions Virtual Drop-In Hour,,none
+2026-10-13,Tuesday,Optional Reschedule Date for Possible Interruptions,UNC Charlotte Academic Calendar,low
+2026-10-13,Tuesday,Alternative Spring Break - Roan Mountain Backpacking,Roan Mountain Highlands,low
+2026-10-13,Tuesday,Student Recess – No Classes,UNC Charlotte Academic Calendar,low
+2026-10-13,Tuesday,CHEM 1251 Drop In Hours (Cancelled),Learning Commons - Colvard North 2300,low
+2026-10-13,Tuesday,Women in Business Fall Retreat,Halton Reading Room,low
+2026-10-13,Tuesday,Designing in a Dash: Adobe Express Basics,,low
+2026-10-13,Tuesday,"Mentorship: Building Natural, Lasting Professional Relationships",,low
+2026-10-13,Tuesday,BIOL 2120 Drop In Hours (Cancelled),Learning Commons - Colvard North 2300,low
+2026-10-13,Tuesday,M.S. in Economics Virtual Information Session,,none
+2026-10-13,Tuesday,Beyond the Basics: Designing Dynamic Google Docs,,low
+2026-10-13,Tuesday,DisabilityIn:NC & NCAble Webinar,,none
+2026-10-13,Tuesday,Part 4: Creating Accessible Instructional Materials with AI,,low
+2026-10-13,Tuesday,Grad School 101: Start Your Program Search with Confidence,,low
+2026-10-13,Tuesday,Digital Accessibility ‘Fix-It Clinic’,,low
+2026-10-13,Tuesday,Microsoft learn: WK6 Excel Workshop,Smith 303,low
+2026-10-14,Wednesday,Alternative Spring Break - Roan Mountain Backpacking,Roan Mountain Highlands,low
+2026-10-14,Wednesday,Student Recess – No Classes,UNC Charlotte Academic Calendar,low
+2026-10-14,Wednesday,Transportation Fair,Cauble Quad,medium
+2026-10-14,Wednesday,Wellness Wednesday,Union,low
+2026-10-14,Wednesday,Duke Energy: NDEAM Workshop,,low
+2026-10-14,Wednesday,M.S. in Financial Engineering & Fintech Virtual Information Session,,none
+2026-10-14,Wednesday,Popp Into Student Involvement,Popp Martin Student Union,medium
+2026-10-14,Wednesday,Public Policy PHD Information Session,,low
+2026-10-14,Wednesday,ECGR 2111 Drop In Hours,EPIC 2342,low
+2026-10-14,Wednesday,ECGR 2254 & ECGR 3111 Drop In Hours,EPIC 2342,low
+2026-10-14,Wednesday,Formatting and Submitting Your Thesis or Dissertation,,low
+2026-10-14,Wednesday,Career Meet Up: Effective Cover Letter Writing,,low
+2026-10-14,Wednesday,Data Made Easy: Simplifying Your Workflow with Google Sheets & Forms,,low
+2026-10-14,Wednesday,ACCT 2121 Drop In Hours,Colvard,low
+2026-10-14,Wednesday,Ace Your Graduate School Application:Tips and Tricks for Success,,low
+2026-10-14,Wednesday,Beyond the Buzzwords,Waddell Center for Student Health and Wellbeing,low
+2026-10-14,Wednesday,The Art of Being: Learning to Cope Creatively (10/14),Price Center for Counseling,low
+2026-10-14,Wednesday,Part 3: Designing Accessible Course Media,,low
+2026-10-14,Wednesday,MSAI Information Session,,low
+2026-10-14,Wednesday,Procrastination Workshop Series:  In-Person October Sessions,"Visualization Lab, J. Murrey Atkins Library, 2nd floor",low
+2026-10-14,Wednesday,Yoga Under the Stars,Star Quad,low
+2026-10-14,Wednesday,Rock Climbing Night at the SAC,,low
+2026-10-15,Thursday,Charlotte 49ers Women's Tennis vs ITA Regionals,"Columbia, S.C.",low
+2026-10-15,Thursday,Conference: Bridging the Invisible,,medium
+2026-10-15,Thursday,Part 1: Canvas Accessibility with UDOIT,,low
+2026-10-15,Thursday,AAC Day!,Cato College of Education/ Mebane Hall,low
+2026-10-15,Thursday,CHEM 1251 Drop In Hours,Learning Commons - Colvard North 2300,low
+2026-10-15,Thursday,Writing Effective Prompts Gemini & Copilot for a Smarter To-Do List Workflow.,,low
+2026-10-15,Thursday,ECGR 2111 Drop In Hours,EPIC 2342,low
+2026-10-15,Thursday,ECGR 2254 & ECGR 3111 Drop In Hours,EPIC 2342,low
+2026-10-15,Thursday,Learning about Lowe’s: Merchandising,,low
+2026-10-15,Thursday,"Part 2: Files and PDF Accessibility Checkers: Using Grackle, Adobe, and Microsoft Tools",,low
+2026-10-15,Thursday,M.S. in Real Estate Virtual Information Session,,none
+2026-10-15,Thursday,"Student Org: ""Drop In Hour""",Popp Martin Student Union,medium
+2026-10-15,Thursday,Think about it Thursdays: Ed.D. Pathways,,low
+2026-10-15,Thursday,BIOL 2120 Drop In Hours,Learning Commons - Colvard North 2300,low
+2026-10-15,Thursday,Midday Devotion,Union 200,low
+2026-10-15,Thursday,ECGR 2105 Drop In Hours,Learning Commons - Colvard North 2300,low
+2026-10-15,Thursday,Funding Your Future: Navigating Graduate Funding Strategies,,low
+2026-10-15,Thursday,Generative AI 101: Getting Started with Gemini & CoPilot,,low
+2026-10-15,Thursday,International Coffee Hour,Popp Martin Student Union,medium
+2026-10-15,Thursday,"Question, Persuade, Refer Training (Student)",,low
+2026-10-15,Thursday,Lend a Hand Part 1,Mebane Hall 032,low
+2026-10-15,Thursday,Machiah's House Game Night!,"College of Health and Human Services (CHHS), Room 153",low
+2026-10-15,Thursday,UCAE Study Skills and Test Taking Workshop,Colvard North 2006,low
+2026-10-15,Thursday,Best Buddies Pumpkin Painting and Costume Party,CHHS 109,low
+2026-10-15,Thursday,Cozy Crafts & Competition,Cone After Hours,low
+2026-10-15,Thursday,Virtual MSW Open House,,none
+2026-10-15,Thursday,Hallow-practice,Cone 113,low
+2026-10-15,Thursday,LWJ- Foundations,Denny 122,low
+2026-10-15,Thursday,Charlotte 49ers Women's Soccer vs South Florida,"Charlotte, N.C., Jen Gaber Field",low
+2026-10-15,Thursday,Slumber Party,PMSU Theater,low
+2026-10-15,Thursday,Thursday Worship Night,STUN 266,low
+2026-10-15,Thursday,Actors From the London Stage present Much Ado About Nothing,Robinson Hall,low
+2026-10-15,Thursday,Rhythm,Fretwell 205,low
+2026-10-16,Friday,Charlotte 49ers Women's Tennis vs ITA Regionals,"Columbia, S.C.",low
+2026-10-16,Friday,Conference: Bridging the Invisible,,medium
+2026-10-16,Friday,ACCT 3323 Drop In Hours,Colvard,low
+2026-10-16,Friday,Graduate Admissions Virtual Office Hours,,none
+2026-10-16,Friday,RA Info Session  (Virtual),,none
+2026-10-16,Friday,American Airlines Career Trek,,low
+2026-10-16,Friday,Part 4: Creating Accessible Instructional Materials with AI,,low
+2026-10-16,Friday,Conflict Management,Popp Martin Student Union,medium
+2026-10-16,Friday,Niner Finances Walk In Hours,King 210,low
+2026-10-16,Friday,Walk In Hours,King,low
+2026-10-16,Friday,Bioinformatics ZOOM Info Session,,none
+2026-10-16,Friday,Crisis Assistance Ministry,Crisis Assistance Ministry,low
+2026-10-16,Friday,Time Management,Popp Martin Student Union,medium
+2026-10-16,Friday,Goal Setting,Popp Martin Student Union,medium
+2026-10-16,Friday,Loose Leaf Tea Workshop,CHHS 294,low
+2026-10-16,Friday,NICU Baby Blanket Crafting,Mebane 165,low
+2026-10-16,Friday,Niners with Novels Reading Club,Fretwell 202,low
+2026-10-16,Friday,Effective Communication,Popp Martin Student Union,medium
+2026-10-16,Friday,Networking lunch and panel,Woodward 120,low
+2026-10-16,Friday,Fall Kickoff Game Jam Presentations 2026,Woodward: rm 106,low
+2026-10-16,Friday,Learning Hungry: Documentary Screening & Community Conversation,College of Health and Human Services,low
+2026-10-16,Friday,SLAM X Checkers,Bojangles Coliseum,low
+2026-10-16,Friday,Charlotte 49ers Women's Volleyball at South Florida,"Tampa, Fla.",low
+2026-10-16,Friday,Holistic Founder: Mindful Paint & Sip,CO-LAB,low
+2026-10-16,Friday,Maid and Butler Halloween Cafe,Student Union 340,low
+2026-10-16,Friday,Mic Check: A School Board Watch Party & Advocacy Workshop,Mebane 165,low
+2026-10-16,Friday,Game Night,CHHS 128,low
+2026-10-16,Friday,Karaoke Night,After Hours,low
+2026-10-16,Friday,Actors From the London Stage present Much Ado About Nothing,Robinson Hall,low
+2026-10-17,Saturday,Charlotte 49ers Women's Tennis vs ITA Regionals,"Columbia, S.C.",low
+2026-10-17,Saturday,2026 Charlotte Kidney Walk,Charlotte Kidney Walk,low
+2026-10-17,Saturday,Conference: Bridging the Invisible,,medium
+2026-10-17,Saturday,Mental Health First Aid (Student),Popp Martin Student Union,medium
+2026-10-17,Saturday,Around the World in Objects: A World-Building Adventure,University City Regional Library,low
+2026-10-17,Saturday,Student Sustainability Summit,Cone University Center Room 210,medium
+2026-10-17,Saturday,Actors From the London Stage present Much Ado About Nothing,Robinson Hall,low
+2026-10-18,Sunday,Charlotte 49ers Women's Volleyball at Florida Atlantic,"Boca Raton, Fla.",low
+2026-10-18,Sunday,Garba 2026,Cone University Center,low
+2026-10-19,Monday,Using Feedback to Improve Teaching and Learning,,low
+2026-10-19,Monday,National Transfer Student Week,The University of North Carolina at Charlotte,low
+2026-10-19,Monday,National Transfer Student Week 2026,The University of North Carolina at Charlotte,low
+2026-10-19,Monday,PAL Session - ACCT 3323 (MCENIRY 118),MCEN 118,none
+2026-10-19,Monday,Advancing Your Career,Online,low
+2026-10-19,Monday,PAL Session: CHEM 1203 (CHHS 294),CHHS 294,none
+2026-10-19,Monday,ECGR 2111 Drop In Hours,EPIC 2342,low
+2026-10-19,Monday,ECGR 2254 & ECGR 3111 Drop In Hours,EPIC 2342,low
+2026-10-19,Monday,Casual Chess Meetup,Cone 109,low
+2026-10-19,Monday,PAL Session - CHEM 1200 (ONLINE),Online,none
+2026-10-19,Monday,PAL Session: CHEM 1252 (FRET 116),FRET 116,none
+2026-10-19,Monday,Part 1: Canvas Accessibility with UDOIT,,low
+2026-10-19,Monday,PAL Session: CHEM 1251 (CHHS 134),CHHS 134,none
+2026-10-19,Monday,Feel Better Fast: Managing Emotions,Popp Martin Student Union,medium
+2026-10-19,Monday,COMM 1100 & COMM 2100 Drop In Hours,Learning Commons - Colvard North 2300,low
+2026-10-19,Monday,Qualitative Assessment,Popp Martin Student Union,medium
+2026-10-19,Monday,Lunch & Learn: Real Connections with Real Estate Professionals,Barnes & Noble,low
+2026-10-19,Monday,PAL Session - ACCT 3323 (MEBANE 032),MEBANE 032,none
+2026-10-19,Monday,PAL Session - CHEM 2131 (GYMNS 207),GYMNS 207,none
+2026-10-19,Monday,PAL Session: CHEM 1200 (GYMNS 206),GYMNS 206,none
+2026-10-19,Monday,PAL Session - CHEM 2132 (ONLINE),Online,none
+2026-10-19,Monday,PAL Session - ECON 3125 (COLVD 5092),COLVD 5092,none
+2026-10-19,Monday,Grad School 101: Start Your Program Search with Confidence,,low
+2026-10-19,Monday,Mental Health First Aid (Student),,low
+2026-10-19,Monday,Haunted Hallows,Union 340,low
+2026-10-19,Monday,PAL Session - ECON 2102,Online,none
+2026-10-19,Monday,Spooky Movie Monday,Student Union Theater,low
+2026-10-19,Monday,LWJ- Bible Study,Colvard 4123,low
+2026-10-19,Monday,PAL Session - CHEM 2131 (ONLINE),Online,none
+2026-10-19,Monday,Rock Climbing Night at the SAC,,low
+2026-10-20,Tuesday,Using Feedback to Improve Teaching and Learning,,low
+2026-10-20,Tuesday,CHEM 1251 Drop In Hours,Learning Commons - Colvard North 2300,low
+2026-10-20,Tuesday,PAL Session: CHEM 1203 (ONLINE),Online,none
+2026-10-20,Tuesday,Reuse Rodeo: Clothing Swap,Belk Plaza,low
+2026-10-20,Tuesday,The Knowledge Navigator: Using Notebook LM to Transform Docs into Deliverables,,low
+2026-10-20,Tuesday,ECGR 2111 Drop In Hours,EPIC 2342,low
+2026-10-20,Tuesday,ECGR 2254 & ECGR 3111 Drop In Hours,EPIC 2342,low
+2026-10-20,Tuesday,EME Week: Co-op Lunch + Learn: Learning While Earning with Duke Energy,,low
+2026-10-20,Tuesday,OSHR Lunch & Learn: The Science of Cravings,,low
+2026-10-20,Tuesday,PAL Session - ECON 2102 (FRIDAY 130),FRIDAY 130,none
+2026-10-20,Tuesday,Part 3: Designing Accessible Course Media,,low
+2026-10-20,Tuesday,PAL Session - CHEM 2131 (DENNY 206),DENNY 206,none
+2026-10-20,Tuesday,BIOL 2120 Drop In Hours,Learning Commons - Colvard North 2300,low
+2026-10-20,Tuesday,Two ways to get your JL Price MBA - Virtual Information Session,,none
+2026-10-20,Tuesday,UCAE Goal Setting Speed  Learning Workshop,Colvard North 2006,low
+2026-10-20,Tuesday,Transfer Treats - National Transfer Student Week,University Transfer and Adult Student Center,low
+2026-10-20,Tuesday,ECGR 2105 Drop In Hours,Learning Commons - Colvard North 2300,low
+2026-10-20,Tuesday,Career Meet Up: Engineering Job/Internship Search Strategies,,low
+2026-10-20,Tuesday,RA Info Session  (In-person),Pop Martin Student Union,low
+2026-10-20,Tuesday,PAL Session: CHEM 1251 (ONLINE),Online,none
+2026-10-20,Tuesday,Growing Through Grief,Price Center for Counseling,low
+2026-10-20,Tuesday,Ace Your Graduate School Application:Tips and Tricks for Success,,low
+2026-10-20,Tuesday,Alcoholics Anonymous (AA),Waddell Center for Student Health and Wellbeing,low
+2026-10-20,Tuesday,Fall 2026 Grad Student & Postdoc Writing Group,Atkins 146,low
+2026-10-20,Tuesday,Finding Focus: Strategies and Tools for ADHD,Popp Martin Student Union,medium
+2026-10-20,Tuesday,PAL Session: CHEM 1252 (MCEN 123),MCENIRY 123,none
+2026-10-20,Tuesday,Tuesday Seminar Series - Think Like a Consultant: Business Strategy for Data Scientists,Dubois Center at UNC Charlotte Center City,low
+2026-10-20,Tuesday,PAL Session - ACCT 3323 (Friday 385),FRIDAY 385,none
+2026-10-20,Tuesday,The Phillips Lecture Series,Atkins Library,low
+2026-10-20,Tuesday,HDR Open House - Oct 20 *Limited RSVP*,HDR Charlotte Office,high
+2026-10-20,Tuesday,PAL Session - ECON 3125 (ONLINE),Online,none
+2026-10-20,Tuesday,"“Perceptions of Election Integrity in the Wake of Hurricane Helene” by Martha Kropf, Ph.D. and Regina Branton, Ph.D.",Independent Picture House,low
+2026-10-20,Tuesday,PAL Session - ECON 2101 (ONLINE),Online,none
+2026-10-20,Tuesday,NSBE Career Connect and Linkedin Workshop with Eaton,CHHS 132,low
+2026-10-20,Tuesday,Stepperz Fall Carve-Out,Cone 113,low
+2026-10-20,Tuesday,Aerospace Jeopardy,Smith 229,low
+2026-10-21,Wednesday,Using Feedback to Improve Teaching and Learning,,low
+2026-10-21,Wednesday,City of Charlotte Internship Career Fair,,high
+2026-10-21,Wednesday,DSBA and DSHA Prospective Graduate Student Information Session,,low
+2026-10-21,Wednesday,Open Office Hours - Softdocs Etrieve,,none
+2026-10-21,Wednesday,Qualitative Assessment,Cone University Center,low
+2026-10-21,Wednesday,PAL Session - ECON 2102 (SMITH 217),SMITH 217,none
+2026-10-21,Wednesday,Reuse Rodeo: Clothing Swap,Belk Plaza,low
+2026-10-21,Wednesday,Wellness Wednesday,UREC,low
+2026-10-21,Wednesday,Part 2: Student Study Skills with Gen-AI,,low
+2026-10-21,Wednesday,Using Gemini Notebook AI for Teaching,,low
+2026-10-21,Wednesday,3 Meals 1 Stop Demo Kitchen,UREC Demo Kitchen,low
+2026-10-21,Wednesday,Enhancing Workflows with Google Gemini: Building Custom Gems,,low
+2026-10-21,Wednesday,Popp Into Student Involvement,Popp Martin Student Union,medium
+2026-10-21,Wednesday,Virtual Lunch and Learn: Defending your Dollar,Online,none
+2026-10-21,Wednesday,ECGR 2111 Drop In Hours,EPIC 2342,low
+2026-10-21,Wednesday,ECGR 2254 & ECGR 3111 Drop In Hours,EPIC 2342,low
+2026-10-21,Wednesday,EME Week: Creating Spaces that Matter with LandDesign (VIRTUAL),,none
+2026-10-21,Wednesday,"Part 2: Files and PDF Accessibility Checkers: Using Grackle, Adobe, and Microsoft Tools",,low
+2026-10-21,Wednesday,UCAE Time Management Speed Learning Workshop,Colvard North 2006,low
+2026-10-21,Wednesday,ACCT 2121 Drop In Hours,Learning Commons - Colvard North 2300,low
+2026-10-21,Wednesday,Goal Setting,Online,low
+2026-10-21,Wednesday,Mental Health First Aid (Student),,low
+2026-10-21,Wednesday,Procrastination Workshop Series:  In-Person October Sessions,"Visualization Lab, J. Murrey Atkins Library, 2nd floor",low
+2026-10-21,Wednesday,Writing Synthesized Literature Reviews,,low
+2026-10-21,Wednesday,Rock Climbing Night at the SAC,,low
+2026-10-22,Thursday,Charlotte 49ers Women's Tennis vs American Conference Individual Championships,"Houston, Texas",medium
+2026-10-22,Thursday,Campus Beautification 10/22,UNC Charlotte,low
+2026-10-22,Thursday,Campus Beautification Day,Snyder Deck Silver Line Bus Stop,low
+2026-10-22,Thursday,Master Your Workflow with Google Gmail and Calendar,,low
+2026-10-22,Thursday,Part 4: Creating Accessible Instructional Materials with AI,,low
+2026-10-22,Thursday,CHEM 1251 Drop In Hours,Learning Commons - Colvard North 2300,low
+2026-10-22,Thursday,EME Week: Scout Motors and Coffee on Craver Road,,low
+2026-10-22,Thursday,Resource Fair - National Transfer Student Week,Sidewalk between Colvard and Atkins,medium
+2026-10-22,Thursday,Transfer Resource Fair - National Transfer Student Week,Sidewalk between Atkins and Colvard,medium
+2026-10-22,Thursday,ECGR 2111 Drop In Hours,EPIC 2342,low
+2026-10-22,Thursday,ECGR 2254 & ECGR 3111 Drop In Hours,EPIC 2342,low
+2026-10-22,Thursday,PAL Session - ECON 2101 (SMITH 204),SMITH 204,none
+2026-10-22,Thursday,UCAE Stress Less Speed Learning Workshop,Colvard North 2006,low
+2026-10-22,Thursday,Visual Storytelling & Design: Creating with Google Slides & Drawings Description,,low
+2026-10-22,Thursday,BIOL 2120 Drop In Hours,Learning Commons - Colvard North 2300,low
+2026-10-22,Thursday,Digital Accessibility ‘Fix-It Clinic’,,low
+2026-10-22,Thursday,Midday Devotion,Union 200,low
+2026-10-22,Thursday,Open Swim: Internship,Friday,low
+2026-10-22,Thursday,ECGR 2105 Drop In Hours,Learning Commons - Colvard North 2300,low
+2026-10-22,Thursday,Career Meet Up: How to Set Up Your LinkedIn Profile,,low
+2026-10-22,Thursday,PAL Session - CHEM 2132 (CHHS 124),CHHS 124,none
+2026-10-22,Thursday,Know Before You Go: Essential Steps for Newly Admitted Students,,high
+2026-10-22,Thursday,Grad Student Fall Social!,Cone University Center,low
+2026-10-22,Thursday,Lend a Hand: Part 2,Mebane Hall 032,low
+2026-10-22,Thursday,Exhibition Reception: Another Other,Rowe,low
+2026-10-22,Thursday,Exhibition Reception: Shameful Company,Rowe,low
+2026-10-22,Thursday,PHD Counselor Education and Supervision Information Session,,low
+2026-10-22,Thursday,LWJ- Foundations,Denny 122,low
+2026-10-22,Thursday,Fall Dance Concert: SHIFT,Robinson Hall,high
+2026-10-22,Thursday,Rhythm,Fretwell 205,low
+2026-10-23,Friday,Charlotte 49ers Women's Tennis vs American Conference Individual Championships,"Houston, Texas",medium
+2026-10-23,Friday,ACCT 3323 Drop In Hours,Learning Commons - Colvard North 2300,low
+2026-10-23,Friday,AI@Work Discussion Series,,low
+2026-10-23,Friday,PAL Session - ECON 2102 (FRIDAY 155),FRIDAY 155,none
+2026-10-23,Friday,PAL Session: CHEM 1200 (ONLINE),Online,none
+2026-10-23,Friday,Info Session - Cybersecurity & HCCE Grad Programs,,low
+2026-10-23,Friday,Part 1: Canvas Accessibility with UDOIT,,low
+2026-10-23,Friday,Charlotte 49ers Women's Volleyball vs Temple,"Charlotte, N.C.",low
+2026-10-23,Friday,Niner Finances Walk In Hours,King 210,low
+2026-10-23,Friday,Part 3: Designing Accessible Course Media,,low
+2026-10-23,Friday,From Isolation to Community: Thriving in Grad School,,low
+2026-10-23,Friday,Niners with Novels Reading Club,Fretwell 202,low
+2026-10-23,Friday,Fall Dance Concert: SHIFT,Robinson Hall,high
+2026-10-24,Saturday,Charlotte 49ers Women's Tennis vs American Conference Individual Championships,"Houston, Texas",medium
+2026-10-24,Saturday,Fall 2026 Mallard Creek Stream Cleanup,Kirk Farm Fields,low
+2026-10-24,Saturday,Around the World in Objects: A World-Building Adventure,University City Regional Library,low
+2026-10-24,Saturday,5K Run,Alumni Pavillion-Toby Creek Greenway,low
+2026-10-24,Saturday,Fall Dance Concert: SHIFT,Robinson Hall,high
+2026-10-25,Sunday,Sunday Worship,Mebane 065,low
+2026-10-25,Sunday,Charlotte 49ers Women's Volleyball vs Wichita State,"Charlotte, N.C.",low
+2026-10-25,Sunday,Fall Dance Concert: SHIFT,Robinson Hall,high
+2026-10-25,Sunday,Charlotte 49ers Women's Soccer at UAB,"Birmingham, AL",low
+2026-10-26,Monday,Registration for Spring 2027 begins,UNC Charlotte Academic Calendar,low
+2026-10-26,Monday,PAL Session - ACCT 3323 (MCENIRY 118),MCEN 118,none
+2026-10-26,Monday,M.S. in Computer Science (MSCS) Virtual Information Session,,none
+2026-10-26,Monday,PAL Session: CHEM 1203 (CHHS 294),CHHS 294,none
+2026-10-26,Monday,ECGR 2111 Drop In Hours,EPIC 2342,low
+2026-10-26,Monday,ECGR 2254 & ECGR 3111 Drop In Hours,EPIC 2342,low
+2026-10-26,Monday,Career Meet Up: Resume Writing Basics,,low
+2026-10-26,Monday,Casual Chess Meetup,Cone 109,low
+2026-10-26,Monday,PAL Session - CHEM 1200 (ONLINE),Online,none
+2026-10-26,Monday,PAL Session: CHEM 1252 (FRET 116),FRET 116,none
+2026-10-26,Monday,Part 4: Creating Accessible Instructional Materials with AI,,low
+2026-10-26,Monday,PAL Session: CHEM 1251 (CHHS 134),CHHS 134,none
+2026-10-26,Monday,COMM 1100 & COMM 2100 Drop In Hours,Learning Commons - Colvard North 2300,low
+2026-10-26,Monday,PAL Session - ACCT 3323 (MEBANE 032),MEBANE 032,none
+2026-10-26,Monday,PAL Session - CHEM 2131 (GYMNS 207),GYMNS 207,none
+2026-10-26,Monday,PAL Session: CHEM 1200 (GYMNS 206),GYMNS 206,none
+2026-10-26,Monday,UCAE Campus Partner Workshop,Colvard North 2006,low
+2026-10-26,Monday,PAL Session - CHEM 2132 (ONLINE),Online,none
+2026-10-26,Monday,PAL Session - ECON 3125 (COLVD 5092),COLVD 5092,none
+2026-10-26,Monday,Master of Public Health - Admissions Virtual Drop-In Hour,,none
+2026-10-26,Monday,October Coffee Hour,Cone 210,low
+2026-10-26,Monday,PAL Session - ECON 2102,Online,none
+2026-10-26,Monday,PAL Session - CHEM 2131 (ONLINE),Online,none
+2026-10-26,Monday,Rock Climbing Night at the SAC,,low
+2026-10-27,Tuesday,CHEM 1251 Drop In Hours,Learning Commons - Colvard North 2300,low
+2026-10-27,Tuesday,Grad School 101: Start Your Program Search with Confidence,,low
+2026-10-27,Tuesday,PAL Session: CHEM 1203 (ONLINE),Online,none
+2026-10-27,Tuesday,Reuse Rodeo: Book Swap,Belk Plaza,low
+2026-10-27,Tuesday,Generative AI 101: Getting Started with Gemini & CoPilot,,low
+2026-10-27,Tuesday,ECGR 2111 Drop In Hours,EPIC 2342,low
+2026-10-27,Tuesday,ECGR 2254 & ECGR 3111 Drop In Hours,EPIC 2342,low
+2026-10-27,Tuesday,Mechanical Engineering Early Entry Information Session,University of North Carolina at Charlotte,low
+2026-10-27,Tuesday,PAL Session - ECON 2102 (FRIDAY 130),FRIDAY 130,none
+2026-10-27,Tuesday,PAL Session - CHEM 2131 (DENNY 206),DENNY 206,none
+2026-10-27,Tuesday,BIOL 2120 Drop In Hours,Learning Commons - Colvard North 2300,low
+2026-10-27,Tuesday,ECGR 2105 Drop In Hours,Learning Commons - Colvard North 2300,low
+2026-10-27,Tuesday,Formatting and Submitting Your Thesis or Dissertation,,low
+2026-10-27,Tuesday,Part 1: Canvas Accessibility with UDOIT,,low
+2026-10-27,Tuesday,PAL Session: CHEM 1251 (ONLINE),Online,none
+2026-10-27,Tuesday,Alcoholics Anonymous (AA),Waddell Center for Student Health and Wellbeing,low
+2026-10-27,Tuesday,Fall 2026 Grad Student & Postdoc Writing Group,Atkins 146,low
+2026-10-27,Tuesday,PAL Session: CHEM 1252 (MCEN 123),MCENIRY 123,none
+2026-10-27,Tuesday,Tuesday Seminar Series -  ‘Giting’ Started with GitHub,Dubois Center at UNC Charlotte Center City,low
+2026-10-27,Tuesday,PAL Session - ACCT 3323 (Friday 385),FRIDAY 385,none
+2026-10-27,Tuesday,UCAE The Art of Public Speaking Workshop,Colvard North 2006,low
+2026-10-27,Tuesday,PAL Session - ECON 3125 (ONLINE),Online,none
+2026-10-27,Tuesday,PAL Session - ECON 2101 (ONLINE),Online,none
+2026-10-28,Wednesday,Open Office Hours - Softdocs Etrieve,,none
+2026-10-28,Wednesday,Streamline Your Storage: Mastering Google Drive,,low
+2026-10-28,Wednesday,PAL Session - ECON 2102 (SMITH 217),SMITH 217,none
+2026-10-28,Wednesday,Funding Your Future: Navigating Graduate Funding Strategies,,low
+2026-10-28,Wednesday,Part 3: Designing Accessible Course Media,,low
+2026-10-28,Wednesday,Reuse Rodeo: Book Swap,Belk Plaza,low
+2026-10-28,Wednesday,Basics of Estate Planning Webinar,,none
+2026-10-28,Wednesday,Career Meet Up: Employer insights on preparing for the interview,,low
+2026-10-28,Wednesday,PAL Session - CHEM 2131 (CHHS 294),CHHS 294,none
+2026-10-28,Wednesday,PAL Session - CHEM 2131 (COLVD 5092),COLVD 5092,none
+2026-10-28,Wednesday,Popp Into Student Involvement,Popp Martin Student Union,medium
+2026-10-28,Wednesday,ECGR 2111 Drop In Hours,EPIC 2342,low
+2026-10-28,Wednesday,ECGR 2254 & ECGR 3111 Drop In Hours,EPIC 2342,low
+2026-10-28,Wednesday,Networking and Industry Engagement: Building Strategic Professional Relationships for Career Success,Atkins 146,low
+2026-10-28,Wednesday,PAL Session: CHEM 1200 (COLVD 5096),COLVD 5096,none
+2026-10-28,Wednesday,ACCT 2121 Drop In Hours,Learning Commons - Colvard North 2300,low
+2026-10-28,Wednesday,PAL Session - CHEM 2132 (FRIDAY 130),FRIDAY 130,none
+2026-10-28,Wednesday,PAL Session - ECON 2101 (COLVD 5092),COLVD 5092,none
+2026-10-28,Wednesday,RA Info Session  (Virtual),Online,none
+2026-10-28,Wednesday,PAL Session - ACCT 3323 (ONLINE),Online,none
+2026-10-28,Wednesday,PAL Session - CHEM 1200 (MEBANE 168),MEBANE 168,none
+2026-10-28,Wednesday,PAL Session: CHEM 1252 (FRIDAY 385),FRIDAY 385,none
+2026-10-28,Wednesday,Procrastination Workshop Series:  In-Person October Sessions,"Visualization Lab, J. Murrey Atkins Library, 2nd floor",low
+2026-10-28,Wednesday,"""Net Values: Environmental, Economic, and Social Entanglements in the Gulf of California"" by Nicole Peterson",Atkins Library,low
+2026-10-28,Wednesday,Beyond Summary: Strategies for Effective Literature Synthesis,,low
+2026-10-29,Thursday,PhD in Computing and Information Systems,,low
+2026-10-29,Thursday,Shrub Planting,Pollinator Gardens,low
+2026-10-29,Thursday,Writing Effective Prompts Gemini & Copilot for a Smarter To-Do List Workflow,,low
+2026-10-29,Thursday,CHEM 1251 Drop In Hours,Learning Commons - Colvard North 2300,low
+2026-10-29,Thursday,"MSC Career LAUNCH Mentorship Program: Ready, Set, Launch!",,low
+2026-10-29,Thursday,Digital Accessibility ‘Fix-It Clinic’,,low
+2026-10-29,Thursday,ECGR 2111 Drop In Hours,EPIC 2342,low
+2026-10-29,Thursday,ECGR 2254 & ECGR 3111 Drop In Hours,EPIC 2342,low
+2026-10-29,Thursday,Career Confidence for Neurodivergent College Students,,low
+2026-10-29,Thursday,"Being a Good Team Player: Balancing Leadership, Dependability, and Collaboration",Colvard 5092,low
+2026-10-29,Thursday,BIOL 2120 Drop In Hours,Learning Commons - Colvard North 2300,low
+2026-10-29,Thursday,Exhibition Reception: Global Studies 2026,"Lambla Gallery, Storrs",low
+2026-10-29,Thursday,Midday Devotion,Cone 208,low
+2026-10-29,Thursday,Beyond the Basics: Designing Dynamic Google Docs,,low
+2026-10-29,Thursday,UCAE Science of Learning Workshop Simulcast,Colvard North 2006,low
+2026-10-29,Thursday,Lecture: Intercultural Futures with Nader Tehrani of NADAAA,"Boardman Lecture Hall, Storrs",low
+2026-10-29,Thursday,LWJ- Foundations,Denny 122,low
+2026-10-29,Thursday,Rhythm,Fretwell 205,low
+2026-10-30,Friday,Charlotte 49ers Women's Tennis vs Elon Invite,"Elon, N.C.",low
+2026-10-30,Friday,Planned Schedule Interruption: Weekday Football Game,UNC Charlotte Academic Calendar,low
+2026-10-30,Friday,ACCT 3323 Drop In Hours,Learning Commons - Colvard North 2300,low
+2026-10-30,Friday,Graduate Admissions Virtual Office Hours,,none
+2026-10-30,Friday,Women in Business Leadership Development Summit: Leading with Purpose,Dubois Center at UNC Charlotte Center City,medium
+2026-10-30,Friday,Niner Finances Walk In Hours,King 210,low
+2026-10-30,Friday,Charlotte 49ers Women's Soccer at Rice,"Houston, TX",low
+2026-10-30,Friday,"Part 2: Files and PDF Accessibility Checkers: Using Grackle, Adobe, and Microsoft Tools",,low
+2026-10-30,Friday,Niners with Novels Reading Club,Fretwell 202,low
+2026-10-30,Friday,Charlotte 49ers Women's Volleyball at UAB,"Birmingham, Ala.",low
+2026-10-30,Friday,Game Night,CHHS 128,low
+2026-10-31,Saturday,Charlotte 49ers Women's Tennis vs Elon Invite,"Elon, N.C.",low
+2026-11-01,Sunday,Charlotte 49ers Women's Volleyball at Memphis,"Memphis, Tenn.",low
+2026-11-02,Monday,"Question, Persuade, Refer Training (Faculty/Staff)",,low
+2026-11-02,Monday,Know Before You Go: Essential Steps for Newly Admitted Students,,high
+2026-11-02,Monday,Rock Climbing Night at the SAC,,low
+2026-11-03,Tuesday,From Chaos to Clarity: Maximizing Productivity with Effective Strategies and AI Tools,,low
+2026-11-03,Tuesday,EME Week: Resume Workshop with Civil + Environmental Engineering + LandDesign,,low
+2026-11-03,Tuesday,Grad School 101: Start Your Program Search with Confidence,,low
+2026-11-03,Tuesday,Two ways to get your JL Price MBA - Virtual Information Session,,none
+2026-11-03,Tuesday,Building a Professional Record with Your ORCID Account,,low
+2026-11-03,Tuesday,Career Meet Up: How to Get an Internship,,low
+2026-11-03,Tuesday,Meet Up: Public Policy Careers,,low
+2026-11-03,Tuesday,Fall 2026 Grad Student & Postdoc Writing Group,Atkins Library,low
+2026-11-03,Tuesday,International Coffee Hour,Popp Martin Student Union,medium
+2026-11-03,Tuesday,Charlotte 49ers Women's Soccer vs Temple,"Charlotte, N.C., Jen Gaber Field",low
+2026-11-03,Tuesday,"Faculty & Friends: Eric Millard, trumpet",Rowe,low
+2026-11-04,Wednesday,Data Made Easy: Simplifying Your Workflow with Google Sheets & Forms,,low
+2026-11-04,Wednesday,Open Office Hours - Softdocs Etrieve,,none
+2026-11-04,Wednesday,Enhancing Workflows with Google Gemini: Building Custom Gems,,low
+2026-11-04,Wednesday,MSAI Information Session,,low
+2026-11-04,Wednesday,"First Gen, Full Circle: Alumni Panel",,low
+2026-11-04,Wednesday,Writing Intelligently in the Age of GenAI,,low
+2026-11-05,Thursday,Charlotte 49ers Women's Tennis vs ITA Conference Masters,"Rome, Ga.",medium
+2026-11-05,Thursday,Charlotte 49ers Women's Tennis vs ITA Sectionals,,low
+2026-11-05,Thursday,The Knowledge Navigator: Using Notebook LM to Transform Docs into Deliverables,,low
+2026-11-05,Thursday,Ace Your Graduate School Application:Tips and Tricks for Success,,low
+2026-11-05,Thursday,A2i - Job Hunting with Intention: Finding a Culture that Fits,,low
+2026-11-05,Thursday,Designing in a Dash: Adobe Express Basics,,low
+2026-11-05,Thursday,Lunch & Learn - You Can Go Anywhere From Here: Know Your Skills,Popp Martin Student Union,medium
+2026-11-05,Thursday,Meet Up: Starting a Nonprofit,,low
+2026-11-06,Friday,Charlotte 49ers Women's Tennis vs ITA Conference Masters,"Rome, Ga.",medium
+2026-11-06,Friday,Charlotte 49ers Women's Tennis vs ITA Sectionals,,low
+2026-11-06,Friday,Charlotte 49ers Women's Tennis vs UNF Fall Invite,"Jacksonville, Fla.",low
+2026-11-06,Friday,AI@Work Discussion Series,,low
+2026-11-06,Friday,How World Events Can Impact Veterans’ Mental Health,,low
+2026-11-06,Friday,Niner Finances Walk In Hours,King 210,low
+2026-11-06,Friday,Charlotte 49ers Women's Volleyball vs Tulsa,"Charlotte, N.C.",low
+2026-11-07,Saturday,Charlotte 49ers Women's Tennis vs ITA Conference Masters,"Rome, Ga.",medium
+2026-11-07,Saturday,Charlotte 49ers Women's Tennis vs ITA Sectionals,,low
+2026-11-07,Saturday,Charlotte 49ers Women's Tennis vs UNF Fall Invite,"Jacksonville, Fla.",low
+2026-11-07,Saturday,Step Into Nature! Beginner's Backpacking Weekend,Pisgah National Forest (or similar hiking area),low
+2026-11-08,Sunday,Charlotte 49ers Women's Soccer vs American Athletic Conference,"Lakewood Ranch, Fla., Premier Sports Complex",medium
+2026-11-08,Sunday,Step Into Nature! Beginner's Backpacking Weekend,Pisgah National Forest (or similar hiking area),low
+2026-11-08,Sunday,Charlotte 49ers Women's Volleyball vs Tulane,"Charlotte, N.C.",low
+2026-11-09,Monday,Charlotte 49ers Women's Soccer vs American Athletic Conference,"Lakewood Ranch, Fla., Premier Sports Complex",medium
+2026-11-09,Monday,Webinar – Land the Interview: Strategies to Stand Out and Get Hired,,none
+2026-11-09,Monday,Ace Your Graduate School Application:Tips and Tricks for Success,,low
+2026-11-09,Monday,Explorers: PD Makeover,University Career Center,low
+2026-11-09,Monday,Career Meet Up: Job Search Strategies for the Healthcare Administration Industry,,low
+2026-11-09,Monday,Master of Public Health - Admissions Virtual Drop-In Hour,,none
+2026-11-09,Monday,In Search of Phillis Wheatley Peters: Documentary Screening & Discussion,J Murrey Atkins Library,low
+2026-11-09,Monday,Career Meet Up: Professionalism: What Employers Expect led by Bobcat,,low
+2026-11-09,Monday,Rock Climbing Night at the SAC,,low
+2026-11-10,Tuesday,Charlotte 49ers Women's Soccer vs American Athletic Conference,"Lakewood Ranch, Fla., Premier Sports Complex",medium
+2026-11-10,Tuesday,Successful Meetings: From Preparation to Follow-up,,low
+2026-11-10,Tuesday,PHD Counselor Education and Supervision Information Session,,low
+2026-11-10,Tuesday,Funding Your Future: Navigating Graduate Funding Strategies,,low
+2026-11-10,Tuesday,Master Your Workflow with Google Gmail and Calendar,,low
+2026-11-10,Tuesday,Formatting and Submitting Your Thesis or Dissertation,,low
+2026-11-10,Tuesday,Career Meet Up: Engineering Job Search Strategies,,low
+2026-11-10,Tuesday,Career Meet Up: Using AI in the Job Search,,low
+2026-11-10,Tuesday,Fall 2026 Grad Student & Postdoc Writing Group,Atkins Library,low
+2026-11-11,Wednesday,Charlotte 49ers Women's Soccer vs American Athletic Conference,"Lakewood Ranch, Fla., Premier Sports Complex",medium
+2026-11-11,Wednesday,Veteran’s Day – No Classes,UNC Charlotte Academic Calendar,low
+2026-11-11,Wednesday,Open Office Hours - Softdocs Etrieve,,none
+2026-11-11,Wednesday,Visual Storytelling & Design: Creating with Google Slides,,low
+2026-11-11,Wednesday,DSBA and DSHA Prospective Graduate Student Information Session,,low
+2026-11-11,Wednesday,Generative AI 101: Getting Started with Gemini & CoPilot,,low
+2026-11-11,Wednesday,Grad School 101: Start Your Program Search with Confidence,,low
+2026-11-11,Wednesday,Prospective PhD Student Information Session - November 11,,low
+2026-11-12,Thursday,Charlotte 49ers Women's Soccer vs American Athletic Conference,"Lakewood Ranch, Fla., Premier Sports Complex",medium
+2026-11-12,Thursday,Doctoral Dissertation Defense Deadline,UNC Charlotte Academic Calendar,none
+2026-11-12,Thursday,LEAD Symposium 2026,Cone University Center,medium
+2026-11-12,Thursday,2nd Annual LEAD Symposium: Navigating Change with Purpose and Vision,Cone University Center,medium
+2026-11-12,Thursday,Master of Accountancy Lunch & Learn,Popp Martin Student Union,medium
+2026-11-12,Thursday,Career Meet Up: Interviewing 101,,low
+2026-11-12,Thursday,Master of Science in Computer Science (MSCS) Virtual Information Session,,none
+2026-11-12,Thursday,Think about it Thursdays: Ed.D. Pathways,,low
+2026-11-12,Thursday,"Career Meet Up: Technology, Data and Analytics Job Search Strategies",,low
+2026-11-12,Thursday,Career Meet Up: The Job Search & Your Mental Health: Best Practices,,low
+2026-11-12,Thursday,Niners in the Queen City: Exploring Life in Charlotte and NC,,low
+2026-11-12,Thursday,Writing Effective Prompts Gemini & Copilot for a Smarter To-Do List Workflow,,low
+2026-11-12,Thursday,Career Meet Up: Salary Negotiation,,low
+2026-11-12,Thursday,Career Meet Up: Building a Portfolio for Your Job Search,,low
+2026-11-12,Thursday,Rock Climbing Night at the SAC,,low
+2026-11-12,Thursday,John Proctor Is the Villain,Robinson Hall,low
+2026-11-13,Friday,Charlotte 49ers Women's Soccer vs American Athletic Conference,"Lakewood Ranch, Fla., Premier Sports Complex",medium
+2026-11-13,Friday,Niner Finances Walk In Hours,King 210,low
+2026-11-13,Friday,Career Meet Up: Getting Started in Your Job Search,,low
+2026-11-13,Friday,Bioinformatics ZOOM Info Session,,none
+2026-11-13,Friday,Charlotte 49ers Women's Volleyball at Rice,"Houston, Texas",low
+2026-11-13,Friday,John Proctor Is the Villain,Robinson Hall,low
+2026-11-14,Saturday,John Proctor Is the Villain,Robinson Hall,low
+2026-11-15,Sunday,Rock Climbing at Rocky Face Mountain,Rocky Face Mountain Recreation Area,low
+2026-11-15,Sunday,Charlotte 49ers Women's Volleyball vs Florida Atlantic,"Charlotte, N.C.",low
+2026-11-15,Sunday,John Proctor Is the Villain,Robinson Hall,low
+2026-11-16,Monday,Last day to submit doctoral dissertations for December 2026 graduation,UNC Charlotte Academic Calendar,low
+2026-11-16,Monday,Career Meet Up: My First Professional Interview,,low
+2026-11-16,Monday,Career Meet Up: Resume Writing Basics,,low
+2026-11-16,Monday,"Question, Persuade, Refer Training (Student)",,low
+2026-11-16,Monday,Career Meet Up: Imposter Syndrome & Interviewing,,low
+2026-11-16,Monday,Grad School 101: Start Your Program Search with Confidence,,low
+2026-11-17,Tuesday,Charlotte 49ers Women's Tennis vs NCAA Individual Championships,"Athens, Ga.",low
+2026-11-17,Tuesday,Voices of Charlotte: The Innovation Exchange,CO-LAB,low
+2026-11-17,Tuesday,Open Swim Q&A: Mastering Google Workspace & Generative AI,,low
+2026-11-17,Tuesday,M.S. in Economics Virtual Information Session,,none
+2026-11-17,Tuesday,Career Meet Up: Mastering the Interview,,low
+2026-11-17,Tuesday,Career Meet Up: Communicating Creative Skills in an Interview,,low
+2026-11-17,Tuesday,"Career Meet Up: Professionalism During Your Interview for Tech, Data and Analytics",,low
+2026-11-17,Tuesday,Fall 2026 Grad Student & Postdoc Writing Group,Atkins Library,low
+2026-11-17,Tuesday,Know Before You Go: Essential Steps for Newly Admitted Students,,high
+2026-11-17,Tuesday,Mental Health First Aid (Student),,low
+2026-11-17,Tuesday,Public Policy PHD Information Session,,low
+2026-11-17,Tuesday,"“Social Media, Influencer Culture, and the Demand for Authenticity” by Shanice Jones Cameron, Ph.D.",Independent Picture House,low
+2026-11-17,Tuesday,Jazz Ensemble and Combos,Robinson Hall,low
+2026-11-18,Wednesday,Charlotte 49ers Women's Tennis vs NCAA Individual Championships,"Athens, Ga.",low
+2026-11-18,Wednesday,Open Office Hours - Softdocs Etrieve,,none
+2026-11-18,Wednesday,Enhancing Workflows with Google Gemini: Building Custom Gems,,low
+2026-11-18,Wednesday,"The Head, Heart, and Hands of Change Management",,low
+2026-11-18,Wednesday,Beyond the Basics: Designing Dynamic Google Docs,,low
+2026-11-18,Wednesday,M.S. in Financial Engineering & Fintech Virtual Information Session,,none
+2026-11-18,Wednesday,Career Meet Up: Interviewing for Introverts & Extroverts,,low
+2026-11-18,Wednesday,Ace Your Graduate School Application:Tips and Tricks for Success,,low
+2026-11-18,Wednesday,Two ways to get your JL Price MBA - Virtual Information Session,,none
+2026-11-18,Wednesday,Rock Climbing Night at the SAC,,low
+2026-11-18,Wednesday,Symphonic Band & Wind Ensemble,Robinson Hall,low
+2026-11-19,Thursday,Charlotte 49ers Women's Tennis vs NCAA Individual Championships,"Athens, Ga.",low
+2026-11-19,Thursday,Streamline Your Storage: Mastering Google Drive,,low
+2026-11-19,Thursday,MSC Career LAUNCH Mentorship Program: Connect Forward,,low
+2026-11-19,Thursday,M.S. in Management Lunch & Learn,Popp Martin Student Union,medium
+2026-11-19,Thursday,Career Meet Up: Interviewing for Med School,,low
+2026-11-19,Thursday,M.S. in Real Estate Virtual Information Session,,none
+2026-11-19,Thursday,MSW Information Session,,low
+2026-11-19,Thursday,The Knowledge Navigator: Using Notebook LM to Transform Docs into Deliverables and Success,,low
+2026-11-19,Thursday,Career Meet Up: Using AI to Prep for an Interview,,low
+2026-11-19,Thursday,International Coffee Hour,Popp Martin Student Union,medium
+2026-11-19,Thursday,Mental Health First Aid (Student),,low
+2026-11-19,Thursday,Career Meet Up: Interviewing for Nonprofit & Social Work Roles,,low
+2026-11-19,Thursday,Exhibition Reception: Ghosts Over Vestiges,Dubois Center at UNC Charlotte Center City,low
+2026-11-19,Thursday,Rock Climbing Night at the SAC,,low
+2026-11-19,Thursday,Orchestra,Robinson Hall,low
+2026-11-20,Friday,Charlotte 49ers Women's Tennis vs NCAA Individual Championships,"Athens, Ga.",low
+2026-11-20,Friday,Charlotte 49ers Women's Volleyball vs American Conference Championship,"Houston, Texas",medium
+2026-11-20,Friday,Graduate Admissions Virtual Office Hours,,none
+2026-11-20,Friday,Career Meet Up: Preparing for Case Interviews,,low
+2026-11-20,Friday,Formatting and Submitting Your Thesis or Dissertation,,low
+2026-11-20,Friday,Info Session - Cybersecurity & HCCE Grad Programs,,low
+2026-11-20,Friday,John Proctor Is the Villain,Blumenthal Performing Arts Center,low
+2026-11-21,Saturday,Charlotte 49ers Women's Tennis vs NCAA Individual Championships,"Athens, Ga.",low
+2026-11-21,Saturday,Charlotte 49ers Women's Volleyball vs American Conference Championship,"Houston, Texas",medium
+2026-11-21,Saturday,Final Examinations for Saturday classes,UNC Charlotte Academic Calendar,low
+2026-11-21,Saturday,Cave Exploration,"Worleys Cave, TN",low
+2026-11-21,Saturday,John Proctor Is the Villain,Blumenthal Performing Arts Center,low
+2026-11-22,Sunday,Charlotte 49ers Women's Tennis vs NCAA Individual Championships,"Athens, Ga.",low
+2026-11-22,Sunday,Winter Wonders Day Hike,Pisgah National Forest (or similar hiking area),low
+2026-11-22,Sunday,John Proctor Is the Villain,Blumenthal Performing Arts Center,low
+2026-11-23,Monday,Faculty Final web grading access available,UNC Charlotte Academic Calendar,low
+2026-11-23,Monday,Grad School 101: Start Your Program Search with Confidence,,low
+2026-11-23,Monday,MSW Information Session,,low
+2026-11-23,Monday,Master of Public Health - Admissions Virtual Drop-In Hour,,none
+2026-11-23,Monday,November Coffee Hour,Zoom,low
+2026-11-23,Monday,Rock Climbing Night at the SAC,,low
+2026-11-23,Monday,Gospel Choir,Robinson Hall,low
+2026-11-24,Tuesday,Ace Your Graduate School Application:Tips and Tricks for Success,,low
+2026-11-24,Tuesday,Rock Climbing Night at the SAC,,low
+2026-11-25,Wednesday,Thanksgiving Break – No Classes/University Closed,UNC Charlotte Academic Calendar,low
+2026-11-25,Wednesday,Open Office Hours - Softdocs Etrieve,,none
+2026-11-26,Thursday,Thanksgiving Break – No Classes/University Closed,UNC Charlotte Academic Calendar,low
+2026-11-27,Friday,Thanksgiving Break – No Classes/University Closed,UNC Charlotte Academic Calendar,low
+2026-11-28,Saturday,Thanksgiving Break – No Classes/University Closed,UNC Charlotte Academic Calendar,low
+2026-11-29,Sunday,Thanksgiving Break – No Classes/University Closed,UNC Charlotte Academic Calendar,low
+2026-11-30,Monday,Niners in the Queen City: Exploring Life in Charlotte and NC,,low
+2026-11-30,Monday,Rock Climbing Night at the SAC,,low
+2026-11-30,Monday,Percussion Ensemble,Robinson Hall,low
+2026-12-01,Tuesday,Grad School 101: Start Your Program Search with Confidence,,low
+2026-12-01,Tuesday,Master of Accountancy Virtual Information Session,,none
+2026-12-01,Tuesday,Writing Effective Prompts Gemini & Copilot for a Smarter To-Do List Workflow,,low
+2026-12-01,Tuesday,M.S. in Management Virtual Information Session,,none
+2026-12-01,Tuesday,Open Swim Q&A: Mastering Google Workspace & Generative AI,,low
+2026-12-01,Tuesday,Women's Choir- The Charlotteans,Robinson Hall,low
+2026-12-01,Tuesday,Men's Choir- The Mallard Creek Chorale,Robinson Hall,low
+2026-12-02,Wednesday,Last day of classes,UNC Charlotte Academic Calendar,low
+2026-12-02,Wednesday,Payment Due Date/Cancellation for non-payment,UNC Charlotte Academic Calendar,low
+2026-12-02,Wednesday,Generative AI 101: Getting Started with Gemini & CoPilot,,low
+2026-12-02,Wednesday,Open Office Hours - Softdocs Etrieve,,none
+2026-12-02,Wednesday,Know Before You Go: Essential Steps for Newly Admitted Students,,high
+2026-12-02,Wednesday,Formatting and Submitting Your Thesis or Dissertation,,low
+2026-12-02,Wednesday,DSBA and DSHA Prospective Graduate Student Information Session,,low
+2026-12-02,Wednesday,Two ways to get your JL Price MBA - Virtual Information Session,,none
+2026-12-02,Wednesday,University Chorale,Robinson Hall,low
+2026-12-03,Thursday,Reading Day,UNC Charlotte Academic Calendar,low
+2026-12-03,Thursday,Data Made Easy: Simplifying Your Workflow with Google Sheets & Forms,,low
+2026-12-03,Thursday,Funding Your Future: Navigating Graduate Funding Strategies,,low
+2026-12-03,Thursday,Think about it Thursdays: Ed.D. Pathways,,low
+2026-12-03,Thursday,AI@Work Discussion Series,,low
+2026-12-03,Thursday,International Coffee Hour,Popp Martin Student Union,medium
+2026-12-04,Friday,Final Examinations,UNC Charlotte Academic Calendar,low
+2026-12-04,Friday,Mental Health First Aid (Faculty and Staff),,low
+2026-12-04,Friday,Graduate Admissions Virtual Office Hours,,none
+2026-12-04,Friday,"Reclaim Your Energy: Applying the ""Let Them Theory"" in the Workplace",,low
+2026-12-04,Friday,Fall 2026 - Engineering Senior Design Expo,Halton Arena,high
+2026-12-04,Friday,Senior Design Expo - Fall 2026,Halton Arena,high
+2026-12-05,Saturday,Final Examinations,UNC Charlotte Academic Calendar,low
+2026-12-06,Sunday,Final Examinations,UNC Charlotte Academic Calendar,low
+2026-12-07,Monday,Master’s Thesis Defense Deadline,UNC Charlotte Academic Calendar,none
+2026-12-07,Monday,Final Examinations Continued,,low
+2026-12-07,Monday,Grad School 101: Start Your Program Search with Confidence,,low
+2026-12-07,Monday,Master of Public Health - Admissions Virtual Drop-In Hour,,none
+2026-12-08,Tuesday,Final Examinations Continued,,low
+2026-12-08,Tuesday,The Knowledge Navigator: Using Notebook LM to Transform Docs into Deliverables,,low
+2026-12-08,Tuesday,"Question, Persuade, Refer Training (Faculty/Staff)",,low
+2026-12-09,Wednesday,Final Examinations Continued,,low
+2026-12-09,Wednesday,Open Office Hours - Softdocs Etrieve,,none
+2026-12-09,Wednesday,Public Policy PHD Information Session,,low
+2026-12-09,Wednesday,Funding Your Future: Navigating Graduate Funding Strategies,,low
+2026-12-10,Thursday,Last Day to submit Master’s Thesis for December 2026 graduation,UNC Charlotte Academic Calendar,low
+2026-12-10,Thursday,Summer 2027 Schedule of Classes Available on the Web,UNC Charlotte Academic Calendar,low
+2026-12-10,Thursday,Final Examinations Continued,,low
+2026-12-10,Thursday,Visual Storytelling & Design: Creating with Google Slides & Drawings Description,,low
+2026-12-10,Thursday,Ace Your Graduate School Application:Tips and Tricks for Success,,low
+2026-12-10,Thursday,Enhancing Workflows with Google Gemini: Building Custom Gems,,low
+2026-12-11,Friday,Commencement,,high
+2026-12-11,Friday,Final Examinations Continued,,low
+2026-12-12,Saturday,Commencement,,high
+2026-12-13,Sunday,Commencement,,high
+2026-12-14,Monday,Final grades due @ noon,UNC Charlotte Academic Calendar,low
+2026-12-15,Tuesday,Streamline Your Storage: Mastering Google Drive,,low
+2026-12-15,Tuesday,Grad School 101: Start Your Program Search with Confidence,,low
+2026-12-15,Tuesday,M.S. in Economics Virtual Information Session,,none
+2026-12-16,Wednesday,Fall 2026 Probation/Suspension notifications sent to students,UNC Charlotte Academic Calendar,low
+2026-12-16,Wednesday,Open Office Hours - Softdocs Etrieve,,none
+2026-12-16,Wednesday,Know Before You Go: Essential Steps for Newly Admitted Students,,high
+2026-12-16,Wednesday,Designing in a Dash: Adobe Express Basics,,low
+2026-12-16,Wednesday,M.S. in Financial Engineering & Fintech Virtual Information Session,,none
+2026-12-17,Thursday,M.S. in Real Estate Virtual Information Session,,none
+2026-12-23,Wednesday,Open Office Hours - Softdocs Etrieve,,none
+2026-12-24,Thursday,Winter Break – University Closed,UNC Charlotte Academic Calendar,low
+2026-12-25,Friday,Winter Break – University Closed,UNC Charlotte Academic Calendar,low
+2026-12-26,Saturday,Winter Break – University Closed,UNC Charlotte Academic Calendar,low
+2026-12-27,Sunday,Winter Break – University Closed,UNC Charlotte Academic Calendar,low
+2026-12-28,Monday,Winter Break – University Closed,,low
+2026-12-29,Tuesday,Winter Break – University Closed,,low
+2026-12-30,Wednesday,Winter Break – University Closed,,low
+2026-12-30,Wednesday,Open Office Hours - Softdocs Etrieve,,none

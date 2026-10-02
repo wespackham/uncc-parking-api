@@ -102,6 +102,49 @@ def build_semester_features(
     return features
 
 
+def build_semester_features_multi(
+    date_str: str,
+    calendar_features: dict,
+    *,
+    semesters: list[dict],
+    total_weeks: int = 16,
+) -> dict:
+    """Semester-aware variant of build_semester_features (models trained from 2026-10).
+
+    Class week counts from the first day of the semester containing the date (through its
+    finals/commencement); weeks-until-finals counts to the next finals start (20 = none known).
+    Mirrors train_2026_10.semester_features.
+    """
+    target_date = pd.Timestamp(date_str).date()
+    week_num = 0
+    weeks_until_finals = 20.0
+    found_next = False
+    for sem in sorted(semesters, key=lambda s: s["first_class_date"]):
+        first_class = _coerce_date(sem["first_class_date"])
+        finals_start = _coerce_date(sem["finals_start_date"])
+        finals_end = _coerce_date(sem["finals_end_date"])
+        if first_class <= target_date <= finals_end:
+            week_num = max(0, min(total_weeks, (target_date - first_class).days // 7 + 1))
+        if not found_next and target_date <= finals_end:
+            weeks_until_finals = float(np.clip((finals_start - target_date).days / 7, 0, 20))
+            found_next = True
+
+    in_session = any((
+        calendar_features.get("is_class_day", 0),
+        calendar_features.get("is_finals", 0),
+        calendar_features.get("is_break", 0),
+    ))
+    if not in_session:
+        week_num = 0
+
+    features = {
+        f"tgt_class_week_{week}": int(week_num == week)
+        for week in range(1, total_weeks + 1)
+    }
+    features["tgt_weeks_until_finals"] = weeks_until_finals
+    return features
+
+
 def build_lag_features(recent_values: list[float], lot: str) -> dict:
     """Build lag features from the most recent occupancy values for a lot.
 

@@ -12,3 +12,4 @@ eval_out/
 eval_out_full/
 full_intersection.csv
 .DS_Store
+models_*/eval_test_predictions.parquet

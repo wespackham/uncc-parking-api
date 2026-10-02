@@ -589,3 +589,50 @@ def test_run_predictions_keeps_live_tier_when_shadow_bundle_fails(monkeypatch):
     run_predictions()
     assert len(written) == 1
     assert written[0]["model_tier"] == "lgb"
+
+
+def test_target_features_use_model_event_feature_names(monkeypatch):
+    """Regression: events were added as event_* keys, so tgt_event_* model features were always 0."""
+    from datetime import datetime, timezone
+    from parking_api import predict
+
+    monkeypatch.setattr(predict, "build_event_features", lambda d: {"event_max_impact": 3, "event_high_count": 2})
+    weather = _make_weather_df()
+    feats = predict._build_target_feature_dict(
+        datetime(2026, 3, 11, 15, 0, tzinfo=timezone.utc), weather,
+        ["tgt_event_max_impact", "tgt_event_high_count"], {},
+    )
+    assert feats["tgt_event_max_impact"] == 3
+    assert feats["tgt_event_high_count"] == 2
+
+
+def test_multi_semester_features_follow_the_semester_containing_the_date():
+    from parking_api.features import build_semester_features_multi
+
+    sems = [
+        {"first_class_date": "2026-01-12", "finals_start_date": "2026-05-01", "finals_end_date": "2026-05-09"},
+        {"first_class_date": "2026-08-17", "finals_start_date": "2026-12-04", "finals_end_date": "2026-12-13"},
+    ]
+    class_day = {"is_class_day": 1}
+    fall = build_semester_features_multi("2026-09-29", class_day, semesters=sems)
+    assert fall["tgt_class_week_7"] == 1
+    assert abs(fall["tgt_weeks_until_finals"] - 66 / 7) < 1e-9
+    summer = build_semester_features_multi("2026-06-15", {"is_class_day": 0}, semesters=sems)
+    assert not any(v for k, v in summer.items() if k.startswith("tgt_class_week_"))
+    assert summer["tgt_weeks_until_finals"] == 20.0
+
+
+def test_suppressed_lots_are_left_out_of_predictions(lgb_models, monkeypatch):
+    """Lots with a known-broken feed (SUPPRESSED_LOTS) get no predictions; others are unaffected."""
+    from parking_api import predict
+
+    point, lower, upper, config = lgb_models
+    monkeypatch.setattr(predict, "SUPPRESSED_LOTS", {"WEST"})
+    now_utc = datetime(2026, 4, 8, 14, 0, 0, tzinfo=timezone.utc)
+
+    result = _run_lgb_predictions(now_utc, _make_rows(), _make_weather_df(), point, lower, upper, config)
+
+    assert len(result) == len(config["horizons"])
+    for rec in result:
+        assert "WEST" not in rec["data"]
+        assert set(rec["data"]) == set(config["lots"]) - {"WEST"}
