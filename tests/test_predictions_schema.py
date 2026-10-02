@@ -344,6 +344,100 @@ class TestHorizonHelpers:
         assert comparison.loc[comparison["minutes_ahead"] == 5, "best_mae_tier"].iloc[0] == "lgb_v3"
 
 
+class TestClockTimeHelpers:
+    def test_filter_to_clock_time_range_uses_local_timezone(self):
+        from evaluate_predictions import filter_to_clock_time_range
+
+        matched = pd.DataFrame({
+            "created_at": pd.to_datetime([
+                "2026-04-13T11:30:00+00:00",
+                "2026-04-13T11:30:00+00:00",
+                "2026-04-13T11:30:00+00:00",
+            ], utc=True),
+            "target_time": pd.to_datetime([
+                "2026-04-13T11:30:00+00:00",
+                "2026-04-13T11:45:00+00:00",
+                "2026-04-13T12:00:00+00:00",
+            ], utc=True),
+            "model_tier": ["lgb", "lgb", "lgb"],
+            "lot": ["CRI", "CRI", "CRI"],
+            "prediction": [0.49, 0.50, 0.55],
+            "confidence_low": [0.39, 0.40, 0.45],
+            "confidence_high": [0.59, 0.60, 0.65],
+            "actual": [0.50, 0.48, 0.58],
+        })
+
+        subset = filter_to_clock_time_range(matched, "07:30", "07:45")
+
+        assert len(subset) == 2
+        assert list(subset["target_clock_local"]) == ["07:30", "07:45"]
+        assert list(subset["abs_error"]) == pytest.approx([0.01, 0.02])
+
+    def test_filter_to_clock_time_range_wraps_midnight(self):
+        from evaluate_predictions import filter_to_clock_time_range
+
+        matched = pd.DataFrame({
+            "created_at": pd.to_datetime([
+                "2026-04-13T03:30:00+00:00",
+                "2026-04-13T03:30:00+00:00",
+                "2026-04-13T03:30:00+00:00",
+            ], utc=True),
+            "target_time": pd.to_datetime([
+                "2026-04-13T03:55:00+00:00",
+                "2026-04-13T04:05:00+00:00",
+                "2026-04-13T04:20:00+00:00",
+            ], utc=True),
+            "model_tier": ["lgb", "lgb", "lgb"],
+            "lot": ["CRI", "CRI", "CRI"],
+            "prediction": [0.50, 0.52, 0.54],
+            "confidence_low": [0.40, 0.42, 0.44],
+            "confidence_high": [0.60, 0.62, 0.64],
+            "actual": [0.48, 0.51, 0.53],
+        })
+
+        subset = filter_to_clock_time_range(matched, "23:55", "00:05")
+
+        assert len(subset) == 2
+        assert list(subset["target_clock_local"]) == ["23:55", "00:05"]
+
+    def test_build_clock_time_comparison_picks_best_model(self):
+        from evaluate_predictions import (
+            build_clock_time_comparison,
+            build_clock_time_summary,
+            filter_to_clock_time_range,
+        )
+
+        matched = pd.DataFrame({
+            "created_at": pd.to_datetime([
+                "2026-04-13T11:30:00+00:00",
+                "2026-04-13T11:30:00+00:00",
+                "2026-04-14T11:30:00+00:00",
+                "2026-04-14T11:30:00+00:00",
+            ], utc=True),
+            "target_time": pd.to_datetime([
+                "2026-04-13T11:45:00+00:00",
+                "2026-04-13T11:45:00+00:00",
+                "2026-04-14T11:45:00+00:00",
+                "2026-04-14T11:45:00+00:00",
+            ], utc=True),
+            "model_tier": ["lgb", "lgb_v3", "lgb", "lgb_v3"],
+            "lot": ["CRI", "CRI", "CRI", "CRI"],
+            "prediction": [0.50, 0.47, 0.59, 0.61],
+            "confidence_low": [0.40, 0.42, 0.49, 0.51],
+            "confidence_high": [0.60, 0.52, 0.69, 0.71],
+            "actual": [0.48, 0.48, 0.60, 0.60],
+        })
+
+        subset = filter_to_clock_time_range(matched, "07:45")
+        comparison = build_clock_time_comparison(subset)
+        summary_rows = build_clock_time_summary(subset, comparison)
+
+        assert list(comparison["best_abs_error_tier"]) == ["lgb_v3", "lgb"]
+        wins = {row["label"]: row["wins"] for row in summary_rows}
+        assert wins["lgb"] == 1
+        assert wins["lgb_v3"] == 1
+
+
 # ── match_predictions_to_actuals ──────────────────────────────────────────
 
 class TestMatchPredictions:

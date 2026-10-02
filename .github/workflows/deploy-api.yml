@@ -1,46 +1,44 @@
-name: Deploy API to EC2
+name: Deploy API to droplet
 
 on:
   push:
     branches: [main]
     paths:
+      - '.github/workflows/**'
       - 'parking_api/**'
       - 'models_lgb_3h/**'
       - 'models_lgb_24h/**'
       - 'data/**'
       - 'requirements.txt'
-      - 'parking-api.service'
       - 'parking-predictor.service'
       - 'parking-predictor.timer'
       - 'parking-predictor-24h.service'
       - 'parking-predictor-24h.timer'
       - 'parking-daily-report.service'
       - 'parking-daily-report.timer'
+      - 'parking-export.service'
+      - 'parking-export.timer'
+      - 'models_lgb_v3/**'
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Deploy to EC2
+      - name: Deploy to droplet
         uses: appleboy/ssh-action@v1
         with:
-          host: ${{ secrets.EC2_HOST }}
-          username: ${{ secrets.EC2_USER }}
-          key: ${{ secrets.EC2_KEY }}
+          host: ${{ secrets.DROPLET_HOST }}
+          username: ${{ secrets.DROPLET_USER }}
+          key: ${{ secrets.DROPLET_KEY }}
           script: |
-            cd ~/uncc-parking-api
-            git pull origin main
-            venv/bin/pip install -r requirements.txt --quiet
-            sudo cp parking-api.service /etc/systemd/system/
-            sudo cp parking-predictor.service /etc/systemd/system/
-            sudo cp parking-predictor.timer /etc/systemd/system/
-            sudo cp parking-predictor-24h.service /etc/systemd/system/
-            sudo cp parking-predictor-24h.timer /etc/systemd/system/
-            sudo systemctl daemon-reload
-            sudo systemctl restart parking-api.service
-            sudo systemctl restart parking-predictor.timer
-            sudo systemctl enable --now parking-predictor-24h.timer
-            sudo cp parking-daily-report.service /etc/systemd/system/
-            sudo cp parking-daily-report.timer /etc/systemd/system/
-            sudo systemctl daemon-reload
-            sudo systemctl enable --now parking-daily-report.timer
+            set -e
+            cd /home/ubuntu/uncc-parking-api
+            sudo -u ubuntu -H git fetch origin main
+            sudo -u ubuntu -H git reset --hard origin/main
+            sudo -u ubuntu -H venv/bin/pip install -r requirements.txt --quiet
+            for u in parking-predictor parking-predictor-24h parking-daily-report parking-export; do
+              cp $u.service $u.timer /etc/systemd/system/
+            done
+            systemctl daemon-reload
+            systemctl enable parking-predictor.timer parking-predictor-24h.timer parking-daily-report.timer parking-export.timer
+            systemctl restart parking-predictor.timer parking-predictor-24h.timer parking-daily-report.timer parking-export.timer

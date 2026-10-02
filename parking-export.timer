@@ -1,0 +1,9 @@
+[Unit]
+Description=Weekly parking predictions archive (every Monday 03:00 UTC)
+
+[Timer]
+OnCalendar=Mon *-*-* 03:00:00
+AccuracySec=5min
+
+[Install]
+WantedBy=timers.target

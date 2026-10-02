@@ -48,7 +48,9 @@ LGBMRegressor(n_estimators=2000, learning_rate=0.05, num_leaves=63, max_depth=8,
 # Quantile models: alpha=0.025 (lower), alpha=0.85 (upper)
 ```
 
-## Performance (test set)
+## Performance
+
+**Test set (7-day holdout at training time):**
 
 | Metric | Value |
 |---|---|
@@ -57,7 +59,50 @@ LGBMRegressor(n_estimators=2000, learning_rate=0.05, num_leaves=63, max_depth=8,
 | R² | 0.9719 |
 | In Band | 93.9% |
 
-Weakest lot: CD VS. Upper confidence bound tends toward 1.0 due to bounded [0,1] target — known limitation.
+**Real-world deployment (Apr 9 – May 10 2026, 32 days, 3.2M matched pairs):**
+
+| Metric | Semester avg | Normal days | Event days | Post-graduation |
+|--------|-------------|-------------|------------|-----------------|
+| MAE | 0.0303 | ~0.025 | ~0.040 | ~0.074 |
+| R² | 0.9415 | — | — | negative |
+| In-Band | 88.7% | ~92% | ~85% | 97%* |
+| Bias | +0.0082 | — | — | — |
+
+*97% in-band post-graduation is a false positive — upper bound degenerates to ≈1.0, so everything is "in band" even with large errors.
+
+**Per-lot MAE (deployment):**
+
+| Lot | MAE | Bias | In-Band |
+|-----|-----|------|---------|
+| WEST | 0.0423 | +0.009 | 88.4% |
+| UDU | 0.0394 | +0.016 | 87.7% |
+| UDL | 0.0348 | +0.007 | 89.3% |
+| CD FS | 0.0357 | +0.002 | 89.5% |
+| CD VS | 0.0345 | +0.010 | 88.2% |
+| ED1 | 0.0285 | +0.015 | 81.6% |
+| ED2/3 | 0.0258 | +0.003 | 92.4% |
+| SOUTH | 0.0243 | +0.006 | 92.1% |
+| CRI | 0.0216 | +0.010 | 86.8% |
+| NORTH | 0.0161 | +0.005 | 91.3% |
+
+**Horizon degradation (deployment):**
+T+5: MAE=0.018, Bias=+0.008 → T+180: MAE=0.044, Bias=+0.010. Near-linear growth. Bias is nearly constant across all horizons (±0.002) — this is a global training artifact, not a real signal.
+
+**Hour-of-day worst cells:**
+
+| Hour | MAE | Bias |
+|------|-----|------|
+| 08:00 | 0.0490 | +0.034 |
+| 09:00 | 0.0496 | +0.022 |
+| 00:00–05:00 | 0.009–0.015 | +0.004–0.006 |
+
+## Known Issues
+
+- **Global positive bias** — flat +0.007–0.016 over-prediction per lot across all horizons. Can be corrected at inference without retraining by subtracting per-lot constants (UDU: −0.016, ED1: −0.015, CRI: −0.010, CD VS: −0.010, WEST: −0.009; see FALL_2026_MODEL_PLAN.md §P0-A).
+- **Upper confidence bound broken** — α=0.85 quantile model (`lgb_upper.pkl`) degenerates toward 1.0 on bounded [0,1] targets. In-band% is not a reliable quality signal for this model.
+- **No event features** — `campus_events.csv` is never loaded during training. Campus events (Airband, career fairs, commencement) are pure noise. Apr 24 Airband caused WEST error of +0.69.
+- **No semester-active regime** — model predicts semester-level occupancy after the calendar ends (May 11+). Post-graduation MAE inflates to 0.074.
+- **Commencement failure** — UDU/WEST drain to ~0.0 during commencement (May 8–9); model predicted ~0.8. Requires `tgt_commencement_drains_lot` per-lot interaction feature.
 
 ## Files
 

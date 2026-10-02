@@ -17,6 +17,8 @@ import pandas as pd
 from dotenv import load_dotenv
 from supabase import create_client
 
+from .config import discord_labeled
+
 load_dotenv()
 
 SUPABASE_URL = os.environ.get("SUPABASE_URL", "")
@@ -183,6 +185,7 @@ def _build_report(matched: pd.DataFrame, date_str: str) -> list[str]:
 
 def _post(message: str):
     """Post to Discord, splitting if over the 2000-char limit."""
+    message = discord_labeled(message)
     while len(message) > 1990:
         split_at = message.rfind("\n", 0, 1990)
         if split_at == -1:

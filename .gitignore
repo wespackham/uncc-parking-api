@@ -7,3 +7,8 @@ __pycache__/
 CLAUDE.md
 plans/models/
 models_v2
+logs/
+eval_out/
+eval_out_full/
+full_intersection.csv
+.DS_Store

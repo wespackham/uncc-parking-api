@@ -27,6 +27,7 @@ import pandas as pd
 
 from .config import (
     DISCORD_WEBHOOK_URL,
+    discord_labeled,
     LGB_MODELS_DIR,
     LGB_MODELS_V2_DIR,
     LGB_MODELS_V3_DIR,
@@ -363,7 +364,7 @@ def _send_discord_alert(message: str):
     if not DISCORD_WEBHOOK_URL:
         return
     try:
-        httpx.post(DISCORD_WEBHOOK_URL, json={"content": message}, timeout=10)
+        httpx.post(DISCORD_WEBHOOK_URL, json={"content": discord_labeled(message)}, timeout=10)
     except Exception:
         pass
 
@@ -436,9 +437,10 @@ def run_predictions(model: str = "3h"):
         write_predictions(all_predictions)
         log.info("Done.")
     except Exception as exc:
-        msg = f"⚠️ Prediction service failed to write: {exc}"
+        msg = f"⚠️ Prediction service failed to write (rows buffered for retry): {exc}"
         log.error(msg)
         _send_discord_alert(msg)
+
 
 
 if __name__ == "__main__":

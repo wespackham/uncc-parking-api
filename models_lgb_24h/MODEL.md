@@ -52,7 +52,9 @@ LGBMRegressor(n_estimators=2000, learning_rate=0.05, num_leaves=63, max_depth=8,
 # Quantile models trained on CPU (GPU quantile not supported by LightGBM)
 ```
 
-## Performance (test set — last 7 days withheld)
+## Performance
+
+**Test set (7-day holdout at training time):**
 
 | Horizon bucket | MAE | R² |
 |---|---|---|
@@ -64,10 +66,51 @@ LGBMRegressor(n_estimators=2000, learning_rate=0.05, num_leaves=63, max_depth=8,
 | T+12–24 h | 0.0479 | 0.9297 |
 | **Overall** | **0.0423** | **0.9353** |
 
-Weakest lot: CD VS (R²=0.56). WEST has highest MAE (0.077).
-Upper confidence bound degenerates toward 1.0 — known limitation of quantile regression on bounded [0,1] targets.
+**Real-world deployment (Apr 9 – May 10 2026, 32 days, 2.1M matched pairs):**
 
-Note: test week (early April 2026) is late spring semester — may include unusual patterns not representative of typical weeks.
+| Metric | Semester avg | Normal days | Event days | Post-graduation |
+|--------|-------------|-------------|------------|-----------------|
+| MAE | 0.0595 | ~0.042 | ~0.083 | **0.2218** |
+| R² | 0.8076 | — | — | **−18.0** |
+| In-Band | 65.3% | ~72% | ~62% | 17.7% |
+| Bias | +0.0202 | — | — | — |
+
+The test-set/deploy gap (0.042 → 0.060) is larger than lgb's (0.020 → 0.030) because the 24h model has no live signal at long horizons and is purely calendar-driven.
+
+**Hour-of-day worst cells (deployment):**
+
+| Hour | MAE | Bias | Note |
+|------|-----|------|------|
+| 10:00 | 0.0950 | +0.062 | Peak structural over-prediction |
+| 11:00 | 0.0992 | +0.057 | Worst single hour |
+| 09:00 | 0.0885 | +0.061 | |
+| 01:00–04:00 | 0.026–0.028 | +0.004–0.009 | Best hours |
+
+MAE stays plateau-flat from T+60 to T+1440 (~0.059–0.065) — the model converges to a mean prediction past the first hour and horizon no longer matters.
+
+**Per-lot MAE (deployment):**
+
+| Lot | MAE | Bias |
+|-----|-----|------|
+| WEST | 0.0893 | +0.020 |
+| UDU | 0.0751 | +0.023 |
+| UDL | 0.0727 | +0.024 |
+| CD FS | 0.0692 | +0.012 |
+| CD VS | 0.0643 | +0.038 |
+| ED1 | 0.0566 | +0.043 |
+| ED2/3 | 0.0475 | +0.005 |
+| SOUTH | 0.0451 | +0.002 |
+| CRI | 0.0447 | +0.023 |
+| NORTH | 0.0310 | +0.011 |
+
+## Known Issues
+
+- **Structural daytime over-prediction** — MAE 0.085–0.099 at 09:00–15:00 with +0.052–0.062 positive bias. The model has no live signal at long horizons and predicts semester-level occupancy regardless of current state. Fix: add `tgt_hist_mean_occupancy[lot, hour, dow]` lookup feature (see FALL_2026_MODEL_PLAN.md §P1-D).
+- **Upper confidence bound broken** — α=0.85 quantile degenerates toward 1.0 on bounded [0,1] targets. In-band% is not a reliable quality signal.
+- **Post-graduation regime failure** — MAE=0.22, R²=−18 post-commencement. Model predicts semester occupancy with no way to detect lot-emptying. SOUTH: MAE=0.50, in-band=0.0%. Fix: `tgt_is_semester_active` feature + lgb_24h summer suppression.
+- **No event features** — identical to lgb; campus events are zero signal. CD FS, WEST, UDU event-day errors are all unmodeled.
+- **CD VS structural positive bias** — +0.038 per-lot bias; strongest structural overestimation across all lots. Partially fixed by P1-D hist_mean feature.
+- **No per-lot commencement response** — UDU/WEST drain to ~0.0 during commencement; 24h model predicted ~0.7–0.8. Worst cell: May 8 10:00 UDU, MAE=0.344 (5.8× baseline).
 
 ## Files
 

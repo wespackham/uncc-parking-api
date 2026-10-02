@@ -7,19 +7,24 @@ then reports MAE, RMSE, R², and within-band % broken down by model tier
 and optionally by lot.
 
 Usage:
-    python evaluate_predictions.py                    # last 7 days
+    python evaluate_predictions.py                                 # last 7 days
     python evaluate_predictions.py --days 14
     python evaluate_predictions.py --from 2025-03-01 --to 2025-03-31
     python evaluate_predictions.py --lot CRI
-    python evaluate_predictions.py --by-lot           # show per-lot breakdown
-    python evaluate_predictions.py --by-horizon       # side-by-side horizon comparison
+    python evaluate_predictions.py --by-lot                        # show per-lot breakdown
+    python evaluate_predictions.py --by-horizon                    # side-by-side horizon comparison
     python evaluate_predictions.py --by-horizon --horizon-csv horizon_metrics.csv
+    python evaluate_predictions.py --clock-time 07:45              # compare models at one local target time
+    python evaluate_predictions.py --clock-time 07:30 --clock-time-end 08:15
+    python evaluate_predictions.py --by-horizon --clock-time 07:30 --clock-time-end 08:15 --summary-only
+    python evaluate_predictions.py --by-hour                        # MAE by hour of day (ET)
 """
 
 import argparse
 import os
 import sys
 from datetime import datetime, timezone, timedelta
+from zoneinfo import ZoneInfo
 
 import numpy as np
 import pandas as pd
@@ -32,6 +37,8 @@ SUPABASE_URL = os.environ.get("SUPABASE_URL", "")
 SUPABASE_KEY = os.environ.get("SUPABASE_KEY", "")
 
 TIER_ORDER = ["lgb", "lgb_v3", "lgb_24h"]
+DISPLAY_TZ_NAME = os.environ.get("EVALUATOR_TZ", "America/New_York")
+DISPLAY_TZ = ZoneInfo(DISPLAY_TZ_NAME)
 
 # Maximum seconds between target_time and actual observation to count as a match
 MATCH_TOLERANCE_SEC = 4 * 60  # 4 minutes
@@ -203,6 +210,31 @@ def add_minutes_ahead(df: pd.DataFrame) -> pd.DataFrame:
     return df
 
 
+def normalize_clock_time(clock_time: str) -> str:
+    """Validate and zero-pad a local HH:MM clock time."""
+    try:
+        parsed = datetime.strptime(clock_time, "%H:%M")
+    except ValueError as exc:
+        raise SystemExit(f"Invalid --clock-time '{clock_time}'. Use HH:MM in 24-hour time, e.g. 07:45.") from exc
+    return parsed.strftime("%H:%M")
+
+
+def clock_time_to_minutes(clock_time: str) -> int:
+    parsed = datetime.strptime(clock_time, "%H:%M")
+    return parsed.hour * 60 + parsed.minute
+
+
+def add_local_target_columns(df: pd.DataFrame) -> pd.DataFrame:
+    """Add local target-time fields used for time-of-day comparisons."""
+    df = df.copy()
+    target_local = df["target_time"].dt.tz_convert(DISPLAY_TZ)
+    df["target_time_local"] = target_local
+    df["target_clock_local"] = target_local.dt.strftime("%H:%M")
+    df["target_clock_minutes_local"] = target_local.dt.hour * 60 + target_local.dt.minute
+    df["target_label_local"] = target_local.dt.strftime("%Y-%m-%d %H:%M")
+    return df
+
+
 def build_horizon_metrics(tier_subsets: dict[str, pd.DataFrame]) -> pd.DataFrame:
     """Return one row per (tier, horizon) with accuracy metrics."""
     rows = []
@@ -250,6 +282,79 @@ def build_horizon_comparison(horizon_metrics: pd.DataFrame) -> pd.DataFrame:
 
     comparison["best_mae_tier"] = comparison.apply(best_tier, axis=1)
     return comparison
+
+
+def filter_to_clock_time_range(df: pd.DataFrame, clock_time_start: str, clock_time_end: str | None = None) -> pd.DataFrame:
+    """Keep only rows whose local target clock falls within an inclusive HH:MM window."""
+    subset = add_minutes_ahead(add_local_target_columns(df))
+    start = normalize_clock_time(clock_time_start)
+    end = normalize_clock_time(clock_time_end or clock_time_start)
+    start_min = clock_time_to_minutes(start)
+    end_min = clock_time_to_minutes(end)
+
+    if start_min <= end_min:
+        mask = (subset["target_clock_minutes_local"] >= start_min) & (subset["target_clock_minutes_local"] <= end_min)
+    else:
+        mask = (subset["target_clock_minutes_local"] >= start_min) | (subset["target_clock_minutes_local"] <= end_min)
+
+    subset = subset[mask].copy()
+    if subset.empty:
+        return subset
+    subset["abs_error"] = (subset["prediction"] - subset["actual"]).abs()
+    subset["horizon_label"] = subset["minutes_ahead"].map(lambda minutes: f"T+{minutes}")
+    return subset
+
+
+def build_clock_time_comparison(clock_subset: pd.DataFrame) -> pd.DataFrame:
+    """Pivot rows at one local clock time into a side-by-side model comparison."""
+    if clock_subset.empty:
+        return pd.DataFrame()
+
+    subset = clock_subset.sort_values(["target_time_local", "lot", "minutes_ahead", "model_tier"]).copy()
+    comparison = subset[[
+        "target_time_local",
+        "target_label_local",
+        "lot",
+        "actual",
+        "minutes_ahead",
+        "horizon_label",
+    ]].drop_duplicates(
+        ["target_time_local", "lot", "minutes_ahead"]
+    )
+
+    for tier in TIER_ORDER:
+        tier_df = subset[subset["model_tier"] == tier][["target_time_local", "lot", "minutes_ahead", "prediction", "abs_error"]]
+        tier_df = tier_df.rename(columns={
+            "prediction": f"{tier}_prediction",
+            "abs_error": f"{tier}_abs_error",
+        })
+        comparison = comparison.merge(tier_df, on=["target_time_local", "lot", "minutes_ahead"], how="left")
+
+    def best_tier(row) -> str:
+        candidates = []
+        for tier in TIER_ORDER:
+            value = row.get(f"{tier}_abs_error")
+            if pd.notna(value):
+                candidates.append((float(value), tier))
+        return min(candidates)[1] if candidates else "—"
+
+    comparison["best_abs_error_tier"] = comparison.apply(best_tier, axis=1)
+    return comparison.sort_values(["target_time_local", "lot", "minutes_ahead"]).reset_index(drop=True)
+
+
+def build_clock_time_summary(clock_subset: pd.DataFrame, comparison: pd.DataFrame) -> list[dict]:
+    """Summarize model accuracy for one local clock time."""
+    win_counts = comparison["best_abs_error_tier"].value_counts().to_dict() if not comparison.empty else {}
+    rows = []
+    for tier in TIER_ORDER:
+        subset = clock_subset[clock_subset["model_tier"] == tier]
+        if subset.empty:
+            continue
+        metrics = compute_metrics(subset)
+        metrics["mae_1h"] = None
+        metrics["wins"] = int(win_counts.get(tier, 0))
+        rows.append({"label": tier, **metrics})
+    return rows
 
 
 def print_table(title: str, rows: list[dict], index_label: str):
@@ -349,6 +454,172 @@ def print_horizon_comparison(horizon_comparison: pd.DataFrame):
         print(line)
 
 
+def print_clock_time_summary(
+    clock_label: str,
+    summary_rows: list[dict],
+    comparison: pd.DataFrame,
+    show_details: bool = True,
+):
+    """Show model metrics and per-row winners for a local target clock-time window."""
+    print(f"\n{'=' * 104}")
+    print(f"  Clock-Time Model Comparison ({clock_label} {DISPLAY_TZ_NAME})")
+    print(f"{'=' * 104}")
+
+    if not summary_rows:
+        print("  No matched rows in that local target-time window.")
+        return
+
+    header = f"  {'Tier':<12}  {'N':>7}  {'MAE':>7}  {'RMSE':>7}  {'R²':>7}  {'In Band':>8}  {'Wins':>6}"
+    print(header)
+    print(f"  {'-' * (len(header) - 2)}")
+    for row in summary_rows:
+        r2_str = f"{row['r2']:.4f}" if not np.isnan(row["r2"]) else "   N/A"
+        print(
+            f"  {row['label']:<12}  {row['n']:>7,}  {row['mae']:>7.4f}  {row['rmse']:>7.4f}  {r2_str:>7}  {row['within_band_pct']:>7.1f}%  {row['wins']:>6}"
+        )
+
+    if not show_details:
+        return
+
+    tier_columns = [tier for tier in TIER_ORDER if f"{tier}_prediction" in comparison.columns]
+    print(f"\n  Per-target rows in {clock_label} {DISPLAY_TZ_NAME}")
+    detail_header = f"  {'Target(Local)':<18}  {'Lot':<8}  {'Hzn':>6}  {'Actual':>6}"
+    for tier in tier_columns:
+        detail_header += f"  {tier + ' Pred':>10}  {tier + ' Err':>9}"
+    detail_header += f"  {'Best':>10}"
+    print(detail_header)
+    print(f"  {'-' * (len(detail_header) - 2)}")
+
+    for _, row in comparison.iterrows():
+        line = f"  {row['target_label_local']:<18}  {row['lot']:<8}  {row['horizon_label']:>6}  {row['actual']:>6.3f}"
+        for tier in tier_columns:
+            pred = row.get(f"{tier}_prediction")
+            err = row.get(f"{tier}_abs_error")
+            pred_str = f"{pred:>10.3f}" if pd.notna(pred) else f"{'—':>10}"
+            err_str = f"{err:>9.3f}" if pd.notna(err) else f"{'—':>9}"
+            line += f"  {pred_str}  {err_str}"
+        line += f"  {row['best_abs_error_tier']:>10}"
+        print(line)
+
+
+def _cell_mae(sub: pd.DataFrame) -> float | None:
+    if len(sub) < 2:
+        return None
+    return float(np.mean(np.abs(sub["prediction"].values - sub["actual"].values)))
+
+
+def _cell_metrics(sub: pd.DataFrame) -> dict:
+    errors = sub["prediction"].values - sub["actual"].values
+    mae = float(np.mean(np.abs(errors)))
+    rmse = float(np.sqrt(np.mean(errors ** 2)))
+    ss_res = float(np.sum(errors ** 2))
+    ss_tot = float(np.sum((sub["actual"].values - sub["actual"].mean()) ** 2))
+    r2 = 1 - ss_res / ss_tot if ss_tot > 0 else float("nan")
+    return {"n": len(sub), "mae": mae, "rmse": rmse, "r2": r2}
+
+
+def print_lot_hour_matrix(tier: str, df: pd.DataFrame):
+    """Print a (hour × lot) MAE matrix."""
+    df = df.copy()
+    df["hour_et"] = df["target_time"].dt.tz_convert(DISPLAY_TZ).dt.hour
+    lots = sorted(df["lot"].unique())
+
+    print(f"\n  Lot × Hour MAE matrix ({DISPLAY_TZ_NAME}) — {tier}")
+    col_w = 7
+    header = f"  {'Hour':<6}" + "".join(f"  {lot:>{col_w}}" for lot in lots)
+    print(header)
+    print(f"  {'-' * (len(header) - 2)}")
+    for hour in range(24):
+        hour_df = df[df["hour_et"] == hour]
+        row = f"  {f'{hour:02d}:00':<6}"
+        for lot in lots:
+            sub = hour_df[hour_df["lot"] == lot]
+            mae = _cell_mae(sub)
+            row += f"  {f'{mae:.4f}':>{col_w}}" if mae is not None else f"  {'—':>{col_w}}"
+        print(row)
+
+
+def print_lot_horizon_matrix(tier: str, df: pd.DataFrame, max_horizons: int = 36):
+    """Print a (horizon × lot) MAE matrix. Caps at max_horizons steps for display."""
+    df = add_minutes_ahead(df)
+    lots = sorted(df["lot"].unique())
+    steps = sorted(df["minutes_ahead"].unique())[:max_horizons]
+
+    label = f"(first {max_horizons} horizons)" if len(df["minutes_ahead"].unique()) > max_horizons else ""
+    print(f"\n  Lot × Horizon MAE matrix {label} — {tier}")
+    col_w = 7
+    header = f"  {'T+min':<6}" + "".join(f"  {lot:>{col_w}}" for lot in lots)
+    print(header)
+    print(f"  {'-' * (len(header) - 2)}")
+    for step in steps:
+        step_df = df[df["minutes_ahead"] == step]
+        row = f"  {f'T+{step}':<6}"
+        for lot in lots:
+            sub = step_df[step_df["lot"] == lot]
+            mae = _cell_mae(sub)
+            row += f"  {f'{mae:.4f}':>{col_w}}" if mae is not None else f"  {'—':>{col_w}}"
+        print(row)
+
+
+def export_full_intersection(matched: pd.DataFrame, output_path: str) -> pd.DataFrame:
+    """Export (model_tier, lot, hour_et, horizon_min) metrics to CSV."""
+    df = add_minutes_ahead(matched)
+    df = df.copy()
+    df["hour_et"] = df["target_time"].dt.tz_convert(DISPLAY_TZ).dt.hour
+
+    rows = []
+    for tier in TIER_ORDER:
+        tier_df = df[df["model_tier"] == tier]
+        if tier_df.empty:
+            continue
+        for lot in sorted(tier_df["lot"].unique()):
+            lot_df = tier_df[tier_df["lot"] == lot]
+            for hour in range(24):
+                hour_df = lot_df[lot_df["hour_et"] == hour]
+                if hour_df.empty:
+                    continue
+                for horizon in sorted(hour_df["minutes_ahead"].unique()):
+                    sub = hour_df[hour_df["minutes_ahead"] == horizon]
+                    if len(sub) < 2:
+                        continue
+                    m = _cell_metrics(sub)
+                    rows.append({
+                        "model_tier": tier,
+                        "lot": lot,
+                        "hour_et": hour,
+                        "horizon_min": int(horizon),
+                        **{k: round(v, 5) if not (isinstance(v, float) and np.isnan(v)) else None
+                           for k, v in m.items()},
+                    })
+
+    out = pd.DataFrame(rows)
+    out.to_csv(output_path, index=False)
+    print(f"\n  Wrote full intersection CSV ({len(out):,} rows) → {output_path}")
+    return out
+
+
+def print_by_hour(tier: str, df: pd.DataFrame):
+    """Show MAE per hour of day (local time) to detect time-of-day accuracy patterns."""
+    df = df.copy()
+    df["hour_local"] = df["target_time"].dt.tz_convert(DISPLAY_TZ).dt.hour
+
+    print(f"\n  MAE by hour of day ({DISPLAY_TZ_NAME}) — {tier}")
+    print(f"  {'Hour':>6}  {'N':>6}  {'MAE':>7}  {'RMSE':>7}  {'R²':>7}")
+    print(f"  {'-' * 42}")
+    for hour in range(24):
+        sub = df[df["hour_local"] == hour]
+        if sub.empty:
+            continue
+        errors = sub["prediction"].values - sub["actual"].values
+        mae = np.mean(np.abs(errors))
+        rmse = np.sqrt(np.mean(errors ** 2))
+        ss_res = np.sum(errors ** 2)
+        ss_tot = np.sum((sub["actual"].values - sub["actual"].mean()) ** 2)
+        r2 = 1 - ss_res / ss_tot if ss_tot > 0 else float("nan")
+        r2_str = f"{r2:.4f}" if not np.isnan(r2) else "   N/A"
+        print(f"  {f'{hour:02d}:00':>6}  {len(sub):>6,}  {mae:>7.4f}  {rmse:>7.4f}  {r2_str:>7}")
+
+
 def print_samples(tier: str, df: pd.DataFrame, n: int = 10):
     sample = df.sample(min(n, len(df)), random_state=42)
     sample = sample.sort_values("target_time")
@@ -371,8 +642,20 @@ def main():
     parser.add_argument("--lot", help="Filter to a single lot (e.g. CRI)")
     parser.add_argument("--by-lot", action="store_true", help="Show per-lot breakdown within each tier")
     parser.add_argument("--by-horizon", action="store_true", help="Show side-by-side horizon comparison and per-tier breakdowns")
+    parser.add_argument("--clock-time", help="Inclusive local target-time window start in HH:MM, e.g. 07:30")
+    parser.add_argument("--clock-time-end", help="Inclusive local target-time window end in HH:MM, e.g. 08:15")
     parser.add_argument("--horizon-csv", help="Optional CSV path for per-(tier,horizon) metrics export")
+    parser.add_argument("--summary-only", action="store_true", help="Suppress sample rows and long detailed breakdowns")
+    parser.add_argument("--by-hour", action="store_true", help="Show MAE per hour of day (ET) to detect time-of-day accuracy patterns")
+    parser.add_argument("--full-analysis", action="store_true", help="Run all breakdowns (by-lot, by-horizon, by-hour, lot×hour matrix, lot×horizon matrix) and export full intersection CSV")
+    parser.add_argument("--full-csv", help="Path to export full (tier, lot, hour, horizon) intersection CSV")
     args = parser.parse_args()
+
+    if args.full_analysis:
+        args.by_lot = True
+        args.by_horizon = True
+        args.by_hour = True
+        args.summary_only = True
 
     now = datetime.now(timezone.utc)
     if args.from_dt:
@@ -411,8 +694,9 @@ def main():
     print_table("Accuracy by Model Tier", tier_rows, "Tier")
     print_early_horizons(tier_subsets)
 
-    for tier, subset in tier_subsets.items():
-        print_samples(tier, subset)
+    if not args.summary_only:
+        for tier, subset in tier_subsets.items():
+            print_samples(tier, subset)
 
     # --- Horizon breakdown ---
     horizon_metrics = build_horizon_metrics(tier_subsets)
@@ -422,8 +706,34 @@ def main():
 
     if args.by_horizon:
         print_horizon_comparison(build_horizon_comparison(horizon_metrics))
+        if not args.summary_only:
+            for tier, subset in tier_subsets.items():
+                print_by_horizon(tier, subset)
+
+    if args.clock_time:
+        clock_time_start = normalize_clock_time(args.clock_time)
+        clock_time_end = normalize_clock_time(args.clock_time_end) if args.clock_time_end else clock_time_start
+        clock_label = clock_time_start if clock_time_start == clock_time_end else f"{clock_time_start} to {clock_time_end}"
+        clock_subset = filter_to_clock_time_range(matched, clock_time_start, clock_time_end)
+        comparison = build_clock_time_comparison(clock_subset)
+        summary_rows = build_clock_time_summary(clock_subset, comparison)
+        print_clock_time_summary(clock_label, summary_rows, comparison, show_details=not args.summary_only)
+
+    # --- Hour-of-day breakdown ---
+    if args.by_hour:
         for tier, subset in tier_subsets.items():
-            print_by_horizon(tier, subset)
+            print_by_hour(tier, subset)
+
+    # --- Full intersection matrices + CSV export ---
+    if args.full_analysis:
+        for tier, subset in tier_subsets.items():
+            print_lot_hour_matrix(tier, subset)
+        for tier, subset in tier_subsets.items():
+            print_lot_horizon_matrix(tier, subset)
+        csv_path = args.full_csv or "full_intersection.csv"
+        export_full_intersection(matched, csv_path)
+    elif args.full_csv:
+        export_full_intersection(matched, args.full_csv)
 
     # --- Per-lot breakdown ---
     if args.by_lot:
