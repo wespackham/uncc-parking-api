@@ -10,6 +10,8 @@ LGB_MODELS_V2_DIR = BASE_DIR / "models_lgb_24h"
 LGB_MODELS_V3_DIR = BASE_DIR / "models_lgb_v3"
 LGB_MODELS_V4_DIR = BASE_DIR / "models_lgb_v4"
 LGB_MODELS_24H_V2_DIR = BASE_DIR / "models_lgb_24h_v2"
+# Estimators that infer a suppressed lot from the other lots (see parking_api/estimate.py)
+ESTIMATOR_DIRS = {"WEST": BASE_DIR / "models_west_est"}
 DATA_DIR = BASE_DIR / "data"
 LOGS_DIR = BASE_DIR / "logs"
 PREDICTIONS_BUFFER_FILE = LOGS_DIR / "pending_predictions.jsonl"

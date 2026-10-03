@@ -77,6 +77,8 @@ def fetch_predictions(client, from_dt: str, to_dt: str, lot: str | None) -> pd.D
     for row in raw_rows:
         data = row.get("data") or {}
         for lot_name, vals in data.items():
+            if vals.get("estimated"):
+                continue  # inferred from other decks, not a model forecast of a live feed
             if lot and lot_name != lot:
                 continue
             rows.append({

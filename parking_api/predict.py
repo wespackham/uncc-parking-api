@@ -36,6 +36,7 @@ from .config import (
     LGB_MODELS_24H_V2_DIR,
 )
 from .enrichment import get_semester_metadata
+from .estimate import add_estimates
 from .features import (
     build_calendar_features,
     build_disruption_features,
@@ -445,6 +446,15 @@ def run_predictions(model: str = "3h"):
                 model_tier=bundle.model_tier,
             )
             log.info("Generated %s prediction rows for %s", len(predictions), bundle.model_tier)
+            if SUPPRESSED_LOTS:
+                try:
+                    add_estimates(
+                        predictions,
+                        SUPPRESSED_LOTS,
+                        lambda target_dt, names: _build_target_feature_dict(target_dt, weather_df, names, {}),
+                    )
+                except Exception:
+                    log.error("Estimating %s for %s failed\n%s", SUPPRESSED_LOTS, bundle.model_tier, traceback.format_exc())
             all_predictions.extend(predictions)
         except Exception:
             msg = f"⚠️ {bundle.model_tier} prediction run failed"

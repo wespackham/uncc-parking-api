@@ -62,6 +62,8 @@ def _fetch_predictions(client, from_dt: str, to_dt: str) -> pd.DataFrame:
     for row in raw_rows:
         data = row.get("data") or {}
         for lot, vals in data.items():
+            if vals.get("estimated"):
+                continue  # inferred from other decks, not a model forecast of a live feed
             rows.append({
                 "created_at": row["created_at"],
                 "target_time": row["target_time"],
