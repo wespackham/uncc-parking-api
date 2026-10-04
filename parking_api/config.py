@@ -15,6 +15,8 @@ ESTIMATOR_DIRS = {"WEST": BASE_DIR / "models_west_est"}
 DATA_DIR = BASE_DIR / "data"
 LOGS_DIR = BASE_DIR / "logs"
 PREDICTIONS_BUFFER_FILE = LOGS_DIR / "pending_predictions.jsonl"
+WEATHER_CACHE_FILE = LOGS_DIR / "weather_forecast.json"
+WEATHER_CACHE_MAX_AGE_HOURS = 48
 
 SUPABASE_URL = os.environ.get("SUPABASE_URL", "")
 SUPABASE_KEY = os.environ.get("SUPABASE_KEY", "")
