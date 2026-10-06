@@ -1,0 +1,9 @@
+[Unit]
+Description=Refresh dashboard analytics every 10 minutes (offset from predictor runs)
+
+[Timer]
+OnCalendar=*:3/10
+AccuracySec=30s
+
+[Install]
+WantedBy=timers.target

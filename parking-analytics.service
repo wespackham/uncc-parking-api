@@ -1,0 +1,10 @@
+[Unit]
+Description=Refresh precomputed dashboard analytics (public.analytics_snapshot)
+After=postgresql.service
+
+[Service]
+Type=oneshot
+User=postgres
+# Tier must match the dashboard's NEAR_TERM_TIER (src/services/PredictionFetcher.js)
+ExecStart=/usr/bin/psql -d parking -v ON_ERROR_STOP=1 -q -c "SET ROLE parking_owner" -c "SELECT ops.refresh_analytics_snapshot('lgb_v4')"
+Nice=10
